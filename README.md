@@ -1,4 +1,6 @@
-# FIFA-2026-model-calibration
+# FIFA 2026 Model Calibration Lab
+
+English | [繁體中文](README_zh.md)
 
 This repository is the FIFA Predictor 4.0 model calibration lab. It is a research
 workspace for testing model assumptions, probability calibration, and tuning
