@@ -1,0 +1,49 @@
+{
+  "fixed_k_factor": 80.0,
+  "results": [
+    {
+      "variant": "none",
+      "accuracy": 0.5538231309025461,
+      "log_loss": 0.9581930348439738,
+      "brier_score": 0.5687957387632453
+    },
+    {
+      "variant": "simple_linear_capped",
+      "accuracy": 0.5530951080911647,
+      "log_loss": 0.9586406978702358,
+      "brier_score": 0.5646945482502552
+    },
+    {
+      "variant": "sqrt_margin",
+      "accuracy": 0.5563509878865094,
+      "log_loss": 0.948733381644048,
+      "brier_score": 0.5612044214708295
+    },
+    {
+      "variant": "log_margin",
+      "accuracy": 0.5590406277174462,
+      "log_loss": 0.9469499541543781,
+      "brier_score": 0.56077643215229
+    }
+  ],
+  "summary": {
+    "best_accuracy": {
+      "variant": "log_margin",
+      "accuracy": 0.5590406277174462,
+      "log_loss": 0.9469499541543781,
+      "brier_score": 0.56077643215229
+    },
+    "best_log_loss": {
+      "variant": "log_margin",
+      "accuracy": 0.5590406277174462,
+      "log_loss": 0.9469499541543781,
+      "brier_score": 0.56077643215229
+    },
+    "best_brier_score": {
+      "variant": "log_margin",
+      "accuracy": 0.5590406277174462,
+      "log_loss": 0.9469499541543781,
+      "brier_score": 0.56077643215229
+    }
+  }
+}

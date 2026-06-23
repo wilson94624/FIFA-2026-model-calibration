@@ -1,0 +1,642 @@
+{
+  "fixed_k_factor": 80.0,
+  "fixed_weights": {
+    "Friendly": 1.0,
+    "Nations League": 1.0,
+    "Other": 1.0
+  },
+  "results": [
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.5538231309025461,
+      "log_loss": 0.9581930348439738,
+      "brier_score": 0.5687957387632453
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5538837994701612,
+      "log_loss": 0.9582959282963062,
+      "brier_score": 0.5688548697054644
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5538231309025461,
+      "log_loss": 0.9584509616753748,
+      "brier_score": 0.5689397299336358
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5535197880644704,
+      "log_loss": 0.9589091499347864,
+      "brier_score": 0.5691728227939757
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.553620902343829,
+      "log_loss": 0.9582863712657467,
+      "brier_score": 0.5688312571119584
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5535197880644704,
+      "log_loss": 0.9583907006205863,
+      "brier_score": 0.5688914553583403
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5533782280733686,
+      "log_loss": 0.95854590478617,
+      "brier_score": 0.5689765288291607
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5531962223705231,
+      "log_loss": 0.9590028876866843,
+      "brier_score": 0.5692096436651538
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.5534186737851119,
+      "log_loss": 0.9585404772341538,
+      "brier_score": 0.5689577975044782
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5532568909381382,
+      "log_loss": 0.9586454910557994,
+      "brier_score": 0.569018315402519
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5531557766587798,
+      "log_loss": 0.9588013293015688,
+      "brier_score": 0.5691036481105061
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5528726566765758,
+      "log_loss": 0.9592603172871228,
+      "brier_score": 0.569337854234562
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.552387308135655,
+      "log_loss": 0.959461019088923,
+      "brier_score": 0.5694393628868814
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5527108738296023,
+      "log_loss": 0.9595655433542506,
+      "brier_score": 0.5694990976398666
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5524681995591417,
+      "log_loss": 0.959722577609568,
+      "brier_score": 0.569584512688271
+    },
+    {
+      "qualifier_weight": 1.0,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5521446338651944,
+      "log_loss": 0.9601861656858709,
+      "brier_score": 0.5698201591279414
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.5527310966854739,
+      "log_loss": 0.9584984083037329,
+      "brier_score": 0.5689514487244308
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5523266395680398,
+      "log_loss": 0.9585937155991215,
+      "brier_score": 0.5690044055360308
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5527513195413456,
+      "log_loss": 0.9587396083987284,
+      "brier_score": 0.5690816864802917
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5527715423972174,
+      "log_loss": 0.9591795695100255,
+      "brier_score": 0.5692989673871256
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.552650205261987,
+      "log_loss": 0.9585740932730508,
+      "brier_score": 0.5689746510850594
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5525288681267568,
+      "log_loss": 0.9586705858636916,
+      "brier_score": 0.569028552823428
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5527715423972174,
+      "log_loss": 0.958816093513252,
+      "brier_score": 0.5691058201436703
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.552650205261987,
+      "log_loss": 0.9592549485507724,
+      "brier_score": 0.5693235222393342
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.5521244110093227,
+      "log_loss": 0.95880494941787,
+      "brier_score": 0.5690856664471947
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5522659710004246,
+      "log_loss": 0.9589020109143725,
+      "brier_score": 0.5691399719680545
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.552387308135655,
+      "log_loss": 0.9590481958388603,
+      "brier_score": 0.5692176623771132
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5521446338651944,
+      "log_loss": 0.9594880091973367,
+      "brier_score": 0.5694360181877153
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.5516997310360169,
+      "log_loss": 0.9596633355107814,
+      "brier_score": 0.5695293071067495
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5514570567655565,
+      "log_loss": 0.9597595150395023,
+      "brier_score": 0.5695827829425335
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5516188396125301,
+      "log_loss": 0.9599059067924266,
+      "brier_score": 0.5696606045499848
+    },
+    {
+      "qualifier_weight": 1.25,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5517806224595038,
+      "log_loss": 0.9603471279304994,
+      "brier_score": 0.5698796273701708
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.5511941596392242,
+      "log_loss": 0.9594622279001932,
+      "brier_score": 0.5695055061278428
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5511334910716091,
+      "log_loss": 0.9595522345790152,
+      "brier_score": 0.5695529071703743
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5511941596392242,
+      "log_loss": 0.9596896484268298,
+      "brier_score": 0.5696234537822323
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.0,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5509717082246355,
+      "log_loss": 0.960116692784636,
+      "brier_score": 0.5698285856009702
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.5514570567655565,
+      "log_loss": 0.9595194185372052,
+      "brier_score": 0.56951761629381
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5513154967744545,
+      "log_loss": 0.9596112330137622,
+      "brier_score": 0.5695660443519808
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5511739367833526,
+      "log_loss": 0.9597481731138263,
+      "brier_score": 0.5696365889379551
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.25,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5508705939452769,
+      "log_loss": 0.9601730571870728,
+      "brier_score": 0.5698415725108946
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.5505672511072014,
+      "log_loss": 0.9597309173916099,
+      "brier_score": 0.5696159379298509
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5506481425306882,
+      "log_loss": 0.9598239434917974,
+      "brier_score": 0.5696647941131254
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5506683653865599,
+      "log_loss": 0.9599619897447971,
+      "brier_score": 0.5697361215250277
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 1.5,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5505672511072014,
+      "log_loss": 0.9603869797317347,
+      "brier_score": 0.569941372990637
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 1.0,
+      "accuracy": 0.5504459139719711,
+      "log_loss": 0.9605402011471923,
+      "brier_score": 0.570028288970865
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 1.25,
+      "accuracy": 0.5504661368278428,
+      "log_loss": 0.960633646449006,
+      "brier_score": 0.5700767759110776
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 1.5,
+      "accuracy": 0.5503650225484843,
+      "log_loss": 0.9607723463741028,
+      "brier_score": 0.5701480758188896
+    },
+    {
+      "qualifier_weight": 1.5,
+      "continental_finals_weight": 2.0,
+      "world_cup_finals_weight": 2.0,
+      "accuracy": 0.5504661368278428,
+      "log_loss": 0.9612000440234355,
+      "brier_score": 0.5703546807900185
+    }
+  ],
+  "summary": {
+    "top_log_loss": [
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.5538231309025461,
+        "log_loss": 0.9581930348439738,
+        "brier_score": 0.5687957387632453
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.553620902343829,
+        "log_loss": 0.9582863712657467,
+        "brier_score": 0.5688312571119584
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.25,
+        "accuracy": 0.5538837994701612,
+        "log_loss": 0.9582959282963062,
+        "brier_score": 0.5688548697054644
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.25,
+        "accuracy": 0.5535197880644704,
+        "log_loss": 0.9583907006205863,
+        "brier_score": 0.5688914553583403
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.5,
+        "accuracy": 0.5538231309025461,
+        "log_loss": 0.9584509616753748,
+        "brier_score": 0.5689397299336358
+      },
+      {
+        "qualifier_weight": 1.25,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.5527310966854739,
+        "log_loss": 0.9584984083037329,
+        "brier_score": 0.5689514487244308
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.5,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.5534186737851119,
+        "log_loss": 0.9585404772341538,
+        "brier_score": 0.5689577975044782
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.5,
+        "accuracy": 0.5533782280733686,
+        "log_loss": 0.95854590478617,
+        "brier_score": 0.5689765288291607
+      },
+      {
+        "qualifier_weight": 1.25,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.552650205261987,
+        "log_loss": 0.9585740932730508,
+        "brier_score": 0.5689746510850594
+      },
+      {
+        "qualifier_weight": 1.25,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.25,
+        "accuracy": 0.5523266395680398,
+        "log_loss": 0.9585937155991215,
+        "brier_score": 0.5690044055360308
+      }
+    ],
+    "top_brier_score": [
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.5538231309025461,
+        "log_loss": 0.9581930348439738,
+        "brier_score": 0.5687957387632453
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.553620902343829,
+        "log_loss": 0.9582863712657467,
+        "brier_score": 0.5688312571119584
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.25,
+        "accuracy": 0.5538837994701612,
+        "log_loss": 0.9582959282963062,
+        "brier_score": 0.5688548697054644
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.25,
+        "accuracy": 0.5535197880644704,
+        "log_loss": 0.9583907006205863,
+        "brier_score": 0.5688914553583403
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.5,
+        "accuracy": 0.5538231309025461,
+        "log_loss": 0.9584509616753748,
+        "brier_score": 0.5689397299336358
+      },
+      {
+        "qualifier_weight": 1.25,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.5527310966854739,
+        "log_loss": 0.9584984083037329,
+        "brier_score": 0.5689514487244308
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.5,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.5534186737851119,
+        "log_loss": 0.9585404772341538,
+        "brier_score": 0.5689577975044782
+      },
+      {
+        "qualifier_weight": 1.25,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.552650205261987,
+        "log_loss": 0.9585740932730508,
+        "brier_score": 0.5689746510850594
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.5,
+        "accuracy": 0.5533782280733686,
+        "log_loss": 0.95854590478617,
+        "brier_score": 0.5689765288291607
+      },
+      {
+        "qualifier_weight": 1.25,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.25,
+        "accuracy": 0.5523266395680398,
+        "log_loss": 0.9585937155991215,
+        "brier_score": 0.5690044055360308
+      }
+    ],
+    "top_accuracy": [
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.25,
+        "accuracy": 0.5538837994701612,
+        "log_loss": 0.9582959282963062,
+        "brier_score": 0.5688548697054644
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.5538231309025461,
+        "log_loss": 0.9581930348439738,
+        "brier_score": 0.5687957387632453
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 1.5,
+        "accuracy": 0.5538231309025461,
+        "log_loss": 0.9584509616753748,
+        "brier_score": 0.5689397299336358
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.553620902343829,
+        "log_loss": 0.9582863712657467,
+        "brier_score": 0.5688312571119584
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.0,
+        "world_cup_finals_weight": 2.0,
+        "accuracy": 0.5535197880644704,
+        "log_loss": 0.9589091499347864,
+        "brier_score": 0.5691728227939757
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.25,
+        "accuracy": 0.5535197880644704,
+        "log_loss": 0.9583907006205863,
+        "brier_score": 0.5688914553583403
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.5,
+        "world_cup_finals_weight": 1.0,
+        "accuracy": 0.5534186737851119,
+        "log_loss": 0.9585404772341538,
+        "brier_score": 0.5689577975044782
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 1.5,
+        "accuracy": 0.5533782280733686,
+        "log_loss": 0.95854590478617,
+        "brier_score": 0.5689765288291607
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.5,
+        "world_cup_finals_weight": 1.25,
+        "accuracy": 0.5532568909381382,
+        "log_loss": 0.9586454910557994,
+        "brier_score": 0.569018315402519
+      },
+      {
+        "qualifier_weight": 1.0,
+        "continental_finals_weight": 1.25,
+        "world_cup_finals_weight": 2.0,
+        "accuracy": 0.5531962223705231,
+        "log_loss": 0.9590028876866843,
+        "brier_score": 0.5692096436651538
+      }
+    ]
+  }
+}

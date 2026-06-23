@@ -1,0 +1,337 @@
+team,category,include_fifa_only,include_fifa_historical,notes
+Abkhazia,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Afghanistan,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Albania,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Alderney,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Algeria,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Ambazonia,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+American Samoa,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Andalusia,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Andorra,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Angola,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Anguilla,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Antigua and Barbuda,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Arameans Suryoye,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Argentina,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Armenia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Artsakh,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Aruba,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Asturias,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Australia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Austria,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Aymara,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Azerbaijan,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Bahamas,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Bahrain,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Bangladesh,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Barawa,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Barbados,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Basque Country,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Belarus,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Belgium,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Belize,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Benin,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Bermuda,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Bhutan,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Biafra,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Bolivia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Bonaire,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Bosnia and Herzegovina,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Botswana,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Brazil,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+British Virgin Islands,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Brittany,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Brunei,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Bulgaria,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Burkina Faso,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Burundi,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Cambodia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Cameroon,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Canada,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Canary Islands,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Cape Verde,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Cascadia,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Catalonia,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Cayman Islands,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Central African Republic,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Central Spain,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Chad,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Chagos Islands,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Chameria,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Chechnya,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Chile,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+China,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Cilento,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Colombia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Comoros,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Congo,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Cook Islands,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Corsica,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Costa Rica,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+County of Nice,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Crimea,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Croatia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Cuba,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Curaçao,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Cyprus,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Czech Republic,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Czechoslovakia,fifa_historical,FALSE,TRUE,Defunct or former senior national team retained for historical Elo continuity.
+DR Congo,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Darfur,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Denmark,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Djibouti,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Dominica,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Dominican Republic,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Donetsk PR,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Délvidék,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+East Turkestan,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Ecuador,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Egypt,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+El Salvador,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Elba Island,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Ellan Vannin,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+England,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Equatorial Guinea,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Eritrea,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Estonia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Eswatini,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Ethiopia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Falkland Islands,non_fifa_representative,FALSE,FALSE,Representative entity not suitable for FIFA Predictor calibration universe.
+Faroe Islands,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Felvidék,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Fiji,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Finland,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+France,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Franconia,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+French Guiana,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Frøya,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Gabon,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Galicia,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Gambia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Georgia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+German DR,fifa_historical,FALSE,TRUE,Defunct or former senior national team retained for historical Elo continuity.
+Germany,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Ghana,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Gibraltar,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Gotland,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Gozo,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Greece,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Greenland,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Grenada,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Guadeloupe,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Guam,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Guatemala,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Guernsey,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Guinea,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Guinea-Bissau,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Guyana,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Găgăuzia,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Haiti,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Hitra,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Hmong,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Honduras,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Hong Kong,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Hungary,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Iceland,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+India,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Indonesia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Iran,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Iraq,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Iraqi Kurdistan,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Isle of Man,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Isle of Wight,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Israel,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Italy,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Ivory Coast,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Jamaica,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Japan,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Jersey,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Jordan,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Kabylia,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Kazakhstan,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Kenya,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Kernow,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Kiribati,non_fifa_representative,FALSE,FALSE,Representative entity not suitable for FIFA Predictor calibration universe.
+Kosovo,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Kurdistan,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Kuwait,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Kyrgyzstan,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Kárpátalja,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Laos,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Latvia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Lebanon,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Lesotho,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Liberia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Libya,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Liechtenstein,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Lithuania,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Luhansk PR,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Luxembourg,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Macau,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Madagascar,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Madrid,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Malawi,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Malaysia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Maldives,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Mali,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Malta,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Manchukuo,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Mapuche,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Marshall Islands,non_fifa_representative,FALSE,FALSE,Representative entity not suitable for FIFA Predictor calibration universe.
+Martinique,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Matabeleland,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Maule Sur,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Mauritania,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Mauritius,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Mayotte,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Menorca,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Mexico,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Micronesia,non_fifa_representative,FALSE,FALSE,Representative entity not suitable for FIFA Predictor calibration universe.
+Moldova,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Monaco,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Mongolia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Montenegro,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Montserrat,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Morocco,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Mozambique,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Myanmar,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Namibia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Nepal,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Netherlands,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+New Caledonia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+New Zealand,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Nicaragua,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Niger,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Nigeria,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Niue,non_fifa_representative,FALSE,FALSE,Representative entity not suitable for FIFA Predictor calibration universe.
+North Korea,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+North Macedonia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+North Vietnam,fifa_historical,FALSE,TRUE,Defunct or former senior national team retained for historical Elo continuity.
+Northern Cyprus,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Northern Ireland,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Northern Mariana Islands,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Norway,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Occitania,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Oman,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Orkney,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Padania,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Pakistan,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Palau,non_fifa_representative,FALSE,FALSE,Representative entity not suitable for FIFA Predictor calibration universe.
+Palestine,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Panama,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Panjab,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Papua New Guinea,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Paraguay,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Parishes of Jersey,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Peru,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Philippines,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Poland,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Portugal,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Provence,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Puerto Rico,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Qatar,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Quebec,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Raetia,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Republic of Ireland,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Republic of St. Pauli,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Rhodes,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Romani people,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Romania,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Russia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Rwanda,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Ryūkyū,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Réunion,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Saare County,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Saarland,fifa_historical,FALSE,TRUE,Defunct or former senior national team retained for historical Elo continuity.
+Saint Barthélemy,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Saint Helena,non_fifa_representative,FALSE,FALSE,Representative entity not suitable for FIFA Predictor calibration universe.
+Saint Kitts and Nevis,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Saint Lucia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Saint Martin,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Saint Pierre and Miquelon,non_fifa_representative,FALSE,FALSE,Representative entity not suitable for FIFA Predictor calibration universe.
+Saint Vincent and the Grenadines,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Samoa,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+San Marino,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Sark,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Saudi Arabia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Saugeais,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Scotland,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Sealand,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Seborga,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Senegal,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Serbia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Seychelles,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Shetland,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Sierra Leone,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Silesia,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Singapore,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Sint Maarten,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Slovakia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Slovenia,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Solomon Islands,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Somalia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Somaliland,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+South Africa,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+South Korea,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+South Ossetia,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+South Sudan,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+South Yemen,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Spain,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Sri Lanka,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Sudan,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Suriname,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Surrey,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Sweden,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Switzerland,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Syria,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Székely Land,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Sápmi,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+São Tomé and Príncipe,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Tahiti,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Taiwan,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Tajikistan,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Tamil Eelam,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Tanzania,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Thailand,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Tibet,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Ticino,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Timor-Leste,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Togo,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Tonga,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Trinidad and Tobago,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Tunisia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Turkey,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Turkmenistan,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Turks and Caicos Islands,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Tuvalu,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Two Sicilies,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Uganda,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Ukraine,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+United Arab Emirates,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+United Koreans in Japan,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+United States,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+United States Virgin Islands,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Uruguay,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Uzbekistan,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Vanuatu,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Vatican City,non_fifa_representative,FALSE,FALSE,Representative entity not suitable for FIFA Predictor calibration universe.
+Venezuela,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Vietnam,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Vietnam Republic,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Wales,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Wallis Islands and Futuna,non_fifa_representative,FALSE,FALSE,Representative entity not suitable for FIFA Predictor calibration universe.
+West Papua,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Western Armenia,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Western Australia,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Western Isles,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Western Sahara,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Yemen,successor_state,TRUE,TRUE,Current FIFA team or renamed/successor state with historical continuity.
+Yemen DPR,fifa_historical,FALSE,TRUE,Defunct or former senior national team retained for historical Elo continuity.
+Ynys Môn,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+Yorkshire,conifa,FALSE,FALSE,CONIFA or non-FIFA representative team excluded from FIFA calibration universe.
+Yoruba Nation,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Yugoslavia,fifa_historical,FALSE,TRUE,Defunct or former senior national team retained for historical Elo continuity.
+Zambia,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Zanzibar,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Zimbabwe,fifa_current,TRUE,TRUE,Current FIFA/senior national team for calibration purposes.
+Åland Islands,regional,FALSE,FALSE,"Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."

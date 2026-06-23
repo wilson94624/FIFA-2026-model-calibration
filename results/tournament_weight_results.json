@@ -1,0 +1,276 @@
+{
+  "fixed_k_factor": 80.0,
+  "weights": {
+    "Friendly": 1.0,
+    "Qualifier": 1.5,
+    "Nations League": 1.25,
+    "Continental Finals": 2.0,
+    "World Cup Finals": 2.5,
+    "Other": 1.0
+  },
+  "metrics": {
+    "accuracy": 0.5503245768367409,
+    "log_loss": 0.9619078749674432,
+    "brier_score": 0.5706846544015034
+  },
+  "category_counts": {
+    "Friendly": 18388,
+    "Qualifier": 15928,
+    "Nations League": 1080,
+    "Continental Finals": 3251,
+    "World Cup Finals": 1008,
+    "Other": 9794
+  },
+  "top_tournaments": [
+    {
+      "tournament": "Friendly",
+      "matches": 18388,
+      "category": "Friendly"
+    },
+    {
+      "tournament": "FIFA World Cup qualification",
+      "matches": 8771,
+      "category": "Qualifier"
+    },
+    {
+      "tournament": "UEFA Euro qualification",
+      "matches": 2824,
+      "category": "Qualifier"
+    },
+    {
+      "tournament": "African Cup of Nations qualification",
+      "matches": 2327,
+      "category": "Qualifier"
+    },
+    {
+      "tournament": "FIFA World Cup",
+      "matches": 1008,
+      "category": "World Cup Finals"
+    },
+    {
+      "tournament": "Copa Am\u00e9rica",
+      "matches": 869,
+      "category": "Continental Finals"
+    },
+    {
+      "tournament": "African Cup of Nations",
+      "matches": 845,
+      "category": "Continental Finals"
+    },
+    {
+      "tournament": "AFC Asian Cup qualification",
+      "matches": 829,
+      "category": "Qualifier"
+    },
+    {
+      "tournament": "UEFA Nations League",
+      "matches": 658,
+      "category": "Nations League"
+    },
+    {
+      "tournament": "CECAFA Cup",
+      "matches": 620,
+      "category": "Other"
+    },
+    {
+      "tournament": "CFU Caribbean Cup qualification",
+      "matches": 606,
+      "category": "Qualifier"
+    },
+    {
+      "tournament": "Merdeka Tournament",
+      "matches": 599,
+      "category": "Other"
+    },
+    {
+      "tournament": "British Home Championship",
+      "matches": 523,
+      "category": "Other"
+    },
+    {
+      "tournament": "CONCACAF Nations League",
+      "matches": 422,
+      "category": "Nations League"
+    },
+    {
+      "tournament": "AFC Asian Cup",
+      "matches": 421,
+      "category": "Continental Finals"
+    },
+    {
+      "tournament": "Gold Cup",
+      "matches": 420,
+      "category": "Continental Finals"
+    },
+    {
+      "tournament": "Gulf Cup",
+      "matches": 410,
+      "category": "Other"
+    },
+    {
+      "tournament": "Island Games",
+      "matches": 394,
+      "category": "Other"
+    },
+    {
+      "tournament": "UEFA Euro",
+      "matches": 388,
+      "category": "Continental Finals"
+    },
+    {
+      "tournament": "Asian Games",
+      "matches": 368,
+      "category": "Other"
+    },
+    {
+      "tournament": "COSAFA Cup",
+      "matches": 354,
+      "category": "Other"
+    },
+    {
+      "tournament": "AFF Championship",
+      "matches": 291,
+      "category": "Other"
+    },
+    {
+      "tournament": "Nordic Championship",
+      "matches": 283,
+      "category": "Other"
+    },
+    {
+      "tournament": "King's Cup",
+      "matches": 253,
+      "category": "Other"
+    },
+    {
+      "tournament": "CFU Caribbean Cup",
+      "matches": 251,
+      "category": "Other"
+    },
+    {
+      "tournament": "Am\u00edlcar Cabral Cup",
+      "matches": 235,
+      "category": "Other"
+    },
+    {
+      "tournament": "Muratti Vase",
+      "matches": 220,
+      "category": "Other"
+    },
+    {
+      "tournament": "South Pacific Games",
+      "matches": 205,
+      "category": "Other"
+    },
+    {
+      "tournament": "Southeast Asian Games",
+      "matches": 182,
+      "category": "Other"
+    },
+    {
+      "tournament": "Arab Cup",
+      "matches": 175,
+      "category": "Other"
+    },
+    {
+      "tournament": "CONCACAF Championship",
+      "matches": 169,
+      "category": "Continental Finals"
+    },
+    {
+      "tournament": "UNCAF Cup",
+      "matches": 164,
+      "category": "Other"
+    },
+    {
+      "tournament": "SAFF Cup",
+      "matches": 162,
+      "category": "Other"
+    },
+    {
+      "tournament": "Korea Cup",
+      "matches": 155,
+      "category": "Other"
+    },
+    {
+      "tournament": "CONCACAF Championship qualification",
+      "matches": 151,
+      "category": "Qualifier"
+    },
+    {
+      "tournament": "Confederations Cup",
+      "matches": 140,
+      "category": "Other"
+    },
+    {
+      "tournament": "Oceania Nations Cup",
+      "matches": 139,
+      "category": "Continental Finals"
+    },
+    {
+      "tournament": "EAFF Championship",
+      "matches": 130,
+      "category": "Other"
+    },
+    {
+      "tournament": "Central European International Cup",
+      "matches": 126,
+      "category": "Other"
+    },
+    {
+      "tournament": "CCCF Championship",
+      "matches": 123,
+      "category": "Other"
+    },
+    {
+      "tournament": "WAFF Championship",
+      "matches": 114,
+      "category": "Other"
+    },
+    {
+      "tournament": "Indian Ocean Island Games",
+      "matches": 110,
+      "category": "Other"
+    },
+    {
+      "tournament": "Baltic Cup",
+      "matches": 106,
+      "category": "Other"
+    },
+    {
+      "tournament": "Windward Islands Tournament",
+      "matches": 101,
+      "category": "Other"
+    },
+    {
+      "tournament": "CONIFA World Football Cup",
+      "matches": 101,
+      "category": "Other"
+    },
+    {
+      "tournament": "AFC Challenge Cup qualification",
+      "matches": 92,
+      "category": "Qualifier"
+    },
+    {
+      "tournament": "Nehru Cup",
+      "matches": 89,
+      "category": "Other"
+    },
+    {
+      "tournament": "Gold Cup qualification",
+      "matches": 88,
+      "category": "Qualifier"
+    },
+    {
+      "tournament": "Balkan Cup",
+      "matches": 87,
+      "category": "Other"
+    },
+    {
+      "tournament": "AFC Challenge Cup",
+      "matches": 87,
+      "category": "Other"
+    }
+  ]
+}

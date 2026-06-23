@@ -1,0 +1,183 @@
+{
+  "team_count": 336,
+  "category_counts": {
+    "conifa": 28,
+    "fifa_current": 195,
+    "regional": 54,
+    "successor_state": 43,
+    "fifa_historical": 6,
+    "non_fifa_representative": 10
+  },
+  "fifa_only_team_count": 238,
+  "fifa_plus_historical_team_count": 244,
+  "excluded_team_count": 92,
+  "top100_excluded_teams": [
+    {
+      "rank": 36,
+      "team": "Jersey",
+      "final_elo": 1720.099177,
+      "matches": 235,
+      "category": "regional",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 39,
+      "team": "Basque Country",
+      "final_elo": 1713.194243,
+      "matches": 64,
+      "category": "regional",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 51,
+      "team": "Guernsey",
+      "final_elo": 1672.434453,
+      "matches": 240,
+      "category": "regional",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 68,
+      "team": "Catalonia",
+      "final_elo": 1629.133287,
+      "matches": 48,
+      "category": "regional",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 72,
+      "team": "Ynys Môn",
+      "final_elo": 1617.548441,
+      "matches": 67,
+      "category": "regional",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 73,
+      "team": "Isle of Man",
+      "final_elo": 1615.757502,
+      "matches": 58,
+      "category": "regional",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 74,
+      "team": "Padania",
+      "final_elo": 1612.889886,
+      "matches": 45,
+      "category": "conifa",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "CONIFA or non-FIFA representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 80,
+      "team": "Isle of Wight",
+      "final_elo": 1594.237136,
+      "matches": 48,
+      "category": "regional",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 84,
+      "team": "Occitania",
+      "final_elo": 1593.48887,
+      "matches": 33,
+      "category": "conifa",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "CONIFA or non-FIFA representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 85,
+      "team": "Northern Cyprus",
+      "final_elo": 1590.875779,
+      "matches": 34,
+      "category": "conifa",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "CONIFA or non-FIFA representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 88,
+      "team": "Andalusia",
+      "final_elo": 1581.899434,
+      "matches": 13,
+      "category": "regional",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 93,
+      "team": "Abkhazia",
+      "final_elo": 1573.786243,
+      "matches": 33,
+      "category": "conifa",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "CONIFA or non-FIFA representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 95,
+      "team": "Kernow",
+      "final_elo": 1567.65112,
+      "matches": 12,
+      "category": "regional",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "Regional, subnational, island-games, or autonomous representative team excluded from FIFA calibration universe."
+    },
+    {
+      "rank": 96,
+      "team": "Iraqi Kurdistan",
+      "final_elo": 1565.377413,
+      "matches": 27,
+      "category": "conifa",
+      "include_fifa_only": "FALSE",
+      "include_fifa_historical": "FALSE",
+      "notes": "CONIFA or non-FIFA representative team excluded from FIFA calibration universe."
+    }
+  ],
+  "historical_retention_check": {
+    "Yugoslavia": {
+      "present": true,
+      "include_fifa_historical": true,
+      "category": "fifa_historical"
+    },
+    "Soviet Union": {
+      "present": false,
+      "include_fifa_historical": false,
+      "category": null
+    },
+    "Czechoslovakia": {
+      "present": true,
+      "include_fifa_historical": true,
+      "category": "fifa_historical"
+    },
+    "German DR": {
+      "present": true,
+      "include_fifa_historical": true,
+      "category": "fifa_historical"
+    }
+  },
+  "recommendation": {
+    "default_universe": "fifa_plus_historical",
+    "use_as_calibration_default": true,
+    "reason": "Retains current/successor FIFA teams plus major historical senior national teams while excluding regional, CONIFA, and non-FIFA representative teams."
+  }
+}

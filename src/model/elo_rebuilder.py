@@ -193,6 +193,8 @@ def rebuild_elo_history(
     matches: list[MatchInput],
     initial_rating: float = INITIAL_RATING,
     k_factor: float = DEFAULT_K_FACTOR,
+    tournament_weight_fn: Any | None = None,
+    goal_diff_multiplier_fn: Any | None = None,
     model_version: str = MODEL_VERSION,
 ) -> list[dict[str, Any]]:
     ratings: dict[str, float] = {}
@@ -205,6 +207,15 @@ def rebuild_elo_history(
         home_before = matches_played.get(match.home_team, 0)
         away_before = matches_played.get(match.away_team, 0)
         actual_home, actual_away = actual_score_from_goals(match.home_score, match.away_score)
+        tournament_weight = (
+            float(tournament_weight_fn(match.tournament)) if tournament_weight_fn else TOURNAMENT_WEIGHT
+        )
+        goal_diff_multiplier = (
+            float(goal_diff_multiplier_fn(match.home_score, match.away_score))
+            if goal_diff_multiplier_fn
+            else GOAL_DIFF_MULTIPLIER
+        )
+        effective_k_factor = k_factor * tournament_weight * goal_diff_multiplier
         (
             home_post,
             away_post,
@@ -212,7 +223,7 @@ def rebuild_elo_history(
             away_change,
             expected_home,
             expected_away,
-        ) = update_elo_pair(home_pre, away_pre, actual_home, k_factor)
+        ) = update_elo_pair(home_pre, away_pre, actual_home, effective_k_factor)
 
         home_after = home_before + 1
         away_after = away_before + 1
@@ -251,10 +262,10 @@ def rebuild_elo_history(
                 "home_is_provisional": str(home_before < PROVISIONAL_MATCH_THRESHOLD).upper(),
                 "away_is_provisional": str(away_before < PROVISIONAL_MATCH_THRESHOLD).upper(),
                 "elo_initial_rating": _format_float(initial_rating),
-                "elo_k_factor": _format_float(k_factor),
+                "elo_k_factor": _format_float(effective_k_factor),
                 "elo_home_advantage": _format_float(HOME_ADVANTAGE),
-                "elo_goal_diff_multiplier": _format_float(GOAL_DIFF_MULTIPLIER),
-                "elo_tournament_weight": _format_float(TOURNAMENT_WEIGHT),
+                "elo_goal_diff_multiplier": _format_float(goal_diff_multiplier),
+                "elo_tournament_weight": _format_float(tournament_weight),
                 "elo_model_version": model_version,
             }
         )

@@ -1,0 +1,281 @@
+{
+  "target_tournaments": {
+    "FIFA World Cup Finals": "FIFA World Cup",
+    "UEFA Euro": "UEFA Euro",
+    "Copa Am\u00e9rica": "Copa Am\u00e9rica",
+    "AFC Asian Cup": "AFC Asian Cup",
+    "African Cup of Nations": "African Cup of Nations"
+  },
+  "rows": [
+    {
+      "tournament_group": "FIFA World Cup Finals",
+      "model": "standard_elo_v1",
+      "matches": 1008,
+      "accuracy": 0.5545634920634921,
+      "log_loss": 1.0062533306147092,
+      "brier_score": 0.6017121817434375,
+      "accuracy_delta": 0.0,
+      "log_loss_delta": 0.0,
+      "brier_delta": 0.0
+    },
+    {
+      "tournament_group": "FIFA World Cup Finals",
+      "model": "calibrated_elo_v2_candidate",
+      "matches": 1008,
+      "accuracy": 0.5654761904761905,
+      "log_loss": 0.97664493468895,
+      "brier_score": 0.5790647451313699,
+      "accuracy_delta": 0.010912698412698374,
+      "log_loss_delta": 0.029608395925759257,
+      "brier_delta": 0.022647436612067695
+    },
+    {
+      "tournament_group": "UEFA Euro",
+      "model": "standard_elo_v1",
+      "matches": 388,
+      "accuracy": 0.5,
+      "log_loss": 1.0268983998915358,
+      "brier_score": 0.6172057486606932,
+      "accuracy_delta": 0.0,
+      "log_loss_delta": 0.0,
+      "brier_delta": 0.0
+    },
+    {
+      "tournament_group": "UEFA Euro",
+      "model": "calibrated_elo_v2_candidate",
+      "matches": 388,
+      "accuracy": 0.48711340206185566,
+      "log_loss": 1.0164239082864854,
+      "brier_score": 0.6091473548447064,
+      "accuracy_delta": -0.01288659793814434,
+      "log_loss_delta": 0.010474491605050318,
+      "brier_delta": 0.00805839381598683
+    },
+    {
+      "tournament_group": "Copa Am\u00e9rica",
+      "model": "standard_elo_v1",
+      "matches": 869,
+      "accuracy": 0.5834292289988493,
+      "log_loss": 0.9646999389493416,
+      "brier_score": 0.5728666840146336,
+      "accuracy_delta": 0.0,
+      "log_loss_delta": 0.0,
+      "brier_delta": 0.0
+    },
+    {
+      "tournament_group": "Copa Am\u00e9rica",
+      "model": "calibrated_elo_v2_candidate",
+      "matches": 869,
+      "accuracy": 0.5903337169159953,
+      "log_loss": 0.9375708038901363,
+      "brier_score": 0.5524881489265878,
+      "accuracy_delta": 0.0069044879171460405,
+      "log_loss_delta": 0.027129135059205334,
+      "brier_delta": 0.02037853508804577
+    },
+    {
+      "tournament_group": "AFC Asian Cup",
+      "model": "standard_elo_v1",
+      "matches": 421,
+      "accuracy": 0.5463182897862233,
+      "log_loss": 0.9922547172473402,
+      "brier_score": 0.5927677685966146,
+      "accuracy_delta": 0.0,
+      "log_loss_delta": 0.0,
+      "brier_delta": 0.0
+    },
+    {
+      "tournament_group": "AFC Asian Cup",
+      "model": "calibrated_elo_v2_candidate",
+      "matches": 421,
+      "accuracy": 0.5581947743467933,
+      "log_loss": 0.9528123119792714,
+      "brier_score": 0.5672785098115869,
+      "accuracy_delta": 0.01187648456057,
+      "log_loss_delta": 0.03944240526806875,
+      "brier_delta": 0.025489258785027724
+    },
+    {
+      "tournament_group": "African Cup of Nations",
+      "model": "standard_elo_v1",
+      "matches": 845,
+      "accuracy": 0.46982248520710057,
+      "log_loss": 1.0271107321059962,
+      "brier_score": 0.6175198130666307,
+      "accuracy_delta": 0.0,
+      "log_loss_delta": 0.0,
+      "brier_delta": 0.0
+    },
+    {
+      "tournament_group": "African Cup of Nations",
+      "model": "calibrated_elo_v2_candidate",
+      "matches": 845,
+      "accuracy": 0.47692307692307695,
+      "log_loss": 1.0234274046000158,
+      "brier_score": 0.6159734987481008,
+      "accuracy_delta": 0.007100591715976379,
+      "log_loss_delta": 0.0036833275059804382,
+      "brier_delta": 0.0015463143185299177
+    }
+  ],
+  "per_tournament": {
+    "FIFA World Cup Finals": {
+      "source_tournament": "FIFA World Cup",
+      "matches": 1008,
+      "standard": {
+        "accuracy": 0.5545634920634921,
+        "log_loss": 1.0062533306147092,
+        "brier_score": 0.6017121817434375
+      },
+      "calibrated": {
+        "accuracy": 0.5654761904761905,
+        "log_loss": 0.97664493468895,
+        "brier_score": 0.5790647451313699
+      },
+      "improvement": {
+        "accuracy_delta": 0.010912698412698374,
+        "log_loss_delta": 0.029608395925759257,
+        "brier_delta": 0.022647436612067695
+      },
+      "improved_log_loss": true,
+      "improved_brier": true,
+      "improved_accuracy": true
+    },
+    "UEFA Euro": {
+      "source_tournament": "UEFA Euro",
+      "matches": 388,
+      "standard": {
+        "accuracy": 0.5,
+        "log_loss": 1.0268983998915358,
+        "brier_score": 0.6172057486606932
+      },
+      "calibrated": {
+        "accuracy": 0.48711340206185566,
+        "log_loss": 1.0164239082864854,
+        "brier_score": 0.6091473548447064
+      },
+      "improvement": {
+        "accuracy_delta": -0.01288659793814434,
+        "log_loss_delta": 0.010474491605050318,
+        "brier_delta": 0.00805839381598683
+      },
+      "improved_log_loss": true,
+      "improved_brier": true,
+      "improved_accuracy": false
+    },
+    "Copa Am\u00e9rica": {
+      "source_tournament": "Copa Am\u00e9rica",
+      "matches": 869,
+      "standard": {
+        "accuracy": 0.5834292289988493,
+        "log_loss": 0.9646999389493416,
+        "brier_score": 0.5728666840146336
+      },
+      "calibrated": {
+        "accuracy": 0.5903337169159953,
+        "log_loss": 0.9375708038901363,
+        "brier_score": 0.5524881489265878
+      },
+      "improvement": {
+        "accuracy_delta": 0.0069044879171460405,
+        "log_loss_delta": 0.027129135059205334,
+        "brier_delta": 0.02037853508804577
+      },
+      "improved_log_loss": true,
+      "improved_brier": true,
+      "improved_accuracy": true
+    },
+    "AFC Asian Cup": {
+      "source_tournament": "AFC Asian Cup",
+      "matches": 421,
+      "standard": {
+        "accuracy": 0.5463182897862233,
+        "log_loss": 0.9922547172473402,
+        "brier_score": 0.5927677685966146
+      },
+      "calibrated": {
+        "accuracy": 0.5581947743467933,
+        "log_loss": 0.9528123119792714,
+        "brier_score": 0.5672785098115869
+      },
+      "improvement": {
+        "accuracy_delta": 0.01187648456057,
+        "log_loss_delta": 0.03944240526806875,
+        "brier_delta": 0.025489258785027724
+      },
+      "improved_log_loss": true,
+      "improved_brier": true,
+      "improved_accuracy": true
+    },
+    "African Cup of Nations": {
+      "source_tournament": "African Cup of Nations",
+      "matches": 845,
+      "standard": {
+        "accuracy": 0.46982248520710057,
+        "log_loss": 1.0271107321059962,
+        "brier_score": 0.6175198130666307
+      },
+      "calibrated": {
+        "accuracy": 0.47692307692307695,
+        "log_loss": 1.0234274046000158,
+        "brier_score": 0.6159734987481008
+      },
+      "improvement": {
+        "accuracy_delta": 0.007100591715976379,
+        "log_loss_delta": 0.0036833275059804382,
+        "brier_delta": 0.0015463143185299177
+      },
+      "improved_log_loss": true,
+      "improved_brier": true,
+      "improved_accuracy": true
+    }
+  },
+  "all_major_tournaments_improved": {
+    "accuracy": false,
+    "log_loss": true,
+    "brier_score": true
+  },
+  "fifa_level_team_scale": {
+    "team_count": 144,
+    "standard": {
+      "team_count": 144.0,
+      "mean": 1600.8412280486111,
+      "median": 1594.079516,
+      "std": 166.84777611658248,
+      "min": 1210.434585,
+      "max": 1998.20513
+    },
+    "calibrated": {
+      "team_count": 144.0,
+      "mean": 1693.2822057083333,
+      "median": 1700.8746350000001,
+      "std": 267.6020037271267,
+      "min": 1027.474994,
+      "max": 2271.258671
+    }
+  },
+  "anomaly_cases": [
+    {
+      "team": "Norway",
+      "calibrated_rank": 6,
+      "calibrated_final_elo": 2144.691934,
+      "major_tournament_matches": 13,
+      "major_tournament_breakdown": {
+        "FIFA World Cup": 10,
+        "UEFA Euro": 3
+      }
+    },
+    {
+      "team": "Basque Country",
+      "calibrated_rank": 17,
+      "calibrated_final_elo": 2033.755257,
+      "major_tournament_matches": 0,
+      "major_tournament_breakdown": {}
+    }
+  ],
+  "recommendation": {
+    "verdict": "B",
+    "label": "needs_further_shrinkage",
+    "reason": "calibrated v2 improves most major-tournament calibration metrics, but not every major tournament improves and the final Elo scale remains very wide."
+  }
+}

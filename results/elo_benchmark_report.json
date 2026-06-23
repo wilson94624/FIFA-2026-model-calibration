@@ -1,0 +1,563 @@
+{
+  "models": {
+    "standard_elo_v1": {
+      "config": {
+        "name": "standard_elo_v1",
+        "k_factor": 20.0,
+        "goal_diff_variant": "none"
+      },
+      "metrics": {
+        "accuracy": 0.5543489251552104,
+        "log_loss": 0.9804863448309428,
+        "brier_score": 0.584209009462329
+      },
+      "distribution": {
+        "team_count": 336.0,
+        "mean": 1500.0000000446428,
+        "median": 1489.6548535,
+        "std": 171.10814955087827,
+        "min": 1043.13835,
+        "max": 1998.20513
+      },
+      "extreme_teams": {
+        "below_1000": [],
+        "above_2200": []
+      }
+    },
+    "calibrated_elo_v2_candidate": {
+      "config": {
+        "name": "calibrated_elo_v2_candidate",
+        "k_factor": 80.0,
+        "goal_diff_variant": "log_margin"
+      },
+      "metrics": {
+        "accuracy": 0.5590406277174462,
+        "log_loss": 0.9469499541543781,
+        "brier_score": 0.56077643215229
+      },
+      "distribution": {
+        "team_count": 336.0,
+        "mean": 1500.0000000059524,
+        "median": 1508.8510075,
+        "std": 319.07329374890736,
+        "min": 608.413045,
+        "max": 2271.258671
+      },
+      "extreme_teams": {
+        "below_1000": [
+          {
+            "team": "American Samoa",
+            "final_elo": 608.413045,
+            "matches": 55
+          },
+          {
+            "team": "Macau",
+            "final_elo": 666.694143,
+            "matches": 148
+          },
+          {
+            "team": "Bahamas",
+            "final_elo": 705.523191,
+            "matches": 67
+          },
+          {
+            "team": "Bhutan",
+            "final_elo": 738.536169,
+            "matches": 110
+          },
+          {
+            "team": "Anguilla",
+            "final_elo": 742.187237,
+            "matches": 91
+          },
+          {
+            "team": "Northern Mariana Islands",
+            "final_elo": 751.018576,
+            "matches": 30
+          },
+          {
+            "team": "Timor-Leste",
+            "final_elo": 788.146081,
+            "matches": 86
+          },
+          {
+            "team": "Brunei",
+            "final_elo": 819.769151,
+            "matches": 137
+          },
+          {
+            "team": "Guam",
+            "final_elo": 821.925395,
+            "matches": 123
+          },
+          {
+            "team": "Turks and Caicos Islands",
+            "final_elo": 832.201991,
+            "matches": 52
+          },
+          {
+            "team": "Mongolia",
+            "final_elo": 862.157007,
+            "matches": 103
+          },
+          {
+            "team": "Tonga",
+            "final_elo": 872.474582,
+            "matches": 68
+          },
+          {
+            "team": "United States Virgin Islands",
+            "final_elo": 895.611738,
+            "matches": 78
+          },
+          {
+            "team": "Maldives",
+            "final_elo": 896.035588,
+            "matches": 233
+          },
+          {
+            "team": "Laos",
+            "final_elo": 909.312751,
+            "matches": 224
+          },
+          {
+            "team": "Cook Islands",
+            "final_elo": 914.822677,
+            "matches": 53
+          },
+          {
+            "team": "Cayman Islands",
+            "final_elo": 922.393826,
+            "matches": 120
+          },
+          {
+            "team": "Seychelles",
+            "final_elo": 928.53234,
+            "matches": 176
+          },
+          {
+            "team": "Bonaire",
+            "final_elo": 970.553066,
+            "matches": 44
+          },
+          {
+            "team": "Barbados",
+            "final_elo": 981.126359,
+            "matches": 302
+          },
+          {
+            "team": "British Virgin Islands",
+            "final_elo": 986.580867,
+            "matches": 123
+          },
+          {
+            "team": "Fr\u00f8ya",
+            "final_elo": 991.123639,
+            "matches": 37
+          },
+          {
+            "team": "Antigua and Barbuda",
+            "final_elo": 994.072365,
+            "matches": 231
+          },
+          {
+            "team": "Afghanistan",
+            "final_elo": 998.002608,
+            "matches": 147
+          }
+        ],
+        "above_2200": [
+          {
+            "team": "Argentina",
+            "final_elo": 2271.258671,
+            "matches": 1071
+          },
+          {
+            "team": "Spain",
+            "final_elo": 2217.517228,
+            "matches": 785
+          },
+          {
+            "team": "France",
+            "final_elo": 2210.931851,
+            "matches": 937
+          }
+        ]
+      }
+    }
+  },
+  "improvement": {
+    "accuracy_delta": 0.004691702562235833,
+    "log_loss_delta": 0.033536390676564665,
+    "brier_delta": 0.023432577310039004
+  },
+  "largest_team_elo_changes": [
+    {
+      "team": "American Samoa",
+      "standard_final_elo": 1213.088528,
+      "calibrated_final_elo": 608.413045,
+      "elo_delta": -604.675483,
+      "abs_elo_delta": 604.675483,
+      "matches": 55
+    },
+    {
+      "team": "Bahamas",
+      "standard_final_elo": 1220.743837,
+      "calibrated_final_elo": 705.523191,
+      "elo_delta": -515.220646,
+      "abs_elo_delta": 515.220646,
+      "matches": 67
+    },
+    {
+      "team": "Northern Mariana Islands",
+      "standard_final_elo": 1256.565738,
+      "calibrated_final_elo": 751.018576,
+      "elo_delta": -505.54716199999996,
+      "abs_elo_delta": 505.54716199999996,
+      "matches": 30
+    },
+    {
+      "team": "Turks and Caicos Islands",
+      "standard_final_elo": 1281.127469,
+      "calibrated_final_elo": 832.201991,
+      "elo_delta": -448.925478,
+      "abs_elo_delta": 448.925478,
+      "matches": 52
+    },
+    {
+      "team": "Macau",
+      "standard_final_elo": 1082.082424,
+      "calibrated_final_elo": 666.694143,
+      "elo_delta": -415.3882809999999,
+      "abs_elo_delta": 415.3882809999999,
+      "matches": 148
+    },
+    {
+      "team": "Cook Islands",
+      "standard_final_elo": 1327.529739,
+      "calibrated_final_elo": 914.822677,
+      "elo_delta": -412.70706200000006,
+      "abs_elo_delta": 412.70706200000006,
+      "matches": 53
+    },
+    {
+      "team": "Tonga",
+      "standard_final_elo": 1278.798454,
+      "calibrated_final_elo": 872.474582,
+      "elo_delta": -406.32387199999994,
+      "abs_elo_delta": 406.32387199999994,
+      "matches": 68
+    },
+    {
+      "team": "Anguilla",
+      "standard_final_elo": 1135.290768,
+      "calibrated_final_elo": 742.187237,
+      "elo_delta": -393.1035310000001,
+      "abs_elo_delta": 393.1035310000001,
+      "matches": 91
+    },
+    {
+      "team": "Kiribati",
+      "standard_final_elo": 1408.788072,
+      "calibrated_final_elo": 1024.888375,
+      "elo_delta": -383.89969700000006,
+      "abs_elo_delta": 383.89969700000006,
+      "matches": 11
+    },
+    {
+      "team": "Norway",
+      "standard_final_elo": 1782.705476,
+      "calibrated_final_elo": 2144.691934,
+      "elo_delta": 361.98645799999986,
+      "abs_elo_delta": 361.98645799999986,
+      "matches": 874
+    },
+    {
+      "team": "Guam",
+      "standard_final_elo": 1176.998125,
+      "calibrated_final_elo": 821.925395,
+      "elo_delta": -355.0727300000001,
+      "abs_elo_delta": 355.0727300000001,
+      "matches": 123
+    },
+    {
+      "team": "Bonaire",
+      "standard_final_elo": 1321.853122,
+      "calibrated_final_elo": 970.553066,
+      "elo_delta": -351.30005600000004,
+      "abs_elo_delta": 351.30005600000004,
+      "matches": 44
+    },
+    {
+      "team": "Fr\u00f8ya",
+      "standard_final_elo": 1338.730775,
+      "calibrated_final_elo": 991.123639,
+      "elo_delta": -347.60713599999997,
+      "abs_elo_delta": 347.60713599999997,
+      "matches": 37
+    },
+    {
+      "team": "Saint Pierre and Miquelon",
+      "standard_final_elo": 1431.458307,
+      "calibrated_final_elo": 1086.784282,
+      "elo_delta": -344.67402500000003,
+      "abs_elo_delta": 344.67402500000003,
+      "matches": 7
+    },
+    {
+      "team": "Tuvalu",
+      "standard_final_elo": 1363.991554,
+      "calibrated_final_elo": 1021.440973,
+      "elo_delta": -342.55058099999997,
+      "abs_elo_delta": 342.55058099999997,
+      "matches": 39
+    },
+    {
+      "team": "Micronesia",
+      "standard_final_elo": 1446.830986,
+      "calibrated_final_elo": 1119.802537,
+      "elo_delta": -327.0284489999999,
+      "abs_elo_delta": 327.0284489999999,
+      "matches": 7
+    },
+    {
+      "team": "Basque Country",
+      "standard_final_elo": 1713.194243,
+      "calibrated_final_elo": 2033.755257,
+      "elo_delta": 320.5610140000001,
+      "abs_elo_delta": 320.5610140000001,
+      "matches": 64
+    },
+    {
+      "team": "Cayman Islands",
+      "standard_final_elo": 1240.276775,
+      "calibrated_final_elo": 922.393826,
+      "elo_delta": -317.88294900000005,
+      "abs_elo_delta": 317.88294900000005,
+      "matches": 120
+    },
+    {
+      "team": "Bhutan",
+      "standard_final_elo": 1055.990378,
+      "calibrated_final_elo": 738.536169,
+      "elo_delta": -317.454209,
+      "abs_elo_delta": 317.454209,
+      "matches": 110
+    },
+    {
+      "team": "Darfur",
+      "standard_final_elo": 1435.562647,
+      "calibrated_final_elo": 1118.523608,
+      "elo_delta": -317.039039,
+      "abs_elo_delta": 317.039039,
+      "matches": 7
+    }
+  ],
+  "top20_ranking_comparison": [
+    {
+      "team": "Argentina",
+      "standard_rank": 1,
+      "calibrated_rank": 1,
+      "rank_delta": 0,
+      "standard_final_elo": 1998.20513,
+      "calibrated_final_elo": 2271.258671
+    },
+    {
+      "team": "Spain",
+      "standard_rank": 2,
+      "calibrated_rank": 2,
+      "rank_delta": 0,
+      "standard_final_elo": 1975.978317,
+      "calibrated_final_elo": 2217.517228
+    },
+    {
+      "team": "France",
+      "standard_rank": 3,
+      "calibrated_rank": 3,
+      "rank_delta": 0,
+      "standard_final_elo": 1948.704749,
+      "calibrated_final_elo": 2210.931851
+    },
+    {
+      "team": "England",
+      "standard_rank": 5,
+      "calibrated_rank": 4,
+      "rank_delta": 1,
+      "standard_final_elo": 1908.009446,
+      "calibrated_final_elo": 2176.086774
+    },
+    {
+      "team": "Germany",
+      "standard_rank": 6,
+      "calibrated_rank": 5,
+      "rank_delta": 1,
+      "standard_final_elo": 1896.302542,
+      "calibrated_final_elo": 2172.772261
+    },
+    {
+      "team": "Norway",
+      "standard_rank": 24,
+      "calibrated_rank": 6,
+      "rank_delta": 18,
+      "standard_final_elo": 1782.705476,
+      "calibrated_final_elo": 2144.691934
+    },
+    {
+      "team": "Brazil",
+      "standard_rank": 4,
+      "calibrated_rank": 7,
+      "rank_delta": -3,
+      "standard_final_elo": 1919.223708,
+      "calibrated_final_elo": 2141.97915
+    },
+    {
+      "team": "Netherlands",
+      "standard_rank": 9,
+      "calibrated_rank": 8,
+      "rank_delta": 1,
+      "standard_final_elo": 1877.856482,
+      "calibrated_final_elo": 2131.548911
+    },
+    {
+      "team": "Colombia",
+      "standard_rank": 8,
+      "calibrated_rank": 9,
+      "rank_delta": -1,
+      "standard_final_elo": 1889.513659,
+      "calibrated_final_elo": 2127.561884
+    },
+    {
+      "team": "Morocco",
+      "standard_rank": 11,
+      "calibrated_rank": 10,
+      "rank_delta": 1,
+      "standard_final_elo": 1858.986122,
+      "calibrated_final_elo": 2122.540706
+    },
+    {
+      "team": "Japan",
+      "standard_rank": 10,
+      "calibrated_rank": 11,
+      "rank_delta": -1,
+      "standard_final_elo": 1866.840727,
+      "calibrated_final_elo": 2117.397886
+    },
+    {
+      "team": "Portugal",
+      "standard_rank": 7,
+      "calibrated_rank": 12,
+      "rank_delta": -5,
+      "standard_final_elo": 1894.961366,
+      "calibrated_final_elo": 2107.175423
+    },
+    {
+      "team": "Mexico",
+      "standard_rank": 14,
+      "calibrated_rank": 13,
+      "rank_delta": 1,
+      "standard_final_elo": 1837.335787,
+      "calibrated_final_elo": 2094.734169
+    },
+    {
+      "team": "Switzerland",
+      "standard_rank": 20,
+      "calibrated_rank": 14,
+      "rank_delta": 6,
+      "standard_final_elo": 1796.667771,
+      "calibrated_final_elo": 2062.688248
+    },
+    {
+      "team": "United States",
+      "standard_rank": 22,
+      "calibrated_rank": 15,
+      "rank_delta": 7,
+      "standard_final_elo": 1793.096766,
+      "calibrated_final_elo": 2056.947118
+    },
+    {
+      "team": "Belgium",
+      "standard_rank": 13,
+      "calibrated_rank": 16,
+      "rank_delta": -3,
+      "standard_final_elo": 1844.912034,
+      "calibrated_final_elo": 2053.623509
+    },
+    {
+      "team": "Basque Country",
+      "standard_rank": 39,
+      "calibrated_rank": 17,
+      "rank_delta": 22,
+      "standard_final_elo": 1713.194243,
+      "calibrated_final_elo": 2033.755257
+    },
+    {
+      "team": "Austria",
+      "standard_rank": 25,
+      "calibrated_rank": 18,
+      "rank_delta": 7,
+      "standard_final_elo": 1780.43713,
+      "calibrated_final_elo": 2018.221477
+    },
+    {
+      "team": "Italy",
+      "standard_rank": 12,
+      "calibrated_rank": 19,
+      "rank_delta": -7,
+      "standard_final_elo": 1852.557921,
+      "calibrated_final_elo": 2015.398213
+    },
+    {
+      "team": "Denmark",
+      "standard_rank": 18,
+      "calibrated_rank": 20,
+      "rank_delta": -2,
+      "standard_final_elo": 1805.184501,
+      "calibrated_final_elo": 2005.261442
+    },
+    {
+      "team": "Ecuador",
+      "standard_rank": 17,
+      "calibrated_rank": 21,
+      "rank_delta": -4,
+      "standard_final_elo": 1807.018753,
+      "calibrated_final_elo": 2001.701442
+    },
+    {
+      "team": "Croatia",
+      "standard_rank": 15,
+      "calibrated_rank": 23,
+      "rank_delta": -8,
+      "standard_final_elo": 1828.73294,
+      "calibrated_final_elo": 1994.434678
+    },
+    {
+      "team": "Iran",
+      "standard_rank": 19,
+      "calibrated_rank": 29,
+      "rank_delta": -10,
+      "standard_final_elo": 1800.856484,
+      "calibrated_final_elo": 1945.196859
+    },
+    {
+      "team": "Uruguay",
+      "standard_rank": 16,
+      "calibrated_rank": 35,
+      "rank_delta": -19,
+      "standard_final_elo": 1807.086408,
+      "calibrated_final_elo": 1914.454162
+    }
+  ],
+  "recommendation": {
+    "promote_to_calibrated_elo_v2": true,
+    "keep_parameters": {
+      "k_factor": 80.0,
+      "goal_diff_multiplier": "log_margin",
+      "tournament_weight": 1.0,
+      "home_advantage": 0.0
+    },
+    "retire_parameters": {
+      "k_factor": 20.0,
+      "goal_diff_multiplier": "none"
+    }
+  }
+}

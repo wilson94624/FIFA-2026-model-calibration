@@ -1,0 +1,1032 @@
+{
+  "fixed_k_factor": 80.0,
+  "tournament_weight": 1.0,
+  "home_advantage": 0.0,
+  "pqs": "disabled",
+  "formula": "1 + alpha * (log(goal_diff + 1) - 1); draws use 1.0",
+  "alphas": {
+    "0.00": {
+      "metrics": {
+        "accuracy": 0.5538231309025461,
+        "log_loss": 0.9581930348439738,
+        "brier_score": 0.5687957387632453
+      },
+      "distribution": {
+        "elo_std": 278.94380135861,
+        "elo_min": 747.49289,
+        "elo_max": 2179.630198
+      },
+      "tracked_teams": {
+        "Argentina": {
+          "final_elo": 2179.630198,
+          "rank": 1,
+          "matches": 1071
+        },
+        "Spain": {
+          "final_elo": 2152.063775,
+          "rank": 2,
+          "matches": 785
+        },
+        "France": {
+          "final_elo": 2124.211764,
+          "rank": 4,
+          "matches": 937
+        },
+        "Norway": {
+          "final_elo": 2065.856035,
+          "rank": 8,
+          "matches": 874
+        },
+        "Brazil": {
+          "final_elo": 2055.547233,
+          "rank": 11,
+          "matches": 1061
+        }
+      },
+      "top20": [
+        {
+          "rank": 1,
+          "team": "Argentina",
+          "final_elo": 2179.630198,
+          "matches": 1071
+        },
+        {
+          "rank": 2,
+          "team": "Spain",
+          "final_elo": 2152.063775,
+          "matches": 785
+        },
+        {
+          "rank": 3,
+          "team": "Germany",
+          "final_elo": 2127.78796,
+          "matches": 1033
+        },
+        {
+          "rank": 4,
+          "team": "France",
+          "final_elo": 2124.211764,
+          "matches": 937
+        },
+        {
+          "rank": 5,
+          "team": "Morocco",
+          "final_elo": 2080.409385,
+          "matches": 619
+        },
+        {
+          "rank": 6,
+          "team": "England",
+          "final_elo": 2079.460667,
+          "matches": 1091
+        },
+        {
+          "rank": 7,
+          "team": "Japan",
+          "final_elo": 2066.160057,
+          "matches": 792
+        },
+        {
+          "rank": 8,
+          "team": "Norway",
+          "final_elo": 2065.856035,
+          "matches": 874
+        },
+        {
+          "rank": 9,
+          "team": "Portugal",
+          "final_elo": 2064.278672,
+          "matches": 696
+        },
+        {
+          "rank": 10,
+          "team": "Mexico",
+          "final_elo": 2060.073206,
+          "matches": 1005
+        },
+        {
+          "rank": 11,
+          "team": "Brazil",
+          "final_elo": 2055.547233,
+          "matches": 1061
+        },
+        {
+          "rank": 12,
+          "team": "Netherlands",
+          "final_elo": 2046.038983,
+          "matches": 881
+        },
+        {
+          "rank": 13,
+          "team": "Colombia",
+          "final_elo": 2030.205878,
+          "matches": 639
+        },
+        {
+          "rank": 14,
+          "team": "United States",
+          "final_elo": 2003.011512,
+          "matches": 792
+        },
+        {
+          "rank": 15,
+          "team": "Italy",
+          "final_elo": 1993.448265,
+          "matches": 893
+        },
+        {
+          "rank": 16,
+          "team": "Switzerland",
+          "final_elo": 1972.95238,
+          "matches": 886
+        },
+        {
+          "rank": 17,
+          "team": "Belgium",
+          "final_elo": 1968.219482,
+          "matches": 855
+        },
+        {
+          "rank": 18,
+          "team": "Denmark",
+          "final_elo": 1965.686031,
+          "matches": 874
+        },
+        {
+          "rank": 19,
+          "team": "Algeria",
+          "final_elo": 1963.554215,
+          "matches": 619
+        },
+        {
+          "rank": 20,
+          "team": "Basque Country",
+          "final_elo": 1962.422696,
+          "matches": 64
+        }
+      ],
+      "tracked_team_delta_vs_alpha_0": {
+        "Argentina": 0.0,
+        "Spain": 0.0,
+        "France": 0.0,
+        "Norway": 0.0,
+        "Brazil": 0.0
+      },
+      "tracked_team_delta_vs_alpha_1": {
+        "Argentina": -91.62847300000021,
+        "Spain": -65.45345300000008,
+        "France": -86.7200869999997,
+        "Norway": -78.83589900000015,
+        "Brazil": -86.43191700000034
+      }
+    },
+    "0.25": {
+      "metrics": {
+        "accuracy": 0.5559869764808186,
+        "log_loss": 0.9544610037458029,
+        "brier_score": 0.5661969885618627
+      },
+      "distribution": {
+        "elo_std": 289.23037197979295,
+        "elo_min": 726.339403,
+        "elo_max": 2202.490964
+      },
+      "tracked_teams": {
+        "Argentina": {
+          "final_elo": 2202.490964,
+          "rank": 1,
+          "matches": 1071
+        },
+        "Spain": {
+          "final_elo": 2168.992547,
+          "rank": 2,
+          "matches": 785
+        },
+        "France": {
+          "final_elo": 2146.643432,
+          "rank": 3,
+          "matches": 937
+        },
+        "Norway": {
+          "final_elo": 2086.608123,
+          "rank": 7,
+          "matches": 874
+        },
+        "Brazil": {
+          "final_elo": 2077.430695,
+          "rank": 9,
+          "matches": 1061
+        }
+      },
+      "top20": [
+        {
+          "rank": 1,
+          "team": "Argentina",
+          "final_elo": 2202.490964,
+          "matches": 1071
+        },
+        {
+          "rank": 2,
+          "team": "Spain",
+          "final_elo": 2168.992547,
+          "matches": 785
+        },
+        {
+          "rank": 3,
+          "team": "France",
+          "final_elo": 2146.643432,
+          "matches": 937
+        },
+        {
+          "rank": 4,
+          "team": "Germany",
+          "final_elo": 2139.256984,
+          "matches": 1033
+        },
+        {
+          "rank": 5,
+          "team": "England",
+          "final_elo": 2104.221775,
+          "matches": 1091
+        },
+        {
+          "rank": 6,
+          "team": "Morocco",
+          "final_elo": 2091.549819,
+          "matches": 619
+        },
+        {
+          "rank": 7,
+          "team": "Norway",
+          "final_elo": 2086.608123,
+          "matches": 874
+        },
+        {
+          "rank": 8,
+          "team": "Japan",
+          "final_elo": 2079.652709,
+          "matches": 792
+        },
+        {
+          "rank": 9,
+          "team": "Brazil",
+          "final_elo": 2077.430695,
+          "matches": 1061
+        },
+        {
+          "rank": 10,
+          "team": "Portugal",
+          "final_elo": 2074.827609,
+          "matches": 696
+        },
+        {
+          "rank": 11,
+          "team": "Mexico",
+          "final_elo": 2068.541106,
+          "matches": 1005
+        },
+        {
+          "rank": 12,
+          "team": "Netherlands",
+          "final_elo": 2068.08531,
+          "matches": 881
+        },
+        {
+          "rank": 13,
+          "team": "Colombia",
+          "final_elo": 2055.196863,
+          "matches": 639
+        },
+        {
+          "rank": 14,
+          "team": "United States",
+          "final_elo": 2016.486768,
+          "matches": 792
+        },
+        {
+          "rank": 15,
+          "team": "Italy",
+          "final_elo": 1999.495991,
+          "matches": 893
+        },
+        {
+          "rank": 16,
+          "team": "Switzerland",
+          "final_elo": 1996.241278,
+          "matches": 886
+        },
+        {
+          "rank": 17,
+          "team": "Belgium",
+          "final_elo": 1990.446571,
+          "matches": 855
+        },
+        {
+          "rank": 18,
+          "team": "Basque Country",
+          "final_elo": 1980.739497,
+          "matches": 64
+        },
+        {
+          "rank": 19,
+          "team": "Denmark",
+          "final_elo": 1975.603766,
+          "matches": 874
+        },
+        {
+          "rank": 20,
+          "team": "Austria",
+          "final_elo": 1971.828391,
+          "matches": 862
+        }
+      ],
+      "tracked_team_delta_vs_alpha_0": {
+        "Argentina": 22.86076600000024,
+        "Spain": 16.928771999999753,
+        "France": 22.431667999999718,
+        "Norway": 20.752088000000185,
+        "Brazil": 21.883462000000236
+      },
+      "tracked_team_delta_vs_alpha_1": {
+        "Argentina": -68.76770699999997,
+        "Spain": -48.52468100000033,
+        "France": -64.28841899999998,
+        "Norway": -58.08381099999997,
+        "Brazil": -64.5484550000001
+      }
+    },
+    "0.50": {
+      "metrics": {
+        "accuracy": 0.5567352221480717,
+        "log_loss": 0.9513795658446131,
+        "brier_score": 0.5640260743955634
+      },
+      "distribution": {
+        "elo_std": 299.29822568026617,
+        "elo_min": 703.560923,
+        "elo_max": 2225.277789
+      },
+      "tracked_teams": {
+        "Argentina": {
+          "final_elo": 2225.277789,
+          "rank": 1,
+          "matches": 1071
+        },
+        "Spain": {
+          "final_elo": 2185.461984,
+          "rank": 2,
+          "matches": 785
+        },
+        "France": {
+          "final_elo": 2168.467144,
+          "rank": 3,
+          "matches": 937
+        },
+        "Norway": {
+          "final_elo": 2106.571241,
+          "rank": 6,
+          "matches": 874
+        },
+        "Brazil": {
+          "final_elo": 2099.025853,
+          "rank": 8,
+          "matches": 1061
+        }
+      },
+      "top20": [
+        {
+          "rank": 1,
+          "team": "Argentina",
+          "final_elo": 2225.277789,
+          "matches": 1071
+        },
+        {
+          "rank": 2,
+          "team": "Spain",
+          "final_elo": 2185.461984,
+          "matches": 785
+        },
+        {
+          "rank": 3,
+          "team": "France",
+          "final_elo": 2168.467144,
+          "matches": 937
+        },
+        {
+          "rank": 4,
+          "team": "Germany",
+          "final_elo": 2150.492125,
+          "matches": 1033
+        },
+        {
+          "rank": 5,
+          "team": "England",
+          "final_elo": 2128.450533,
+          "matches": 1091
+        },
+        {
+          "rank": 6,
+          "team": "Norway",
+          "final_elo": 2106.571241,
+          "matches": 874
+        },
+        {
+          "rank": 7,
+          "team": "Morocco",
+          "final_elo": 2102.21064,
+          "matches": 619
+        },
+        {
+          "rank": 8,
+          "team": "Brazil",
+          "final_elo": 2099.025853,
+          "matches": 1061
+        },
+        {
+          "rank": 9,
+          "team": "Japan",
+          "final_elo": 2092.539317,
+          "matches": 792
+        },
+        {
+          "rank": 10,
+          "team": "Netherlands",
+          "final_elo": 2089.570457,
+          "matches": 881
+        },
+        {
+          "rank": 11,
+          "team": "Portugal",
+          "final_elo": 2085.38392,
+          "matches": 696
+        },
+        {
+          "rank": 12,
+          "team": "Colombia",
+          "final_elo": 2079.619319,
+          "matches": 639
+        },
+        {
+          "rank": 13,
+          "team": "Mexico",
+          "final_elo": 2077.058662,
+          "matches": 1005
+        },
+        {
+          "rank": 14,
+          "team": "United States",
+          "final_elo": 2029.871551,
+          "matches": 792
+        },
+        {
+          "rank": 15,
+          "team": "Switzerland",
+          "final_elo": 2018.850612,
+          "matches": 886
+        },
+        {
+          "rank": 16,
+          "team": "Belgium",
+          "final_elo": 2011.974072,
+          "matches": 855
+        },
+        {
+          "rank": 17,
+          "team": "Italy",
+          "final_elo": 2005.091744,
+          "matches": 893
+        },
+        {
+          "rank": 18,
+          "team": "Basque Country",
+          "final_elo": 1998.658092,
+          "matches": 64
+        },
+        {
+          "rank": 19,
+          "team": "Austria",
+          "final_elo": 1986.83975,
+          "matches": 862
+        },
+        {
+          "rank": 20,
+          "team": "Denmark",
+          "final_elo": 1985.415274,
+          "matches": 874
+        }
+      ],
+      "tracked_team_delta_vs_alpha_0": {
+        "Argentina": 45.647591000000375,
+        "Spain": 33.39820899999995,
+        "France": 44.25538000000006,
+        "Norway": 40.71520600000031,
+        "Brazil": 43.47862000000032
+      },
+      "tracked_team_delta_vs_alpha_1": {
+        "Argentina": -45.98088199999984,
+        "Spain": -32.05524400000013,
+        "France": -42.464706999999635,
+        "Norway": -38.12069299999985,
+        "Brazil": -42.95329700000002
+      }
+    },
+    "0.75": {
+      "metrics": {
+        "accuracy": 0.5578272563651439,
+        "log_loss": 0.9488894145705844,
+        "brier_score": 0.5622308750982996
+      },
+      "distribution": {
+        "elo_std": 309.22308912776697,
+        "elo_min": 653.874997,
+        "elo_max": 2248.156008
+      },
+      "tracked_teams": {
+        "Argentina": {
+          "final_elo": 2248.156008,
+          "rank": 1,
+          "matches": 1071
+        },
+        "Spain": {
+          "final_elo": 2201.602961,
+          "rank": 2,
+          "matches": 785
+        },
+        "France": {
+          "final_elo": 2189.851821,
+          "rank": 3,
+          "matches": 937
+        },
+        "Norway": {
+          "final_elo": 2125.895428,
+          "rank": 6,
+          "matches": 874
+        },
+        "Brazil": {
+          "final_elo": 2120.498095,
+          "rank": 7,
+          "matches": 1061
+        }
+      },
+      "top20": [
+        {
+          "rank": 1,
+          "team": "Argentina",
+          "final_elo": 2248.156008,
+          "matches": 1071
+        },
+        {
+          "rank": 2,
+          "team": "Spain",
+          "final_elo": 2201.602961,
+          "matches": 785
+        },
+        {
+          "rank": 3,
+          "team": "France",
+          "final_elo": 2189.851821,
+          "matches": 937
+        },
+        {
+          "rank": 4,
+          "team": "Germany",
+          "final_elo": 2161.629125,
+          "matches": 1033
+        },
+        {
+          "rank": 5,
+          "team": "England",
+          "final_elo": 2152.352406,
+          "matches": 1091
+        },
+        {
+          "rank": 6,
+          "team": "Norway",
+          "final_elo": 2125.895428,
+          "matches": 874
+        },
+        {
+          "rank": 7,
+          "team": "Brazil",
+          "final_elo": 2120.498095,
+          "matches": 1061
+        },
+        {
+          "rank": 8,
+          "team": "Morocco",
+          "final_elo": 2112.510725,
+          "matches": 619
+        },
+        {
+          "rank": 9,
+          "team": "Netherlands",
+          "final_elo": 2110.676166,
+          "matches": 881
+        },
+        {
+          "rank": 10,
+          "team": "Japan",
+          "final_elo": 2105.054712,
+          "matches": 792
+        },
+        {
+          "rank": 11,
+          "team": "Colombia",
+          "final_elo": 2103.683546,
+          "matches": 639
+        },
+        {
+          "rank": 12,
+          "team": "Portugal",
+          "final_elo": 2096.118847,
+          "matches": 696
+        },
+        {
+          "rank": 13,
+          "team": "Mexico",
+          "final_elo": 2085.756684,
+          "matches": 1005
+        },
+        {
+          "rank": 14,
+          "team": "United States",
+          "final_elo": 2043.320729,
+          "matches": 792
+        },
+        {
+          "rank": 15,
+          "team": "Switzerland",
+          "final_elo": 2040.952687,
+          "matches": 886
+        },
+        {
+          "rank": 16,
+          "team": "Belgium",
+          "final_elo": 2032.984784,
+          "matches": 855
+        },
+        {
+          "rank": 17,
+          "team": "Basque Country",
+          "final_elo": 2016.298423,
+          "matches": 64
+        },
+        {
+          "rank": 18,
+          "team": "Italy",
+          "final_elo": 2010.361557,
+          "matches": 893
+        },
+        {
+          "rank": 19,
+          "team": "Austria",
+          "final_elo": 2002.277198,
+          "matches": 862
+        },
+        {
+          "rank": 20,
+          "team": "Denmark",
+          "final_elo": 1995.263329,
+          "matches": 874
+        }
+      ],
+      "tracked_team_delta_vs_alpha_0": {
+        "Argentina": 68.52581000000009,
+        "Spain": 49.53918599999997,
+        "France": 65.64005700000007,
+        "Norway": 60.03939300000002,
+        "Brazil": 64.95086200000014
+      },
+      "tracked_team_delta_vs_alpha_1": {
+        "Argentina": -23.10266300000012,
+        "Spain": -15.914267000000109,
+        "France": -21.080029999999624,
+        "Norway": -18.796506000000136,
+        "Brazil": -21.481055000000197
+      }
+    },
+    "1.00": {
+      "metrics": {
+        "accuracy": 0.5590406277174462,
+        "log_loss": 0.9469499541543781,
+        "brier_score": 0.56077643215229
+      },
+      "distribution": {
+        "elo_std": 319.07329374890736,
+        "elo_min": 608.413045,
+        "elo_max": 2271.258671
+      },
+      "tracked_teams": {
+        "Argentina": {
+          "final_elo": 2271.258671,
+          "rank": 1,
+          "matches": 1071
+        },
+        "Spain": {
+          "final_elo": 2217.517228,
+          "rank": 2,
+          "matches": 785
+        },
+        "France": {
+          "final_elo": 2210.931851,
+          "rank": 3,
+          "matches": 937
+        },
+        "Norway": {
+          "final_elo": 2144.691934,
+          "rank": 6,
+          "matches": 874
+        },
+        "Brazil": {
+          "final_elo": 2141.97915,
+          "rank": 7,
+          "matches": 1061
+        }
+      },
+      "top20": [
+        {
+          "rank": 1,
+          "team": "Argentina",
+          "final_elo": 2271.258671,
+          "matches": 1071
+        },
+        {
+          "rank": 2,
+          "team": "Spain",
+          "final_elo": 2217.517228,
+          "matches": 785
+        },
+        {
+          "rank": 3,
+          "team": "France",
+          "final_elo": 2210.931851,
+          "matches": 937
+        },
+        {
+          "rank": 4,
+          "team": "England",
+          "final_elo": 2176.086774,
+          "matches": 1091
+        },
+        {
+          "rank": 5,
+          "team": "Germany",
+          "final_elo": 2172.772261,
+          "matches": 1033
+        },
+        {
+          "rank": 6,
+          "team": "Norway",
+          "final_elo": 2144.691934,
+          "matches": 874
+        },
+        {
+          "rank": 7,
+          "team": "Brazil",
+          "final_elo": 2141.97915,
+          "matches": 1061
+        },
+        {
+          "rank": 8,
+          "team": "Netherlands",
+          "final_elo": 2131.548911,
+          "matches": 881
+        },
+        {
+          "rank": 9,
+          "team": "Colombia",
+          "final_elo": 2127.561884,
+          "matches": 639
+        },
+        {
+          "rank": 10,
+          "team": "Morocco",
+          "final_elo": 2122.540706,
+          "matches": 619
+        },
+        {
+          "rank": 11,
+          "team": "Japan",
+          "final_elo": 2117.397886,
+          "matches": 792
+        },
+        {
+          "rank": 12,
+          "team": "Portugal",
+          "final_elo": 2107.175423,
+          "matches": 696
+        },
+        {
+          "rank": 13,
+          "team": "Mexico",
+          "final_elo": 2094.734169,
+          "matches": 1005
+        },
+        {
+          "rank": 14,
+          "team": "Switzerland",
+          "final_elo": 2062.688248,
+          "matches": 886
+        },
+        {
+          "rank": 15,
+          "team": "United States",
+          "final_elo": 2056.947118,
+          "matches": 792
+        },
+        {
+          "rank": 16,
+          "team": "Belgium",
+          "final_elo": 2053.623509,
+          "matches": 855
+        },
+        {
+          "rank": 17,
+          "team": "Basque Country",
+          "final_elo": 2033.755257,
+          "matches": 64
+        },
+        {
+          "rank": 18,
+          "team": "Austria",
+          "final_elo": 2018.221477,
+          "matches": 862
+        },
+        {
+          "rank": 19,
+          "team": "Italy",
+          "final_elo": 2015.398213,
+          "matches": 893
+        },
+        {
+          "rank": 20,
+          "team": "Denmark",
+          "final_elo": 2005.261442,
+          "matches": 874
+        }
+      ],
+      "tracked_team_delta_vs_alpha_0": {
+        "Argentina": 91.62847300000021,
+        "Spain": 65.45345300000008,
+        "France": 86.7200869999997,
+        "Norway": 78.83589900000015,
+        "Brazil": 86.43191700000034
+      },
+      "tracked_team_delta_vs_alpha_1": {
+        "Argentina": 0.0,
+        "Spain": 0.0,
+        "France": 0.0,
+        "Norway": 0.0,
+        "Brazil": 0.0
+      }
+    }
+  },
+  "results": [
+    {
+      "alpha": 0.0,
+      "accuracy": 0.5538231309025461,
+      "log_loss": 0.9581930348439738,
+      "brier_score": 0.5687957387632453,
+      "elo_std": 278.94380135861,
+      "elo_min": 747.49289,
+      "elo_max": 2179.630198,
+      "argentina_final_elo": 2179.630198,
+      "spain_final_elo": 2152.063775,
+      "france_final_elo": 2124.211764,
+      "norway_final_elo": 2065.856035,
+      "brazil_final_elo": 2055.547233
+    },
+    {
+      "alpha": 0.25,
+      "accuracy": 0.5559869764808186,
+      "log_loss": 0.9544610037458029,
+      "brier_score": 0.5661969885618627,
+      "elo_std": 289.23037197979295,
+      "elo_min": 726.339403,
+      "elo_max": 2202.490964,
+      "argentina_final_elo": 2202.490964,
+      "spain_final_elo": 2168.992547,
+      "france_final_elo": 2146.643432,
+      "norway_final_elo": 2086.608123,
+      "brazil_final_elo": 2077.430695
+    },
+    {
+      "alpha": 0.5,
+      "accuracy": 0.5567352221480717,
+      "log_loss": 0.9513795658446131,
+      "brier_score": 0.5640260743955634,
+      "elo_std": 299.29822568026617,
+      "elo_min": 703.560923,
+      "elo_max": 2225.277789,
+      "argentina_final_elo": 2225.277789,
+      "spain_final_elo": 2185.461984,
+      "france_final_elo": 2168.467144,
+      "norway_final_elo": 2106.571241,
+      "brazil_final_elo": 2099.025853
+    },
+    {
+      "alpha": 0.75,
+      "accuracy": 0.5578272563651439,
+      "log_loss": 0.9488894145705844,
+      "brier_score": 0.5622308750982996,
+      "elo_std": 309.22308912776697,
+      "elo_min": 653.874997,
+      "elo_max": 2248.156008,
+      "argentina_final_elo": 2248.156008,
+      "spain_final_elo": 2201.602961,
+      "france_final_elo": 2189.851821,
+      "norway_final_elo": 2125.895428,
+      "brazil_final_elo": 2120.498095
+    },
+    {
+      "alpha": 1.0,
+      "accuracy": 0.5590406277174462,
+      "log_loss": 0.9469499541543781,
+      "brier_score": 0.56077643215229,
+      "elo_std": 319.07329374890736,
+      "elo_min": 608.413045,
+      "elo_max": 2271.258671,
+      "argentina_final_elo": 2271.258671,
+      "spain_final_elo": 2217.517228,
+      "france_final_elo": 2210.931851,
+      "norway_final_elo": 2144.691934,
+      "brazil_final_elo": 2141.97915
+    }
+  ],
+  "summary": {
+    "best_accuracy": {
+      "alpha": 1.0,
+      "accuracy": 0.5590406277174462,
+      "log_loss": 0.9469499541543781,
+      "brier_score": 0.56077643215229,
+      "elo_std": 319.07329374890736,
+      "elo_min": 608.413045,
+      "elo_max": 2271.258671,
+      "argentina_final_elo": 2271.258671,
+      "spain_final_elo": 2217.517228,
+      "france_final_elo": 2210.931851,
+      "norway_final_elo": 2144.691934,
+      "brazil_final_elo": 2141.97915
+    },
+    "best_log_loss": {
+      "alpha": 1.0,
+      "accuracy": 0.5590406277174462,
+      "log_loss": 0.9469499541543781,
+      "brier_score": 0.56077643215229,
+      "elo_std": 319.07329374890736,
+      "elo_min": 608.413045,
+      "elo_max": 2271.258671,
+      "argentina_final_elo": 2271.258671,
+      "spain_final_elo": 2217.517228,
+      "france_final_elo": 2210.931851,
+      "norway_final_elo": 2144.691934,
+      "brazil_final_elo": 2141.97915
+    },
+    "best_brier_score": {
+      "alpha": 1.0,
+      "accuracy": 0.5590406277174462,
+      "log_loss": 0.9469499541543781,
+      "brier_score": 0.56077643215229,
+      "elo_std": 319.07329374890736,
+      "elo_min": 608.413045,
+      "elo_max": 2271.258671,
+      "argentina_final_elo": 2271.258671,
+      "spain_final_elo": 2217.517228,
+      "france_final_elo": 2210.931851,
+      "norway_final_elo": 2144.691934,
+      "brazil_final_elo": 2141.97915
+    },
+    "no_multiplier_alpha": {
+      "alpha": 0.0,
+      "accuracy": 0.5538231309025461,
+      "log_loss": 0.9581930348439738,
+      "brier_score": 0.5687957387632453,
+      "elo_std": 278.94380135861,
+      "elo_min": 747.49289,
+      "elo_max": 2179.630198,
+      "argentina_final_elo": 2179.630198,
+      "spain_final_elo": 2152.063775,
+      "france_final_elo": 2124.211764,
+      "norway_final_elo": 2065.856035,
+      "brazil_final_elo": 2055.547233
+    },
+    "full_log_margin_alpha": {
+      "alpha": 1.0,
+      "accuracy": 0.5590406277174462,
+      "log_loss": 0.9469499541543781,
+      "brier_score": 0.56077643215229,
+      "elo_std": 319.07329374890736,
+      "elo_min": 608.413045,
+      "elo_max": 2271.258671,
+      "argentina_final_elo": 2271.258671,
+      "spain_final_elo": 2217.517228,
+      "france_final_elo": 2210.931851,
+      "norway_final_elo": 2144.691934,
+      "brazil_final_elo": 2141.97915
+    },
+    "recommended_calibrated_elo_v3_candidate": {
+      "alpha": 0.25,
+      "reason": "lowest Elo max/std among alphas that still improve LogLoss and Brier over alpha=0"
+    }
+  }
+}

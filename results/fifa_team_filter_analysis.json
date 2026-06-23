@@ -1,0 +1,1565 @@
+{
+  "source": "data/processed/matches_with_elo.csv",
+  "note": "Analysis uses existing processed standard_elo_v1 final Elo only; it does not rebuild Elo and does not modify model formulas.",
+  "unique_team_count": 336,
+  "classification_counts": {
+    "conifa_team": 28,
+    "fifa_national_team": 181,
+    "regional_team": 67,
+    "successor_state_or_renamed_fifa_team": 44,
+    "historical_fifa_team": 8,
+    "non_fifa_representative_team": 8
+  },
+  "classification_rules": {
+    "fifa_national_team": "Default for current national-team entities not listed as regional/CONIFA/historical.",
+    "historical_fifa_team": "Defunct or former FIFA/senior national teams such as Czechoslovakia, Yugoslavia, Soviet Union, German DR.",
+    "successor_state_or_renamed_fifa_team": "Current FIFA teams or renamed teams with historical continuity.",
+    "regional_team": "Subnational, island-games, regional, autonomous, or non-sovereign representative teams outside the FIFA calibration universe.",
+    "conifa_team": "Known CONIFA/non-FIFA football representative teams.",
+    "non_fifa_representative_team": "Representative entities not suitable for FIFA Predictor calibration universe."
+  },
+  "teams_by_category": {
+    "conifa_team": [
+      "Abkhazia",
+      "Artsakh",
+      "Aymara",
+      "Barawa",
+      "Cascadia",
+      "Chagos Islands",
+      "Ellan Vannin",
+      "Felvidék",
+      "Iraqi Kurdistan",
+      "Kabylia",
+      "Kurdistan",
+      "Kárpátalja",
+      "Matabeleland",
+      "Northern Cyprus",
+      "Occitania",
+      "Padania",
+      "Panjab",
+      "Raetia",
+      "Romani people",
+      "South Ossetia",
+      "Székely Land",
+      "Sápmi",
+      "Tamil Eelam",
+      "Tibet",
+      "Tuvalu",
+      "United Koreans in Japan",
+      "Western Armenia",
+      "Yorkshire"
+    ],
+    "fifa_national_team": [
+      "Afghanistan",
+      "Albania",
+      "Algeria",
+      "Ambazonia",
+      "American Samoa",
+      "Andorra",
+      "Angola",
+      "Anguilla",
+      "Antigua and Barbuda",
+      "Argentina",
+      "Aruba",
+      "Australia",
+      "Austria",
+      "Bahamas",
+      "Bahrain",
+      "Bangladesh",
+      "Barbados",
+      "Belgium",
+      "Belize",
+      "Bermuda",
+      "Bhutan",
+      "Bolivia",
+      "Botswana",
+      "Brazil",
+      "British Virgin Islands",
+      "Brunei",
+      "Bulgaria",
+      "Burundi",
+      "Cameroon",
+      "Canada",
+      "Cape Verde",
+      "Cayman Islands",
+      "Central African Republic",
+      "Chad",
+      "Chile",
+      "China",
+      "Colombia",
+      "Comoros",
+      "Congo",
+      "Cook Islands",
+      "Costa Rica",
+      "Cuba",
+      "Cyprus",
+      "Denmark",
+      "Dominica",
+      "Dominican Republic",
+      "Ecuador",
+      "Egypt",
+      "El Salvador",
+      "England",
+      "Equatorial Guinea",
+      "Eritrea",
+      "Ethiopia",
+      "Faroe Islands",
+      "Fiji",
+      "Finland",
+      "France",
+      "Gabon",
+      "Gambia",
+      "Germany",
+      "Gibraltar",
+      "Greece",
+      "Grenada",
+      "Guam",
+      "Guatemala",
+      "Guinea",
+      "Haiti",
+      "Honduras",
+      "Hong Kong",
+      "Hungary",
+      "Iceland",
+      "India",
+      "Iran",
+      "Iraq",
+      "Italy",
+      "Ivory Coast",
+      "Jamaica",
+      "Japan",
+      "Jordan",
+      "Kenya",
+      "Kuwait",
+      "Laos",
+      "Lebanon",
+      "Lesotho",
+      "Liberia",
+      "Libya",
+      "Liechtenstein",
+      "Luxembourg",
+      "Macau",
+      "Madagascar",
+      "Maldives",
+      "Mali",
+      "Malta",
+      "Manchukuo",
+      "Mauritania",
+      "Mauritius",
+      "Mexico",
+      "Mongolia",
+      "Montserrat",
+      "Morocco",
+      "Mozambique",
+      "Namibia",
+      "Nepal",
+      "Netherlands",
+      "New Zealand",
+      "Nicaragua",
+      "Niger",
+      "Nigeria",
+      "North Korea",
+      "Northern Mariana Islands",
+      "Norway",
+      "Oman",
+      "Pakistan",
+      "Palestine",
+      "Panama",
+      "Papua New Guinea",
+      "Paraguay",
+      "Peru",
+      "Philippines",
+      "Poland",
+      "Portugal",
+      "Puerto Rico",
+      "Qatar",
+      "Quebec",
+      "Republic of St. Pauli",
+      "Romania",
+      "Rwanda",
+      "Ryūkyū",
+      "Saare County",
+      "Saint Barthélemy",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "San Marino",
+      "Saudi Arabia",
+      "Saugeais",
+      "Scotland",
+      "Sealand",
+      "Seborga",
+      "Senegal",
+      "Seychelles",
+      "Sierra Leone",
+      "Singapore",
+      "Solomon Islands",
+      "Somalia",
+      "South Africa",
+      "South Korea",
+      "South Sudan",
+      "Spain",
+      "Sudan",
+      "Suriname",
+      "Surrey",
+      "Sweden",
+      "Switzerland",
+      "Syria",
+      "São Tomé and Príncipe",
+      "Tahiti",
+      "Taiwan",
+      "Tanzania",
+      "Thailand",
+      "Ticino",
+      "Timor-Leste",
+      "Togo",
+      "Trinidad and Tobago",
+      "Tunisia",
+      "Turkey",
+      "Turks and Caicos Islands",
+      "Uganda",
+      "United Arab Emirates",
+      "United States",
+      "United States Virgin Islands",
+      "Uruguay",
+      "Vanuatu",
+      "Venezuela",
+      "Vietnam",
+      "Vietnam Republic",
+      "Wales",
+      "West Papua",
+      "Yoruba Nation",
+      "Zambia",
+      "Zimbabwe"
+    ],
+    "historical_fifa_team": [
+      "Czechoslovakia",
+      "German DR",
+      "North Vietnam",
+      "Saarland",
+      "South Yemen",
+      "Yemen DPR",
+      "Yugoslavia",
+      "Zanzibar"
+    ],
+    "non_fifa_representative_team": [
+      "Falkland Islands",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia",
+      "Niue",
+      "Palau",
+      "Tonga",
+      "Vatican City"
+    ],
+    "regional_team": [
+      "Alderney",
+      "Andalusia",
+      "Arameans Suryoye",
+      "Asturias",
+      "Basque Country",
+      "Biafra",
+      "Bonaire",
+      "Brittany",
+      "Canary Islands",
+      "Catalonia",
+      "Central Spain",
+      "Chameria",
+      "Chechnya",
+      "Cilento",
+      "Corsica",
+      "County of Nice",
+      "Crimea",
+      "Darfur",
+      "Donetsk PR",
+      "Délvidék",
+      "East Turkestan",
+      "Elba Island",
+      "Franconia",
+      "French Guiana",
+      "Frøya",
+      "Galicia",
+      "Gotland",
+      "Gozo",
+      "Greenland",
+      "Guadeloupe",
+      "Guernsey",
+      "Găgăuzia",
+      "Hitra",
+      "Hmong",
+      "Isle of Man",
+      "Isle of Wight",
+      "Jersey",
+      "Kernow",
+      "Luhansk PR",
+      "Madrid",
+      "Mapuche",
+      "Martinique",
+      "Maule Sur",
+      "Mayotte",
+      "Menorca",
+      "Monaco",
+      "New Caledonia",
+      "Orkney",
+      "Parishes of Jersey",
+      "Provence",
+      "Rhodes",
+      "Réunion",
+      "Saint Helena",
+      "Saint Martin",
+      "Saint Pierre and Miquelon",
+      "Sark",
+      "Shetland",
+      "Silesia",
+      "Sint Maarten",
+      "Somaliland",
+      "Two Sicilies",
+      "Wallis Islands and Futuna",
+      "Western Australia",
+      "Western Isles",
+      "Western Sahara",
+      "Ynys Môn",
+      "Åland Islands"
+    ],
+    "successor_state_or_renamed_fifa_team": [
+      "Armenia",
+      "Azerbaijan",
+      "Belarus",
+      "Benin",
+      "Bosnia and Herzegovina",
+      "Burkina Faso",
+      "Cambodia",
+      "Croatia",
+      "Curaçao",
+      "Czech Republic",
+      "DR Congo",
+      "Djibouti",
+      "Estonia",
+      "Eswatini",
+      "Georgia",
+      "Ghana",
+      "Guinea-Bissau",
+      "Guyana",
+      "Indonesia",
+      "Israel",
+      "Kazakhstan",
+      "Kosovo",
+      "Kyrgyzstan",
+      "Latvia",
+      "Lithuania",
+      "Malawi",
+      "Malaysia",
+      "Moldova",
+      "Montenegro",
+      "Myanmar",
+      "North Macedonia",
+      "Northern Ireland",
+      "Republic of Ireland",
+      "Russia",
+      "Samoa",
+      "Serbia",
+      "Slovakia",
+      "Slovenia",
+      "Sri Lanka",
+      "Tajikistan",
+      "Turkmenistan",
+      "Ukraine",
+      "Uzbekistan",
+      "Yemen"
+    ]
+  },
+  "top100_non_fifa_teams": [
+    {
+      "team": "Jersey",
+      "final_elo": 1720.099177,
+      "matches": 235,
+      "category": "regional_team",
+      "rank": 36
+    },
+    {
+      "team": "Basque Country",
+      "final_elo": 1713.194243,
+      "matches": 64,
+      "category": "regional_team",
+      "rank": 39
+    },
+    {
+      "team": "Guernsey",
+      "final_elo": 1672.434453,
+      "matches": 240,
+      "category": "regional_team",
+      "rank": 51
+    },
+    {
+      "team": "Catalonia",
+      "final_elo": 1629.133287,
+      "matches": 48,
+      "category": "regional_team",
+      "rank": 68
+    },
+    {
+      "team": "Ynys Môn",
+      "final_elo": 1617.548441,
+      "matches": 67,
+      "category": "regional_team",
+      "rank": 72
+    },
+    {
+      "team": "Isle of Man",
+      "final_elo": 1615.757502,
+      "matches": 58,
+      "category": "regional_team",
+      "rank": 73
+    },
+    {
+      "team": "Padania",
+      "final_elo": 1612.889886,
+      "matches": 45,
+      "category": "conifa_team",
+      "rank": 74
+    },
+    {
+      "team": "Isle of Wight",
+      "final_elo": 1594.237136,
+      "matches": 48,
+      "category": "regional_team",
+      "rank": 80
+    },
+    {
+      "team": "Occitania",
+      "final_elo": 1593.48887,
+      "matches": 33,
+      "category": "conifa_team",
+      "rank": 84
+    },
+    {
+      "team": "Northern Cyprus",
+      "final_elo": 1590.875779,
+      "matches": 34,
+      "category": "conifa_team",
+      "rank": 85
+    },
+    {
+      "team": "Andalusia",
+      "final_elo": 1581.899434,
+      "matches": 13,
+      "category": "regional_team",
+      "rank": 88
+    },
+    {
+      "team": "Abkhazia",
+      "final_elo": 1573.786243,
+      "matches": 33,
+      "category": "conifa_team",
+      "rank": 93
+    },
+    {
+      "team": "Kernow",
+      "final_elo": 1567.65112,
+      "matches": 12,
+      "category": "regional_team",
+      "rank": 95
+    },
+    {
+      "team": "Iraqi Kurdistan",
+      "final_elo": 1565.377413,
+      "matches": 27,
+      "category": "conifa_team",
+      "rank": 96
+    },
+    {
+      "team": "Réunion",
+      "final_elo": 1554.15104,
+      "matches": 124,
+      "category": "regional_team",
+      "rank": 100
+    }
+  ],
+  "all_teams_distribution": {
+    "team_count": 336,
+    "mean": 1500.0000000446428,
+    "median": 1489.6548535,
+    "std": 171.10814955087827,
+    "min": 1043.13835,
+    "max": 1998.20513
+  },
+  "fifa_only_distribution": {
+    "team_count": 225,
+    "mean": 1502.6988408133334,
+    "median": 1489.554236,
+    "std": 200.97951801888465,
+    "min": 1043.13835,
+    "max": 1998.20513
+  },
+  "fifa_plus_historical_distribution": {
+    "team_count": 233,
+    "mean": 1504.034020888412,
+    "median": 1487.615927,
+    "std": 198.52749252117974,
+    "min": 1043.13835,
+    "max": 1998.20513
+  },
+  "all_top50": [
+    {
+      "team": "Argentina",
+      "final_elo": 1998.20513,
+      "matches": 1071,
+      "category": "fifa_national_team",
+      "rank": 1
+    },
+    {
+      "team": "Spain",
+      "final_elo": 1975.978317,
+      "matches": 785,
+      "category": "fifa_national_team",
+      "rank": 2
+    },
+    {
+      "team": "France",
+      "final_elo": 1948.704749,
+      "matches": 937,
+      "category": "fifa_national_team",
+      "rank": 3
+    },
+    {
+      "team": "Brazil",
+      "final_elo": 1919.223708,
+      "matches": 1061,
+      "category": "fifa_national_team",
+      "rank": 4
+    },
+    {
+      "team": "England",
+      "final_elo": 1908.009446,
+      "matches": 1091,
+      "category": "fifa_national_team",
+      "rank": 5
+    },
+    {
+      "team": "Germany",
+      "final_elo": 1896.302542,
+      "matches": 1033,
+      "category": "fifa_national_team",
+      "rank": 6
+    },
+    {
+      "team": "Portugal",
+      "final_elo": 1894.961366,
+      "matches": 696,
+      "category": "fifa_national_team",
+      "rank": 7
+    },
+    {
+      "team": "Colombia",
+      "final_elo": 1889.513659,
+      "matches": 639,
+      "category": "fifa_national_team",
+      "rank": 8
+    },
+    {
+      "team": "Netherlands",
+      "final_elo": 1877.856482,
+      "matches": 881,
+      "category": "fifa_national_team",
+      "rank": 9
+    },
+    {
+      "team": "Japan",
+      "final_elo": 1866.840727,
+      "matches": 792,
+      "category": "fifa_national_team",
+      "rank": 10
+    },
+    {
+      "team": "Morocco",
+      "final_elo": 1858.986122,
+      "matches": 619,
+      "category": "fifa_national_team",
+      "rank": 11
+    },
+    {
+      "team": "Italy",
+      "final_elo": 1852.557921,
+      "matches": 893,
+      "category": "fifa_national_team",
+      "rank": 12
+    },
+    {
+      "team": "Belgium",
+      "final_elo": 1844.912034,
+      "matches": 855,
+      "category": "fifa_national_team",
+      "rank": 13
+    },
+    {
+      "team": "Mexico",
+      "final_elo": 1837.335787,
+      "matches": 1005,
+      "category": "fifa_national_team",
+      "rank": 14
+    },
+    {
+      "team": "Croatia",
+      "final_elo": 1828.73294,
+      "matches": 397,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 15
+    },
+    {
+      "team": "Uruguay",
+      "final_elo": 1807.086408,
+      "matches": 972,
+      "category": "fifa_national_team",
+      "rank": 16
+    },
+    {
+      "team": "Ecuador",
+      "final_elo": 1807.018753,
+      "matches": 593,
+      "category": "fifa_national_team",
+      "rank": 17
+    },
+    {
+      "team": "Denmark",
+      "final_elo": 1805.184501,
+      "matches": 874,
+      "category": "fifa_national_team",
+      "rank": 18
+    },
+    {
+      "team": "Iran",
+      "final_elo": 1800.856484,
+      "matches": 614,
+      "category": "fifa_national_team",
+      "rank": 19
+    },
+    {
+      "team": "Switzerland",
+      "final_elo": 1796.667771,
+      "matches": 886,
+      "category": "fifa_national_team",
+      "rank": 20
+    },
+    {
+      "team": "South Korea",
+      "final_elo": 1793.528133,
+      "matches": 1009,
+      "category": "fifa_national_team",
+      "rank": 21
+    },
+    {
+      "team": "United States",
+      "final_elo": 1793.096766,
+      "matches": 792,
+      "category": "fifa_national_team",
+      "rank": 22
+    },
+    {
+      "team": "Algeria",
+      "final_elo": 1790.540974,
+      "matches": 619,
+      "category": "fifa_national_team",
+      "rank": 23
+    },
+    {
+      "team": "Norway",
+      "final_elo": 1782.705476,
+      "matches": 874,
+      "category": "fifa_national_team",
+      "rank": 24
+    },
+    {
+      "team": "Austria",
+      "final_elo": 1780.43713,
+      "matches": 862,
+      "category": "fifa_national_team",
+      "rank": 25
+    },
+    {
+      "team": "Turkey",
+      "final_elo": 1769.594653,
+      "matches": 644,
+      "category": "fifa_national_team",
+      "rank": 26
+    },
+    {
+      "team": "Senegal",
+      "final_elo": 1768.857748,
+      "matches": 640,
+      "category": "fifa_national_team",
+      "rank": 27
+    },
+    {
+      "team": "Australia",
+      "final_elo": 1767.472123,
+      "matches": 583,
+      "category": "fifa_national_team",
+      "rank": 28
+    },
+    {
+      "team": "Canada",
+      "final_elo": 1761.793222,
+      "matches": 471,
+      "category": "fifa_national_team",
+      "rank": 29
+    },
+    {
+      "team": "Russia",
+      "final_elo": 1755.883101,
+      "matches": 749,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 30
+    },
+    {
+      "team": "Ivory Coast",
+      "final_elo": 1737.631876,
+      "matches": 638,
+      "category": "fifa_national_team",
+      "rank": 31
+    },
+    {
+      "team": "Egypt",
+      "final_elo": 1737.592317,
+      "matches": 758,
+      "category": "fifa_national_team",
+      "rank": 32
+    },
+    {
+      "team": "Ukraine",
+      "final_elo": 1736.878819,
+      "matches": 338,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 33
+    },
+    {
+      "team": "Paraguay",
+      "final_elo": 1732.947134,
+      "matches": 785,
+      "category": "fifa_national_team",
+      "rank": 34
+    },
+    {
+      "team": "Poland",
+      "final_elo": 1720.970089,
+      "matches": 892,
+      "category": "fifa_national_team",
+      "rank": 35
+    },
+    {
+      "team": "Jersey",
+      "final_elo": 1720.099177,
+      "matches": 235,
+      "category": "regional_team",
+      "rank": 36
+    },
+    {
+      "team": "Nigeria",
+      "final_elo": 1716.168388,
+      "matches": 661,
+      "category": "fifa_national_team",
+      "rank": 37
+    },
+    {
+      "team": "Sweden",
+      "final_elo": 1713.273433,
+      "matches": 1103,
+      "category": "fifa_national_team",
+      "rank": 38
+    },
+    {
+      "team": "Basque Country",
+      "final_elo": 1713.194243,
+      "matches": 64,
+      "category": "regional_team",
+      "rank": 39
+    },
+    {
+      "team": "Serbia",
+      "final_elo": 1713.125265,
+      "matches": 348,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 40
+    },
+    {
+      "team": "Hungary",
+      "final_elo": 1712.168721,
+      "matches": 1006,
+      "category": "fifa_national_team",
+      "rank": 41
+    },
+    {
+      "team": "Uzbekistan",
+      "final_elo": 1711.081837,
+      "matches": 355,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 42
+    },
+    {
+      "team": "Czech Republic",
+      "final_elo": 1709.20508,
+      "matches": 362,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 43
+    },
+    {
+      "team": "Chile",
+      "final_elo": 1703.453247,
+      "matches": 835,
+      "category": "fifa_national_team",
+      "rank": 44
+    },
+    {
+      "team": "Scotland",
+      "final_elo": 1700.34095,
+      "matches": 853,
+      "category": "fifa_national_team",
+      "rank": 45
+    },
+    {
+      "team": "Venezuela",
+      "final_elo": 1695.93395,
+      "matches": 460,
+      "category": "fifa_national_team",
+      "rank": 46
+    },
+    {
+      "team": "Yugoslavia",
+      "final_elo": 1693.622242,
+      "matches": 483,
+      "category": "historical_fifa_team",
+      "rank": 47
+    },
+    {
+      "team": "Greece",
+      "final_elo": 1689.595609,
+      "matches": 633,
+      "category": "fifa_national_team",
+      "rank": 48
+    },
+    {
+      "team": "Panama",
+      "final_elo": 1680.843744,
+      "matches": 540,
+      "category": "fifa_national_team",
+      "rank": 49
+    },
+    {
+      "team": "Peru",
+      "final_elo": 1675.781147,
+      "matches": 714,
+      "category": "fifa_national_team",
+      "rank": 50
+    }
+  ],
+  "fifa_only_top50": [
+    {
+      "team": "Argentina",
+      "final_elo": 1998.20513,
+      "matches": 1071,
+      "category": "fifa_national_team",
+      "rank": 1
+    },
+    {
+      "team": "Spain",
+      "final_elo": 1975.978317,
+      "matches": 785,
+      "category": "fifa_national_team",
+      "rank": 2
+    },
+    {
+      "team": "France",
+      "final_elo": 1948.704749,
+      "matches": 937,
+      "category": "fifa_national_team",
+      "rank": 3
+    },
+    {
+      "team": "Brazil",
+      "final_elo": 1919.223708,
+      "matches": 1061,
+      "category": "fifa_national_team",
+      "rank": 4
+    },
+    {
+      "team": "England",
+      "final_elo": 1908.009446,
+      "matches": 1091,
+      "category": "fifa_national_team",
+      "rank": 5
+    },
+    {
+      "team": "Germany",
+      "final_elo": 1896.302542,
+      "matches": 1033,
+      "category": "fifa_national_team",
+      "rank": 6
+    },
+    {
+      "team": "Portugal",
+      "final_elo": 1894.961366,
+      "matches": 696,
+      "category": "fifa_national_team",
+      "rank": 7
+    },
+    {
+      "team": "Colombia",
+      "final_elo": 1889.513659,
+      "matches": 639,
+      "category": "fifa_national_team",
+      "rank": 8
+    },
+    {
+      "team": "Netherlands",
+      "final_elo": 1877.856482,
+      "matches": 881,
+      "category": "fifa_national_team",
+      "rank": 9
+    },
+    {
+      "team": "Japan",
+      "final_elo": 1866.840727,
+      "matches": 792,
+      "category": "fifa_national_team",
+      "rank": 10
+    },
+    {
+      "team": "Morocco",
+      "final_elo": 1858.986122,
+      "matches": 619,
+      "category": "fifa_national_team",
+      "rank": 11
+    },
+    {
+      "team": "Italy",
+      "final_elo": 1852.557921,
+      "matches": 893,
+      "category": "fifa_national_team",
+      "rank": 12
+    },
+    {
+      "team": "Belgium",
+      "final_elo": 1844.912034,
+      "matches": 855,
+      "category": "fifa_national_team",
+      "rank": 13
+    },
+    {
+      "team": "Mexico",
+      "final_elo": 1837.335787,
+      "matches": 1005,
+      "category": "fifa_national_team",
+      "rank": 14
+    },
+    {
+      "team": "Croatia",
+      "final_elo": 1828.73294,
+      "matches": 397,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 15
+    },
+    {
+      "team": "Uruguay",
+      "final_elo": 1807.086408,
+      "matches": 972,
+      "category": "fifa_national_team",
+      "rank": 16
+    },
+    {
+      "team": "Ecuador",
+      "final_elo": 1807.018753,
+      "matches": 593,
+      "category": "fifa_national_team",
+      "rank": 17
+    },
+    {
+      "team": "Denmark",
+      "final_elo": 1805.184501,
+      "matches": 874,
+      "category": "fifa_national_team",
+      "rank": 18
+    },
+    {
+      "team": "Iran",
+      "final_elo": 1800.856484,
+      "matches": 614,
+      "category": "fifa_national_team",
+      "rank": 19
+    },
+    {
+      "team": "Switzerland",
+      "final_elo": 1796.667771,
+      "matches": 886,
+      "category": "fifa_national_team",
+      "rank": 20
+    },
+    {
+      "team": "South Korea",
+      "final_elo": 1793.528133,
+      "matches": 1009,
+      "category": "fifa_national_team",
+      "rank": 21
+    },
+    {
+      "team": "United States",
+      "final_elo": 1793.096766,
+      "matches": 792,
+      "category": "fifa_national_team",
+      "rank": 22
+    },
+    {
+      "team": "Algeria",
+      "final_elo": 1790.540974,
+      "matches": 619,
+      "category": "fifa_national_team",
+      "rank": 23
+    },
+    {
+      "team": "Norway",
+      "final_elo": 1782.705476,
+      "matches": 874,
+      "category": "fifa_national_team",
+      "rank": 24
+    },
+    {
+      "team": "Austria",
+      "final_elo": 1780.43713,
+      "matches": 862,
+      "category": "fifa_national_team",
+      "rank": 25
+    },
+    {
+      "team": "Turkey",
+      "final_elo": 1769.594653,
+      "matches": 644,
+      "category": "fifa_national_team",
+      "rank": 26
+    },
+    {
+      "team": "Senegal",
+      "final_elo": 1768.857748,
+      "matches": 640,
+      "category": "fifa_national_team",
+      "rank": 27
+    },
+    {
+      "team": "Australia",
+      "final_elo": 1767.472123,
+      "matches": 583,
+      "category": "fifa_national_team",
+      "rank": 28
+    },
+    {
+      "team": "Canada",
+      "final_elo": 1761.793222,
+      "matches": 471,
+      "category": "fifa_national_team",
+      "rank": 29
+    },
+    {
+      "team": "Russia",
+      "final_elo": 1755.883101,
+      "matches": 749,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 30
+    },
+    {
+      "team": "Ivory Coast",
+      "final_elo": 1737.631876,
+      "matches": 638,
+      "category": "fifa_national_team",
+      "rank": 31
+    },
+    {
+      "team": "Egypt",
+      "final_elo": 1737.592317,
+      "matches": 758,
+      "category": "fifa_national_team",
+      "rank": 32
+    },
+    {
+      "team": "Ukraine",
+      "final_elo": 1736.878819,
+      "matches": 338,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 33
+    },
+    {
+      "team": "Paraguay",
+      "final_elo": 1732.947134,
+      "matches": 785,
+      "category": "fifa_national_team",
+      "rank": 34
+    },
+    {
+      "team": "Poland",
+      "final_elo": 1720.970089,
+      "matches": 892,
+      "category": "fifa_national_team",
+      "rank": 35
+    },
+    {
+      "team": "Nigeria",
+      "final_elo": 1716.168388,
+      "matches": 661,
+      "category": "fifa_national_team",
+      "rank": 36
+    },
+    {
+      "team": "Sweden",
+      "final_elo": 1713.273433,
+      "matches": 1103,
+      "category": "fifa_national_team",
+      "rank": 37
+    },
+    {
+      "team": "Serbia",
+      "final_elo": 1713.125265,
+      "matches": 348,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 38
+    },
+    {
+      "team": "Hungary",
+      "final_elo": 1712.168721,
+      "matches": 1006,
+      "category": "fifa_national_team",
+      "rank": 39
+    },
+    {
+      "team": "Uzbekistan",
+      "final_elo": 1711.081837,
+      "matches": 355,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 40
+    },
+    {
+      "team": "Czech Republic",
+      "final_elo": 1709.20508,
+      "matches": 362,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 41
+    },
+    {
+      "team": "Chile",
+      "final_elo": 1703.453247,
+      "matches": 835,
+      "category": "fifa_national_team",
+      "rank": 42
+    },
+    {
+      "team": "Scotland",
+      "final_elo": 1700.34095,
+      "matches": 853,
+      "category": "fifa_national_team",
+      "rank": 43
+    },
+    {
+      "team": "Venezuela",
+      "final_elo": 1695.93395,
+      "matches": 460,
+      "category": "fifa_national_team",
+      "rank": 44
+    },
+    {
+      "team": "Greece",
+      "final_elo": 1689.595609,
+      "matches": 633,
+      "category": "fifa_national_team",
+      "rank": 45
+    },
+    {
+      "team": "Panama",
+      "final_elo": 1680.843744,
+      "matches": 540,
+      "category": "fifa_national_team",
+      "rank": 46
+    },
+    {
+      "team": "Peru",
+      "final_elo": 1675.781147,
+      "matches": 714,
+      "category": "fifa_national_team",
+      "rank": 47
+    },
+    {
+      "team": "Iraq",
+      "final_elo": 1670.00317,
+      "matches": 657,
+      "category": "fifa_national_team",
+      "rank": 48
+    },
+    {
+      "team": "Wales",
+      "final_elo": 1669.776078,
+      "matches": 726,
+      "category": "fifa_national_team",
+      "rank": 49
+    },
+    {
+      "team": "Republic of Ireland",
+      "final_elo": 1667.334522,
+      "matches": 633,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 50
+    }
+  ],
+  "fifa_plus_historical_top50": [
+    {
+      "team": "Argentina",
+      "final_elo": 1998.20513,
+      "matches": 1071,
+      "category": "fifa_national_team",
+      "rank": 1
+    },
+    {
+      "team": "Spain",
+      "final_elo": 1975.978317,
+      "matches": 785,
+      "category": "fifa_national_team",
+      "rank": 2
+    },
+    {
+      "team": "France",
+      "final_elo": 1948.704749,
+      "matches": 937,
+      "category": "fifa_national_team",
+      "rank": 3
+    },
+    {
+      "team": "Brazil",
+      "final_elo": 1919.223708,
+      "matches": 1061,
+      "category": "fifa_national_team",
+      "rank": 4
+    },
+    {
+      "team": "England",
+      "final_elo": 1908.009446,
+      "matches": 1091,
+      "category": "fifa_national_team",
+      "rank": 5
+    },
+    {
+      "team": "Germany",
+      "final_elo": 1896.302542,
+      "matches": 1033,
+      "category": "fifa_national_team",
+      "rank": 6
+    },
+    {
+      "team": "Portugal",
+      "final_elo": 1894.961366,
+      "matches": 696,
+      "category": "fifa_national_team",
+      "rank": 7
+    },
+    {
+      "team": "Colombia",
+      "final_elo": 1889.513659,
+      "matches": 639,
+      "category": "fifa_national_team",
+      "rank": 8
+    },
+    {
+      "team": "Netherlands",
+      "final_elo": 1877.856482,
+      "matches": 881,
+      "category": "fifa_national_team",
+      "rank": 9
+    },
+    {
+      "team": "Japan",
+      "final_elo": 1866.840727,
+      "matches": 792,
+      "category": "fifa_national_team",
+      "rank": 10
+    },
+    {
+      "team": "Morocco",
+      "final_elo": 1858.986122,
+      "matches": 619,
+      "category": "fifa_national_team",
+      "rank": 11
+    },
+    {
+      "team": "Italy",
+      "final_elo": 1852.557921,
+      "matches": 893,
+      "category": "fifa_national_team",
+      "rank": 12
+    },
+    {
+      "team": "Belgium",
+      "final_elo": 1844.912034,
+      "matches": 855,
+      "category": "fifa_national_team",
+      "rank": 13
+    },
+    {
+      "team": "Mexico",
+      "final_elo": 1837.335787,
+      "matches": 1005,
+      "category": "fifa_national_team",
+      "rank": 14
+    },
+    {
+      "team": "Croatia",
+      "final_elo": 1828.73294,
+      "matches": 397,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 15
+    },
+    {
+      "team": "Uruguay",
+      "final_elo": 1807.086408,
+      "matches": 972,
+      "category": "fifa_national_team",
+      "rank": 16
+    },
+    {
+      "team": "Ecuador",
+      "final_elo": 1807.018753,
+      "matches": 593,
+      "category": "fifa_national_team",
+      "rank": 17
+    },
+    {
+      "team": "Denmark",
+      "final_elo": 1805.184501,
+      "matches": 874,
+      "category": "fifa_national_team",
+      "rank": 18
+    },
+    {
+      "team": "Iran",
+      "final_elo": 1800.856484,
+      "matches": 614,
+      "category": "fifa_national_team",
+      "rank": 19
+    },
+    {
+      "team": "Switzerland",
+      "final_elo": 1796.667771,
+      "matches": 886,
+      "category": "fifa_national_team",
+      "rank": 20
+    },
+    {
+      "team": "South Korea",
+      "final_elo": 1793.528133,
+      "matches": 1009,
+      "category": "fifa_national_team",
+      "rank": 21
+    },
+    {
+      "team": "United States",
+      "final_elo": 1793.096766,
+      "matches": 792,
+      "category": "fifa_national_team",
+      "rank": 22
+    },
+    {
+      "team": "Algeria",
+      "final_elo": 1790.540974,
+      "matches": 619,
+      "category": "fifa_national_team",
+      "rank": 23
+    },
+    {
+      "team": "Norway",
+      "final_elo": 1782.705476,
+      "matches": 874,
+      "category": "fifa_national_team",
+      "rank": 24
+    },
+    {
+      "team": "Austria",
+      "final_elo": 1780.43713,
+      "matches": 862,
+      "category": "fifa_national_team",
+      "rank": 25
+    },
+    {
+      "team": "Turkey",
+      "final_elo": 1769.594653,
+      "matches": 644,
+      "category": "fifa_national_team",
+      "rank": 26
+    },
+    {
+      "team": "Senegal",
+      "final_elo": 1768.857748,
+      "matches": 640,
+      "category": "fifa_national_team",
+      "rank": 27
+    },
+    {
+      "team": "Australia",
+      "final_elo": 1767.472123,
+      "matches": 583,
+      "category": "fifa_national_team",
+      "rank": 28
+    },
+    {
+      "team": "Canada",
+      "final_elo": 1761.793222,
+      "matches": 471,
+      "category": "fifa_national_team",
+      "rank": 29
+    },
+    {
+      "team": "Russia",
+      "final_elo": 1755.883101,
+      "matches": 749,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 30
+    },
+    {
+      "team": "Ivory Coast",
+      "final_elo": 1737.631876,
+      "matches": 638,
+      "category": "fifa_national_team",
+      "rank": 31
+    },
+    {
+      "team": "Egypt",
+      "final_elo": 1737.592317,
+      "matches": 758,
+      "category": "fifa_national_team",
+      "rank": 32
+    },
+    {
+      "team": "Ukraine",
+      "final_elo": 1736.878819,
+      "matches": 338,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 33
+    },
+    {
+      "team": "Paraguay",
+      "final_elo": 1732.947134,
+      "matches": 785,
+      "category": "fifa_national_team",
+      "rank": 34
+    },
+    {
+      "team": "Poland",
+      "final_elo": 1720.970089,
+      "matches": 892,
+      "category": "fifa_national_team",
+      "rank": 35
+    },
+    {
+      "team": "Nigeria",
+      "final_elo": 1716.168388,
+      "matches": 661,
+      "category": "fifa_national_team",
+      "rank": 36
+    },
+    {
+      "team": "Sweden",
+      "final_elo": 1713.273433,
+      "matches": 1103,
+      "category": "fifa_national_team",
+      "rank": 37
+    },
+    {
+      "team": "Serbia",
+      "final_elo": 1713.125265,
+      "matches": 348,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 38
+    },
+    {
+      "team": "Hungary",
+      "final_elo": 1712.168721,
+      "matches": 1006,
+      "category": "fifa_national_team",
+      "rank": 39
+    },
+    {
+      "team": "Uzbekistan",
+      "final_elo": 1711.081837,
+      "matches": 355,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 40
+    },
+    {
+      "team": "Czech Republic",
+      "final_elo": 1709.20508,
+      "matches": 362,
+      "category": "successor_state_or_renamed_fifa_team",
+      "rank": 41
+    },
+    {
+      "team": "Chile",
+      "final_elo": 1703.453247,
+      "matches": 835,
+      "category": "fifa_national_team",
+      "rank": 42
+    },
+    {
+      "team": "Scotland",
+      "final_elo": 1700.34095,
+      "matches": 853,
+      "category": "fifa_national_team",
+      "rank": 43
+    },
+    {
+      "team": "Venezuela",
+      "final_elo": 1695.93395,
+      "matches": 460,
+      "category": "fifa_national_team",
+      "rank": 44
+    },
+    {
+      "team": "Yugoslavia",
+      "final_elo": 1693.622242,
+      "matches": 483,
+      "category": "historical_fifa_team",
+      "rank": 45
+    },
+    {
+      "team": "Greece",
+      "final_elo": 1689.595609,
+      "matches": 633,
+      "category": "fifa_national_team",
+      "rank": 46
+    },
+    {
+      "team": "Panama",
+      "final_elo": 1680.843744,
+      "matches": 540,
+      "category": "fifa_national_team",
+      "rank": 47
+    },
+    {
+      "team": "Peru",
+      "final_elo": 1675.781147,
+      "matches": 714,
+      "category": "fifa_national_team",
+      "rank": 48
+    },
+    {
+      "team": "Czechoslovakia",
+      "final_elo": 1670.070381,
+      "matches": 520,
+      "category": "historical_fifa_team",
+      "rank": 49
+    },
+    {
+      "team": "Iraq",
+      "final_elo": 1670.00317,
+      "matches": 657,
+      "category": "fifa_national_team",
+      "rank": 50
+    }
+  ],
+  "excluded_from_fifa_only_count": 111,
+  "excluded_from_fifa_plus_historical_count": 103,
+  "recommendation": {
+    "choice": "C",
+    "label": "FIFA + historical national teams universe",
+    "rationale": "Best balance for reproducible historical calibration: excludes regional/CONIFA/non-FIFA representative teams while preserving defunct senior national teams and successor-state continuity."
+  }
+}

@@ -1,0 +1,760 @@
+{
+  "universe": {
+    "name": "fifa_historical",
+    "label": "FIFA + historical national teams",
+    "source_matches": 49449,
+    "universe_matches": 48175
+  },
+  "tournament_groups": {
+    "FIFA World Cup": "FIFA World Cup",
+    "UEFA Euro": "UEFA Euro",
+    "Copa Am\u00e9rica": "Copa Am\u00e9rica",
+    "AFC Asian Cup": "AFC Asian Cup",
+    "African Cup of Nations": "African Cup of Nations"
+  },
+  "fixed_settings": {
+    "home_advantage": 0.0,
+    "tournament_weight": 1.0,
+    "pqs": "disabled"
+  },
+  "models": {
+    "standard_elo_v1": {
+      "config": {
+        "model": "standard_elo_v1",
+        "k_factor": 20.0,
+        "gd_variant": "none",
+        "alpha": null
+      },
+      "distribution": {
+        "final_team_count": 236.0,
+        "elo_mean": 1500.0000000169491,
+        "elo_median": 1478.9202175,
+        "elo_std": 200.06308171394218,
+        "elo_min": 1041.984745,
+        "elo_max": 2002.213327
+      },
+      "tracked_teams": {
+        "Argentina": {
+          "rank": 1,
+          "final_elo": 2002.213327,
+          "matches": 1066
+        },
+        "Spain": {
+          "rank": 2,
+          "final_elo": 1977.047409,
+          "matches": 781
+        },
+        "France": {
+          "rank": 3,
+          "final_elo": 1949.925688,
+          "matches": 934
+        },
+        "Norway": {
+          "rank": 24,
+          "final_elo": 1782.831676,
+          "matches": 872
+        },
+        "Brazil": {
+          "rank": 4,
+          "final_elo": 1922.752392,
+          "matches": 1057
+        }
+      },
+      "top20": [
+        {
+          "rank": 1,
+          "team": "Argentina",
+          "final_elo": 2002.213327,
+          "matches": 1066
+        },
+        {
+          "rank": 2,
+          "team": "Spain",
+          "final_elo": 1977.047409,
+          "matches": 781
+        },
+        {
+          "rank": 3,
+          "team": "France",
+          "final_elo": 1949.925688,
+          "matches": 934
+        },
+        {
+          "rank": 4,
+          "team": "Brazil",
+          "final_elo": 1922.752392,
+          "matches": 1057
+        },
+        {
+          "rank": 5,
+          "team": "England",
+          "final_elo": 1908.883346,
+          "matches": 1091
+        },
+        {
+          "rank": 6,
+          "team": "Germany",
+          "final_elo": 1897.344274,
+          "matches": 1033
+        },
+        {
+          "rank": 7,
+          "team": "Portugal",
+          "final_elo": 1895.949626,
+          "matches": 696
+        },
+        {
+          "rank": 8,
+          "team": "Colombia",
+          "final_elo": 1893.083753,
+          "matches": 638
+        },
+        {
+          "rank": 9,
+          "team": "Netherlands",
+          "final_elo": 1878.780146,
+          "matches": 881
+        },
+        {
+          "rank": 10,
+          "team": "Japan",
+          "final_elo": 1868.437506,
+          "matches": 792
+        },
+        {
+          "rank": 11,
+          "team": "Morocco",
+          "final_elo": 1860.719625,
+          "matches": 617
+        },
+        {
+          "rank": 12,
+          "team": "Italy",
+          "final_elo": 1853.540028,
+          "matches": 893
+        },
+        {
+          "rank": 13,
+          "team": "Belgium",
+          "final_elo": 1845.719801,
+          "matches": 855
+        },
+        {
+          "rank": 14,
+          "team": "Mexico",
+          "final_elo": 1839.268562,
+          "matches": 998
+        },
+        {
+          "rank": 15,
+          "team": "Croatia",
+          "final_elo": 1829.674755,
+          "matches": 397
+        },
+        {
+          "rank": 16,
+          "team": "Uruguay",
+          "final_elo": 1812.431121,
+          "matches": 966
+        },
+        {
+          "rank": 17,
+          "team": "Ecuador",
+          "final_elo": 1810.613338,
+          "matches": 591
+        },
+        {
+          "rank": 18,
+          "team": "Denmark",
+          "final_elo": 1805.722203,
+          "matches": 873
+        },
+        {
+          "rank": 19,
+          "team": "Iran",
+          "final_elo": 1801.81779,
+          "matches": 613
+        },
+        {
+          "rank": 20,
+          "team": "Switzerland",
+          "final_elo": 1797.309167,
+          "matches": 886
+        }
+      ]
+    },
+    "calibrated_elo_v2_candidate": {
+      "config": {
+        "model": "calibrated_elo_v2_candidate",
+        "k_factor": 80.0,
+        "gd_variant": "log_margin",
+        "alpha": 1.0
+      },
+      "distribution": {
+        "final_team_count": 236.0,
+        "elo_mean": 1499.9999999957627,
+        "elo_median": 1505.8109305,
+        "elo_std": 360.9213253216236,
+        "elo_min": 549.698361,
+        "elo_max": 2268.246455
+      },
+      "tracked_teams": {
+        "Argentina": {
+          "rank": 1,
+          "final_elo": 2268.246455,
+          "matches": 1066
+        },
+        "Spain": {
+          "rank": 2,
+          "final_elo": 2213.482788,
+          "matches": 781
+        },
+        "France": {
+          "rank": 3,
+          "final_elo": 2206.615712,
+          "matches": 934
+        },
+        "Norway": {
+          "rank": 6,
+          "final_elo": 2139.834205,
+          "matches": 872
+        },
+        "Brazil": {
+          "rank": 7,
+          "final_elo": 2137.75559,
+          "matches": 1057
+        }
+      },
+      "top20": [
+        {
+          "rank": 1,
+          "team": "Argentina",
+          "final_elo": 2268.246455,
+          "matches": 1066
+        },
+        {
+          "rank": 2,
+          "team": "Spain",
+          "final_elo": 2213.482788,
+          "matches": 781
+        },
+        {
+          "rank": 3,
+          "team": "France",
+          "final_elo": 2206.615712,
+          "matches": 934
+        },
+        {
+          "rank": 4,
+          "team": "England",
+          "final_elo": 2171.682341,
+          "matches": 1091
+        },
+        {
+          "rank": 5,
+          "team": "Germany",
+          "final_elo": 2168.475087,
+          "matches": 1033
+        },
+        {
+          "rank": 6,
+          "team": "Norway",
+          "final_elo": 2139.834205,
+          "matches": 872
+        },
+        {
+          "rank": 7,
+          "team": "Brazil",
+          "final_elo": 2137.75559,
+          "matches": 1057
+        },
+        {
+          "rank": 8,
+          "team": "Netherlands",
+          "final_elo": 2127.138691,
+          "matches": 881
+        },
+        {
+          "rank": 9,
+          "team": "Colombia",
+          "final_elo": 2122.537513,
+          "matches": 638
+        },
+        {
+          "rank": 10,
+          "team": "Morocco",
+          "final_elo": 2117.798033,
+          "matches": 617
+        },
+        {
+          "rank": 11,
+          "team": "Japan",
+          "final_elo": 2112.481204,
+          "matches": 792
+        },
+        {
+          "rank": 12,
+          "team": "Portugal",
+          "final_elo": 2102.905098,
+          "matches": 696
+        },
+        {
+          "rank": 13,
+          "team": "Mexico",
+          "final_elo": 2089.690092,
+          "matches": 998
+        },
+        {
+          "rank": 14,
+          "team": "Switzerland",
+          "final_elo": 2057.742865,
+          "matches": 886
+        },
+        {
+          "rank": 15,
+          "team": "United States",
+          "final_elo": 2051.78833,
+          "matches": 792
+        },
+        {
+          "rank": 16,
+          "team": "Belgium",
+          "final_elo": 2048.980413,
+          "matches": 855
+        },
+        {
+          "rank": 17,
+          "team": "Austria",
+          "final_elo": 2013.914477,
+          "matches": 862
+        },
+        {
+          "rank": 18,
+          "team": "Italy",
+          "final_elo": 2011.353649,
+          "matches": 893
+        },
+        {
+          "rank": 19,
+          "team": "Denmark",
+          "final_elo": 2000.950623,
+          "matches": 873
+        },
+        {
+          "rank": 20,
+          "team": "Ecuador",
+          "final_elo": 1996.547791,
+          "matches": 591
+        }
+      ]
+    },
+    "calibrated_elo_v3_candidate": {
+      "config": {
+        "model": "calibrated_elo_v3_candidate",
+        "k_factor": 80.0,
+        "gd_variant": "log_margin_shrinkage",
+        "alpha": 0.1
+      },
+      "distribution": {
+        "final_team_count": 236.0,
+        "elo_mean": 1499.9999999830509,
+        "elo_median": 1497.3425475,
+        "elo_std": 324.3076419566264,
+        "elo_min": 731.136737,
+        "elo_max": 2189.583655
+      },
+      "tracked_teams": {
+        "Argentina": {
+          "rank": 1,
+          "final_elo": 2189.583655,
+          "matches": 1066
+        },
+        "Spain": {
+          "rank": 2,
+          "final_elo": 2158.799829,
+          "matches": 781
+        },
+        "France": {
+          "rank": 3,
+          "final_elo": 2132.905075,
+          "matches": 934
+        },
+        "Norway": {
+          "rank": 7,
+          "final_elo": 2073.533474,
+          "matches": 872
+        },
+        "Brazil": {
+          "rank": 10,
+          "final_elo": 2064.07081,
+          "matches": 1057
+        }
+      },
+      "top20": [
+        {
+          "rank": 1,
+          "team": "Argentina",
+          "final_elo": 2189.583655,
+          "matches": 1066
+        },
+        {
+          "rank": 2,
+          "team": "Spain",
+          "final_elo": 2158.799829,
+          "matches": 781
+        },
+        {
+          "rank": 3,
+          "team": "France",
+          "final_elo": 2132.905075,
+          "matches": 934
+        },
+        {
+          "rank": 4,
+          "team": "Germany",
+          "final_elo": 2132.025449,
+          "matches": 1033
+        },
+        {
+          "rank": 5,
+          "team": "England",
+          "final_elo": 2088.910554,
+          "matches": 1091
+        },
+        {
+          "rank": 6,
+          "team": "Morocco",
+          "final_elo": 2084.071846,
+          "matches": 617
+        },
+        {
+          "rank": 7,
+          "team": "Norway",
+          "final_elo": 2073.533474,
+          "matches": 872
+        },
+        {
+          "rank": 8,
+          "team": "Japan",
+          "final_elo": 2070.808071,
+          "matches": 792
+        },
+        {
+          "rank": 9,
+          "team": "Portugal",
+          "final_elo": 2068.071408,
+          "matches": 696
+        },
+        {
+          "rank": 10,
+          "team": "Brazil",
+          "final_elo": 2064.07081,
+          "matches": 1057
+        },
+        {
+          "rank": 11,
+          "team": "Mexico",
+          "final_elo": 2062.228662,
+          "matches": 998
+        },
+        {
+          "rank": 12,
+          "team": "Netherlands",
+          "final_elo": 2054.48853,
+          "matches": 881
+        },
+        {
+          "rank": 13,
+          "team": "Colombia",
+          "final_elo": 2039.500793,
+          "matches": 638
+        },
+        {
+          "rank": 14,
+          "team": "United States",
+          "final_elo": 2007.14597,
+          "matches": 792
+        },
+        {
+          "rank": 15,
+          "team": "Italy",
+          "final_elo": 1995.897007,
+          "matches": 893
+        },
+        {
+          "rank": 16,
+          "team": "Switzerland",
+          "final_elo": 1981.580355,
+          "matches": 886
+        },
+        {
+          "rank": 17,
+          "team": "Belgium",
+          "final_elo": 1976.555906,
+          "matches": 855
+        },
+        {
+          "rank": 18,
+          "team": "Denmark",
+          "final_elo": 1969.270462,
+          "matches": 873
+        },
+        {
+          "rank": 19,
+          "team": "Algeria",
+          "final_elo": 1965.240997,
+          "matches": 619
+        },
+        {
+          "rank": 20,
+          "team": "Turkey",
+          "final_elo": 1963.85662,
+          "matches": 642
+        }
+      ]
+    }
+  },
+  "rows": [
+    {
+      "tournament_group": "FIFA World Cup",
+      "model": "standard_elo_v1",
+      "matches": 1008,
+      "accuracy": 0.5535714285714286,
+      "log_loss": 1.0064963521677468,
+      "brier_score": 0.6018997825332899
+    },
+    {
+      "tournament_group": "FIFA World Cup",
+      "model": "calibrated_elo_v2_candidate",
+      "matches": 1008,
+      "accuracy": 0.5634920634920635,
+      "log_loss": 0.9771409636238915,
+      "brier_score": 0.5795168050848912
+    },
+    {
+      "tournament_group": "FIFA World Cup",
+      "model": "calibrated_elo_v3_candidate",
+      "matches": 1008,
+      "accuracy": 0.5555555555555556,
+      "log_loss": 0.9866770037573198,
+      "brier_score": 0.5871058457265147
+    },
+    {
+      "tournament_group": "UEFA Euro",
+      "model": "standard_elo_v1",
+      "matches": 388,
+      "accuracy": 0.5,
+      "log_loss": 1.027117446688633,
+      "brier_score": 0.617384986944389
+    },
+    {
+      "tournament_group": "UEFA Euro",
+      "model": "calibrated_elo_v2_candidate",
+      "matches": 388,
+      "accuracy": 0.48711340206185566,
+      "log_loss": 1.016774673811385,
+      "brier_score": 0.6094596644808539
+    },
+    {
+      "tournament_group": "UEFA Euro",
+      "model": "calibrated_elo_v3_candidate",
+      "matches": 388,
+      "accuracy": 0.49226804123711343,
+      "log_loss": 1.0221954848408572,
+      "brier_score": 0.6132199207840299
+    },
+    {
+      "tournament_group": "Copa Am\u00e9rica",
+      "model": "standard_elo_v1",
+      "matches": 869,
+      "accuracy": 0.5857307249712314,
+      "log_loss": 0.9650394455286047,
+      "brier_score": 0.5730726729043305
+    },
+    {
+      "tournament_group": "Copa Am\u00e9rica",
+      "model": "calibrated_elo_v2_candidate",
+      "matches": 869,
+      "accuracy": 0.5926352128883774,
+      "log_loss": 0.938066090927223,
+      "brier_score": 0.5526996815472275
+    },
+    {
+      "tournament_group": "Copa Am\u00e9rica",
+      "model": "calibrated_elo_v3_candidate",
+      "matches": 869,
+      "accuracy": 0.5799769850402762,
+      "log_loss": 0.9439524597631678,
+      "brier_score": 0.5579065653260021
+    },
+    {
+      "tournament_group": "AFC Asian Cup",
+      "model": "standard_elo_v1",
+      "matches": 421,
+      "accuracy": 0.5463182897862233,
+      "log_loss": 0.9913517043594969,
+      "brier_score": 0.5921449318744484
+    },
+    {
+      "tournament_group": "AFC Asian Cup",
+      "model": "calibrated_elo_v2_candidate",
+      "matches": 421,
+      "accuracy": 0.5629453681710214,
+      "log_loss": 0.9515390034043356,
+      "brier_score": 0.5664381724716114
+    },
+    {
+      "tournament_group": "AFC Asian Cup",
+      "model": "calibrated_elo_v3_candidate",
+      "matches": 421,
+      "accuracy": 0.5558194774346793,
+      "log_loss": 0.9590905575184767,
+      "brier_score": 0.57133054948267
+    },
+    {
+      "tournament_group": "African Cup of Nations",
+      "model": "standard_elo_v1",
+      "matches": 845,
+      "accuracy": 0.46982248520710057,
+      "log_loss": 1.0267913772500876,
+      "brier_score": 0.6172790694944668
+    },
+    {
+      "tournament_group": "African Cup of Nations",
+      "model": "calibrated_elo_v2_candidate",
+      "matches": 845,
+      "accuracy": 0.47455621301775147,
+      "log_loss": 1.0231163338795406,
+      "brier_score": 0.6157319719535692
+    },
+    {
+      "tournament_group": "African Cup of Nations",
+      "model": "calibrated_elo_v3_candidate",
+      "matches": 845,
+      "accuracy": 0.47455621301775147,
+      "log_loss": 1.028383408856278,
+      "brier_score": 0.6190864544778903
+    }
+  ],
+  "summary": {
+    "per_tournament": {
+      "FIFA World Cup": {
+        "v3_vs_standard": {
+          "accuracy_delta": 0.001984126984126977,
+          "log_loss_delta": 0.019819348410426985,
+          "brier_delta": 0.01479393680677521
+        },
+        "v3_sacrifice_vs_v2": {
+          "log_loss_extra_vs_v2": 0.009536040133428347,
+          "brier_extra_vs_v2": 0.007589040641623468
+        },
+        "v3_improves_standard": {
+          "accuracy": true,
+          "log_loss": true,
+          "brier_score": true
+        }
+      },
+      "UEFA Euro": {
+        "v3_vs_standard": {
+          "accuracy_delta": -0.0077319587628865705,
+          "log_loss_delta": 0.004921961847775824,
+          "brier_delta": 0.0041650661603591654
+        },
+        "v3_sacrifice_vs_v2": {
+          "log_loss_extra_vs_v2": 0.005420811029472228,
+          "brier_extra_vs_v2": 0.0037602563031760017
+        },
+        "v3_improves_standard": {
+          "accuracy": false,
+          "log_loss": true,
+          "brier_score": true
+        }
+      },
+      "Copa Am\u00e9rica": {
+        "v3_vs_standard": {
+          "accuracy_delta": -0.005753739930955182,
+          "log_loss_delta": 0.021086985765436883,
+          "brier_delta": 0.01516610757832837
+        },
+        "v3_sacrifice_vs_v2": {
+          "log_loss_extra_vs_v2": 0.005886368835944733,
+          "brier_extra_vs_v2": 0.005206883778774651
+        },
+        "v3_improves_standard": {
+          "accuracy": false,
+          "log_loss": true,
+          "brier_score": true
+        }
+      },
+      "AFC Asian Cup": {
+        "v3_vs_standard": {
+          "accuracy_delta": 0.009501187648455978,
+          "log_loss_delta": 0.032261146841020216,
+          "brier_delta": 0.020814382391778352
+        },
+        "v3_sacrifice_vs_v2": {
+          "log_loss_extra_vs_v2": 0.007551554114141101,
+          "brier_extra_vs_v2": 0.004892377011058602
+        },
+        "v3_improves_standard": {
+          "accuracy": true,
+          "log_loss": true,
+          "brier_score": true
+        }
+      },
+      "African Cup of Nations": {
+        "v3_vs_standard": {
+          "accuracy_delta": 0.004733727810650901,
+          "log_loss_delta": -0.0015920316061903694,
+          "brier_delta": -0.0018073849834235878
+        },
+        "v3_sacrifice_vs_v2": {
+          "log_loss_extra_vs_v2": 0.005267074976737396,
+          "brier_extra_vs_v2": 0.003354482524321134
+        },
+        "v3_improves_standard": {
+          "accuracy": true,
+          "log_loss": false,
+          "brier_score": false
+        }
+      }
+    },
+    "v3_better_than_standard_all_tournaments": {
+      "accuracy": false,
+      "log_loss": false,
+      "brier_score": false
+    },
+    "v3_sacrifice_vs_v2": {
+      "FIFA World Cup": {
+        "log_loss_extra_vs_v2": 0.009536040133428347,
+        "brier_extra_vs_v2": 0.007589040641623468
+      },
+      "UEFA Euro": {
+        "log_loss_extra_vs_v2": 0.005420811029472228,
+        "brier_extra_vs_v2": 0.0037602563031760017
+      },
+      "Copa Am\u00e9rica": {
+        "log_loss_extra_vs_v2": 0.005886368835944733,
+        "brier_extra_vs_v2": 0.005206883778774651
+      },
+      "AFC Asian Cup": {
+        "log_loss_extra_vs_v2": 0.007551554114141101,
+        "brier_extra_vs_v2": 0.004892377011058602
+      },
+      "African Cup of Nations": {
+        "log_loss_extra_vs_v2": 0.005267074976737396,
+        "brier_extra_vs_v2": 0.003354482524321134
+      }
+    },
+    "v3_scale_improvement_vs_v2": {
+      "elo_min_delta": 181.43837600000006,
+      "elo_max_delta": -78.66280000000006,
+      "elo_std_delta": -36.6136833649972
+    },
+    "recommendation": {
+      "verdict": "B",
+      "label": "v3_is_fifa_predictor_integration_candidate",
+      "reason": "v3 materially improves Elo scale versus v2 and improves LogLoss/Brier versus standard on most major tournament splits, but not every split; final promotion should follow integration QA and tournament-specific review."
+    }
+  }
+}
