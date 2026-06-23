@@ -43,6 +43,57 @@ Status:
 - More stable rating scale than `calibrated_elo_v2_candidate`.
 - Not yet promoted to the production default.
 
+# Final World Cup Model Benchmark
+
+The lab has completed a final benchmark for the World Cup-oriented model path on:
+
+- FIFA World Cup + UEFA Euro
+- neutral-site matches only
+- FIFA + historical national team universe
+
+Compared models:
+
+- `baseline_current`
+- `elo_only_calibrated`
+- `elo_xg_calibrated`
+- `full_calibrated_worldcup_candidate`
+
+Result summary:
+
+| Model | Accuracy | LogLoss | Brier |
+| --- | ---: | ---: | ---: |
+| `baseline_current` | 0.485470 | 1.022132 | 0.611690 |
+| `full_calibrated_worldcup_candidate` | 0.532479 | 0.993752 | 0.590615 |
+
+Improvement from `baseline_current` to `full_calibrated_worldcup_candidate`:
+
+- Accuracy: `+0.047009`
+- LogLoss improvement: `+0.028380`
+- Brier improvement: `+0.021075`
+
+Final candidate:
+
+```text
+final_worldcup_model_v1_candidate
+```
+
+Parameters:
+
+- Elo: `calibrated_elo_v3_candidate`
+- xG: `calibrated_xg_worldcup_v1_candidate`
+- Dixon-Coles `rho = 0.05`
+- Bivariate Poisson `gamma = 0.08`
+- PQS disabled
+- Market disabled
+- Home advantage disabled except possible host-specific handling later
+
+Layer contribution:
+
+- xG calibration contributed the largest LogLoss improvement.
+- Elo calibration contributed stable improvement.
+- Dixon-Coles rho contributed only minor improvement.
+- `gamma = 0.08` remains suitable.
+
 # Research Roadmap
 
 Completed:
@@ -50,17 +101,32 @@ Completed:
 - Elo rebuild
 - Elo calibration
 - Validation framework
+- World Cup mode v1 benchmark
 
 In progress:
 
-- Elo-to-xG calibration
+- FIFA Predictor shadow mode integration planning
 
 Planned:
 
-- Poisson calibration
-- Dixon-Coles calibration
 - PQS integration
 - FIFA Predictor integration
+
+## FIFA Predictor Shadow Mode Integration
+
+Shadow mode means the calibrated World Cup mode should not replace the
+production model immediately. Instead, the old model and calibrated World Cup
+mode should run side by side while comparing:
+
+- xG outputs
+- W/D/L probabilities
+- score matrices
+- championship odds
+- match reviews
+
+The calibrated World Cup mode should only be promoted after QA confirms that
+the new probabilities, score distributions, and downstream tournament outputs
+are stable and explainable.
 
 Pipeline:
 

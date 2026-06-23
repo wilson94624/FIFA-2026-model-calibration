@@ -1,0 +1,196 @@
+{
+  "elo_source": {
+    "model": "calibrated_elo_v3_candidate",
+    "k_factor": 80.0,
+    "goal_diff_shrinkage_alpha": 0.1
+  },
+  "universe": {
+    "name": "fifa_historical",
+    "label": "FIFA + historical national teams",
+    "source_matches": 49449,
+    "universe_matches": 48175,
+    "target_matches": 1170
+  },
+  "target": {
+    "tournaments": [
+      "FIFA World Cup",
+      "UEFA Euro"
+    ],
+    "neutral_only": true
+  },
+  "formulas": {
+    "current_asymmetric_xg": {
+      "formula": "current_asymmetric",
+      "base_home": 1.5,
+      "base_away": 1.1,
+      "c1": 1.0,
+      "scale": 450.0,
+      "min_xg": 0.2
+    },
+    "neutral_xg_worldcup_v1_candidate": {
+      "formula": "neutral_xg_worldcup_v1_candidate",
+      "base": 1.5,
+      "c1": 1.25,
+      "scale": 550.0
+    }
+  },
+  "formal_model_formulas_unchanged": true,
+  "rows": [
+    {
+      "split": "FIFA World Cup neutral",
+      "formula": "current_asymmetric_xg",
+      "matches": 881,
+      "goal_mae": 0.9865640066250472,
+      "team_a_goal_mae": 1.0687847632841467,
+      "team_b_goal_mae": 0.9043432499659477,
+      "total_goals_mae": 1.500496855278093,
+      "goal_difference_mae": 1.385296563155505,
+      "poisson_log_loss": 1.0000081746804108,
+      "brier_score": 0.5914103814871342,
+      "predicted_avg_total_goals": 2.602656550124858,
+      "actual_avg_total_goals": 2.8308740068104425,
+      "predicted_avg_home_or_team_a_goals": 1.5865711386959263,
+      "predicted_avg_away_or_team_b_goals": 1.016085411428932,
+      "actual_avg_home_or_team_a_goals": 1.5459704880817253,
+      "actual_avg_away_or_team_b_goals": 1.2849035187287174,
+      "predicted_minus_actual_total_goals": -0.22821745668558435
+    },
+    {
+      "split": "FIFA World Cup neutral",
+      "formula": "neutral_xg_worldcup_v1_candidate",
+      "matches": 881,
+      "goal_mae": 1.0092941036838303,
+      "team_a_goal_mae": 1.0686037188886597,
+      "team_b_goal_mae": 0.9499844884790011,
+      "total_goals_mae": 1.4813037365803323,
+      "goal_difference_mae": 1.3537291577236612,
+      "poisson_log_loss": 0.9795677603669278,
+      "brier_score": 0.5803605223904805,
+      "predicted_avg_total_goals": 3.000032453946961,
+      "actual_avg_total_goals": 2.8308740068104425,
+      "predicted_avg_home_or_team_a_goals": 1.5885386645753792,
+      "predicted_avg_away_or_team_b_goals": 1.411493789371582,
+      "actual_avg_home_or_team_a_goals": 1.5459704880817253,
+      "actual_avg_away_or_team_b_goals": 1.2849035187287174,
+      "predicted_minus_actual_total_goals": 0.1691584471365184
+    },
+    {
+      "split": "UEFA Euro neutral",
+      "formula": "current_asymmetric_xg",
+      "matches": 289,
+      "goal_mae": 0.877124128650519,
+      "team_a_goal_mae": 0.9410565809842368,
+      "team_b_goal_mae": 0.8131916763168012,
+      "total_goals_mae": 1.213840830449827,
+      "goal_difference_mae": 1.221114512495194,
+      "poisson_log_loss": 1.0677958096534084,
+      "brier_score": 0.6420056168811835,
+      "predicted_avg_total_goals": 2.6,
+      "actual_avg_total_goals": 2.404844290657439,
+      "predicted_avg_home_or_team_a_goals": 1.5182451975009612,
+      "predicted_avg_away_or_team_b_goals": 1.0817548024990389,
+      "actual_avg_home_or_team_a_goals": 1.245674740484429,
+      "actual_avg_away_or_team_b_goals": 1.1591695501730104,
+      "predicted_minus_actual_total_goals": 0.19515570934256088
+    },
+    {
+      "split": "UEFA Euro neutral",
+      "formula": "neutral_xg_worldcup_v1_candidate",
+      "matches": 289,
+      "goal_mae": 0.9130740787983642,
+      "team_a_goal_mae": 0.9407187666168606,
+      "team_b_goal_mae": 0.885429390979868,
+      "total_goals_mae": 1.245674740484429,
+      "goal_difference_mae": 1.1731269226958163,
+      "poisson_log_loss": 1.0359238950364247,
+      "brier_score": 0.6224189671901443,
+      "predicted_avg_total_goals": 3.0,
+      "actual_avg_total_goals": 2.404844290657439,
+      "predicted_avg_home_or_team_a_goals": 1.5186598610805284,
+      "predicted_avg_away_or_team_b_goals": 1.4813401389194716,
+      "actual_avg_home_or_team_a_goals": 1.245674740484429,
+      "actual_avg_away_or_team_b_goals": 1.1591695501730104,
+      "predicted_minus_actual_total_goals": 0.5951557093425608
+    },
+    {
+      "split": "World Cup + Euro neutral",
+      "formula": "current_asymmetric_xg",
+      "matches": 1170,
+      "goal_mae": 0.9595314213817663,
+      "team_a_goal_mae": 1.0372348105622031,
+      "team_b_goal_mae": 0.8818280322013295,
+      "total_goals_mae": 1.429690367094017,
+      "goal_difference_mae": 1.344742193377018,
+      "poisson_log_loss": 1.0167522999002379,
+      "brier_score": 0.6039078370673724,
+      "predicted_avg_total_goals": 2.6020003595384615,
+      "actual_avg_total_goals": 2.7256410256410257,
+      "predicted_avg_home_or_team_a_goals": 1.5696940472383665,
+      "predicted_avg_away_or_team_b_goals": 1.032306312300095,
+      "actual_avg_home_or_team_a_goals": 1.471794871794872,
+      "actual_avg_away_or_team_b_goals": 1.2538461538461538,
+      "predicted_minus_actual_total_goals": -0.12364066610256419
+    },
+    {
+      "split": "World Cup + Euro neutral",
+      "formula": "neutral_xg_worldcup_v1_candidate",
+      "matches": 1170,
+      "goal_mae": 0.9855269351437452,
+      "team_a_goal_mae": 1.0370150426437452,
+      "team_b_goal_mae": 0.9340388276437451,
+      "total_goals_mae": 1.4231013606216005,
+      "goal_difference_mae": 1.309118862062937,
+      "poisson_log_loss": 0.9934882073066575,
+      "brier_score": 0.5907493177298863,
+      "predicted_avg_total_goals": 3.0000244375446776,
+      "actual_avg_total_goals": 2.7256410256410257,
+      "predicted_avg_home_or_team_a_goals": 1.5712780028574203,
+      "predicted_avg_away_or_team_b_goals": 1.4287464346872571,
+      "actual_avg_home_or_team_a_goals": 1.471794871794872,
+      "actual_avg_away_or_team_b_goals": 1.2538461538461538,
+      "predicted_minus_actual_total_goals": 0.2743834119036519
+    }
+  ],
+  "summary": {
+    "comparisons": {
+      "FIFA World Cup neutral": {
+        "log_loss_delta": 0.02044041431348298,
+        "brier_delta": 0.01104985909665368,
+        "goal_difference_mae_delta": 0.031567405431843776,
+        "total_goals_mae_delta": 0.019193118697760747,
+        "neutral_better_log_loss": true,
+        "neutral_better_brier": true,
+        "neutral_predicted_total_minus_actual": 0.1691584471365184,
+        "asymmetric_predicted_total_minus_actual": -0.22821745668558435
+      },
+      "UEFA Euro neutral": {
+        "log_loss_delta": 0.03187191461698369,
+        "brier_delta": 0.019586649691039182,
+        "goal_difference_mae_delta": 0.04798758979937778,
+        "total_goals_mae_delta": -0.03183391003460212,
+        "neutral_better_log_loss": true,
+        "neutral_better_brier": true,
+        "neutral_predicted_total_minus_actual": 0.5951557093425608,
+        "asymmetric_predicted_total_minus_actual": 0.19515570934256088
+      },
+      "World Cup + Euro neutral": {
+        "log_loss_delta": 0.02326409259358031,
+        "brier_delta": 0.01315851933748613,
+        "goal_difference_mae_delta": 0.03562333131408102,
+        "total_goals_mae_delta": 0.006589006472416559,
+        "neutral_better_log_loss": true,
+        "neutral_better_brier": true,
+        "neutral_predicted_total_minus_actual": 0.2743834119036519,
+        "asymmetric_predicted_total_minus_actual": -0.12364066610256419
+      }
+    },
+    "neutral_better_on_all_splits": {
+      "log_loss": true,
+      "brier_score": true
+    },
+    "pooled_recommendation": {
+      "formula": "neutral_xg_worldcup_v1_candidate",
+      "selection_metric": "poisson_log_loss_and_brier_score"
+    }
+  }
+}

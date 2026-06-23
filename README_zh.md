@@ -70,6 +70,57 @@ calibrated_elo_v3_candidate
 - 比 `calibrated_elo_v2_candidate` 有更穩定的 rating scale。
 - 尚未升級為 production default。
 
+# Final World Cup Model Benchmark
+
+Calibration Lab 已完成 World Cup 導向模型路徑的 final benchmark，資料範圍為：
+
+- FIFA World Cup + UEFA Euro
+- 只使用 `neutral == TRUE` 的比賽
+- FIFA + historical national teams universe
+
+比較的模型：
+
+- `baseline_current`
+- `elo_only_calibrated`
+- `elo_xg_calibrated`
+- `full_calibrated_worldcup_candidate`
+
+結果摘要：
+
+| Model | Accuracy | LogLoss | Brier |
+| --- | ---: | ---: | ---: |
+| `baseline_current` | 0.485470 | 1.022132 | 0.611690 |
+| `full_calibrated_worldcup_candidate` | 0.532479 | 0.993752 | 0.590615 |
+
+從 `baseline_current` 到 `full_calibrated_worldcup_candidate` 的改善幅度：
+
+- Accuracy: `+0.047009`
+- LogLoss improvement: `+0.028380`
+- Brier improvement: `+0.021075`
+
+最終候選：
+
+```text
+final_worldcup_model_v1_candidate
+```
+
+參數：
+
+- Elo: `calibrated_elo_v3_candidate`
+- xG: `calibrated_xg_worldcup_v1_candidate`
+- Dixon-Coles `rho = 0.05`
+- Bivariate Poisson `gamma = 0.08`
+- PQS disabled
+- Market disabled
+- Home advantage disabled，未來可視主辦國情境再做 host-specific handling
+
+分層貢獻：
+
+- xG calibration 貢獻最大的 LogLoss improvement。
+- Elo calibration 帶來穩定改善。
+- Dixon-Coles rho 只有小幅改善。
+- `gamma = 0.08` 仍然適合保留。
+
 # 研究路線圖
 
 已完成：
@@ -77,17 +128,30 @@ calibrated_elo_v3_candidate
 - Elo rebuild
 - Elo calibration
 - Validation framework
+- World Cup mode v1 benchmark
 
 進行中：
 
-- Elo-to-xG calibration
+- FIFA Predictor shadow mode integration planning
 
 計畫中：
 
-- Poisson calibration
-- Dixon-Coles calibration
 - PQS integration
 - FIFA Predictor integration
+
+## FIFA Predictor Shadow Mode Integration
+
+Shadow mode 的意思是：calibrated World Cup mode 不會立刻取代 production model，而是先讓舊模型與新的 World Cup calibrated mode 並行運作。
+
+並行期間需要比較：
+
+- xG outputs
+- W/D/L probabilities
+- score matrix
+- championship odds
+- match reviews
+
+只有在 QA 確認新模型的機率、比分分布與下游 tournament outputs 都穩定且可解釋之後，才考慮正式升級。
 
 Pipeline：
 

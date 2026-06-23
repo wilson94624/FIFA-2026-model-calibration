@@ -1,0 +1,540 @@
+{
+  "report_name": "PQS Data Readiness Report",
+  "scope": "FIFA Predictor Calibration Lab",
+  "status": {
+    "pqs_calibration_completed": false,
+    "recommended_claim": "PQS is not calibrated yet. The lab can support a PQS shadow benchmark or a limited modern-period benchmark only after period-correct roster, rating, unavailability, fatigue, and team-key mapping data are supplied.",
+    "formal_predictor_modified": false,
+    "src_model_pqs_modified": false,
+    "model_formulas_modified": false
+  },
+  "recommended_schema_files": [
+    {
+      "path": "data/schema/teams_db_snapshot_schema.csv",
+      "purpose": "Defines one timestamped team-level snapshot for the team database used by PQS shadow benchmarks.",
+      "fields": [
+        {
+          "name": "snapshot_id",
+          "required": true,
+          "type": "string",
+          "purpose": "Stable identifier for a frozen teams_db snapshot."
+        },
+        {
+          "name": "snapshot_date",
+          "required": true,
+          "type": "date",
+          "purpose": "Date when ratings and roster data are valid or frozen; prevents look-ahead leakage."
+        },
+        {
+          "name": "team_key",
+          "required": true,
+          "type": "string",
+          "purpose": "Canonical key used to join team snapshot, player ratings, rosters, unavailable players, and fixtures."
+        },
+        {
+          "name": "team_name",
+          "required": true,
+          "type": "string",
+          "purpose": "Human-readable team name in teams_db."
+        },
+        {
+          "name": "has_data",
+          "required": true,
+          "type": "boolean",
+          "purpose": "Indicates whether player-level data are available."
+        },
+        {
+          "name": "starting_pqs",
+          "required": true,
+          "type": "float",
+          "purpose": "Fallback or precomputed starting XI PQS for teams without detailed roster evaluation."
+        },
+        {
+          "name": "bench_pqs",
+          "required": true,
+          "type": "float",
+          "purpose": "Fallback or precomputed bench quality used by fatigue and depth logic."
+        },
+        {
+          "name": "fifa_points",
+          "required": false,
+          "type": "float",
+          "purpose": "Optional product-side rating input; not a replacement for calibrated Elo in the lab."
+        },
+        {
+          "name": "style",
+          "required": false,
+          "type": "string",
+          "purpose": "Optional tactical style label for future shadow analysis; should be disabled in first PQS benchmark unless explicitly tested."
+        },
+        {
+          "name": "source",
+          "required": true,
+          "type": "string",
+          "purpose": "Data source or export process used to create the snapshot."
+        },
+        {
+          "name": "notes",
+          "required": false,
+          "type": "string",
+          "purpose": "Free-form caveats about coverage, rating source, or known missing data."
+        }
+      ]
+    },
+    {
+      "path": "data/schema/player_ratings_schema.csv",
+      "purpose": "Defines player-level ratings inside a timestamped teams_db snapshot.",
+      "fields": [
+        {
+          "name": "snapshot_id",
+          "required": true,
+          "type": "string",
+          "purpose": "Joins each player record to a frozen team snapshot."
+        },
+        {
+          "name": "snapshot_date",
+          "required": true,
+          "type": "date",
+          "purpose": "Date ratings are valid; must be on or before evaluated matches."
+        },
+        {
+          "name": "team_key",
+          "required": true,
+          "type": "string",
+          "purpose": "Canonical team key."
+        },
+        {
+          "name": "player_id",
+          "required": true,
+          "type": "string",
+          "purpose": "Stable player identifier; avoids fuzzy name-only joins."
+        },
+        {
+          "name": "player_name",
+          "required": true,
+          "type": "string",
+          "purpose": "Display name and fallback matching field."
+        },
+        {
+          "name": "position",
+          "required": true,
+          "type": "enum:GK,DF,MF,FW",
+          "purpose": "Used to split offensive and defensive PQS."
+        },
+        {
+          "name": "overall",
+          "required": false,
+          "type": "float",
+          "purpose": "Optional raw player overall rating used by some product logic."
+        },
+        {
+          "name": "efficiency_score",
+          "required": true,
+          "type": "float",
+          "purpose": "Primary PQS player quality input used for active roster sorting and attack/defense averages."
+        },
+        {
+          "name": "rating_source",
+          "required": true,
+          "type": "string",
+          "purpose": "Provenance for player rating data."
+        },
+        {
+          "name": "rating_timestamp",
+          "required": true,
+          "type": "datetime",
+          "purpose": "Timestamp of rating extraction or publication."
+        },
+        {
+          "name": "is_in_squad_pool",
+          "required": false,
+          "type": "boolean",
+          "purpose": "Indicates whether the player belongs to the tournament squad pool."
+        },
+        {
+          "name": "notes",
+          "required": false,
+          "type": "string",
+          "purpose": "Known data caveats."
+        }
+      ]
+    },
+    {
+      "path": "data/schema/match_roster_schema.csv",
+      "purpose": "Defines match-level roster, starting XI, and bench availability for reproducible active PQS.",
+      "fields": [
+        {
+          "name": "match_id",
+          "required": true,
+          "type": "string",
+          "purpose": "Join key to fixture or historical match row."
+        },
+        {
+          "name": "match_date",
+          "required": true,
+          "type": "date",
+          "purpose": "Used for time-safe snapshot selection."
+        },
+        {
+          "name": "team_key",
+          "required": true,
+          "type": "string",
+          "purpose": "Canonical team key."
+        },
+        {
+          "name": "player_id",
+          "required": true,
+          "type": "string",
+          "purpose": "Stable player identifier."
+        },
+        {
+          "name": "player_name",
+          "required": true,
+          "type": "string",
+          "purpose": "Display name for diagnostics."
+        },
+        {
+          "name": "roster_status",
+          "required": true,
+          "type": "enum:starting_xi,bench,squad,not_in_squad",
+          "purpose": "Defines whether the player is a known starter, bench player, squad member, or absent from the match squad."
+        },
+        {
+          "name": "position",
+          "required": true,
+          "type": "enum:GK,DF,MF,FW",
+          "purpose": "Required for attack/defense PQS split."
+        },
+        {
+          "name": "source",
+          "required": true,
+          "type": "string",
+          "purpose": "Roster or lineup source."
+        },
+        {
+          "name": "lineup_confirmed",
+          "required": false,
+          "type": "boolean",
+          "purpose": "Distinguishes confirmed lineup from projected squad."
+        },
+        {
+          "name": "notes",
+          "required": false,
+          "type": "string",
+          "purpose": "Coverage caveats or late changes."
+        }
+      ]
+    },
+    {
+      "path": "data/schema/unavailable_players_schema.csv",
+      "purpose": "Defines match-level unavailable players for injury, suspension, and other absences.",
+      "fields": [
+        {
+          "name": "match_id",
+          "required": true,
+          "type": "string",
+          "purpose": "Join key to match."
+        },
+        {
+          "name": "match_date",
+          "required": true,
+          "type": "date",
+          "purpose": "Used to verify absence information was available before kickoff."
+        },
+        {
+          "name": "team_key",
+          "required": true,
+          "type": "string",
+          "purpose": "Canonical team key."
+        },
+        {
+          "name": "player_id",
+          "required": false,
+          "type": "string",
+          "purpose": "Stable player identifier when available."
+        },
+        {
+          "name": "player_name",
+          "required": true,
+          "type": "string",
+          "purpose": "Name used for active roster exclusion and diagnostics."
+        },
+        {
+          "name": "unavailable_reason",
+          "required": true,
+          "type": "enum:injury,suspension,illness,personal,not_selected,unknown",
+          "purpose": "Reason for exclusion."
+        },
+        {
+          "name": "status_confidence",
+          "required": false,
+          "type": "enum:confirmed,probable,uncertain",
+          "purpose": "Confidence level for pre-match availability."
+        },
+        {
+          "name": "reported_at",
+          "required": true,
+          "type": "datetime",
+          "purpose": "Timestamp proving the information was known before the prediction."
+        },
+        {
+          "name": "source",
+          "required": true,
+          "type": "string",
+          "purpose": "Injury or availability source."
+        },
+        {
+          "name": "notes",
+          "required": false,
+          "type": "string",
+          "purpose": "Additional context."
+        }
+      ]
+    },
+    {
+      "path": "data/schema/fatigue_state_schema.csv",
+      "purpose": "Defines pre-match fatigue state used by PQS shadow benchmarks.",
+      "fields": [
+        {
+          "name": "match_id",
+          "required": true,
+          "type": "string",
+          "purpose": "Join key to fixture."
+        },
+        {
+          "name": "match_date",
+          "required": true,
+          "type": "date",
+          "purpose": "Date of match."
+        },
+        {
+          "name": "team_key",
+          "required": true,
+          "type": "string",
+          "purpose": "Canonical team key."
+        },
+        {
+          "name": "pre_match_fatigue",
+          "required": true,
+          "type": "float",
+          "purpose": "Fatigue value available before the match; should be reproducible from prior matches or explicitly provided."
+        },
+        {
+          "name": "fatigue_method",
+          "required": true,
+          "type": "string",
+          "purpose": "Method used to compute fatigue, such as product_v4_legacy, manual_snapshot, or disabled."
+        },
+        {
+          "name": "prior_matches_counted",
+          "required": false,
+          "type": "integer",
+          "purpose": "Number of prior tournament matches included in fatigue calculation."
+        },
+        {
+          "name": "extra_time_prior",
+          "required": false,
+          "type": "integer",
+          "purpose": "Number of prior extra-time matches included."
+        },
+        {
+          "name": "bench_pqs_used",
+          "required": false,
+          "type": "float",
+          "purpose": "Bench PQS used to compute fatigue increment."
+        },
+        {
+          "name": "source",
+          "required": true,
+          "type": "string",
+          "purpose": "Source of fatigue state or calculation."
+        },
+        {
+          "name": "notes",
+          "required": false,
+          "type": "string",
+          "purpose": "Caveats."
+        }
+      ]
+    },
+    {
+      "path": "data/schema/team_name_mapping_schema.csv",
+      "purpose": "Maps FIFA / international_results team names to teams_db keys.",
+      "fields": [
+        {
+          "name": "source_team_name",
+          "required": true,
+          "type": "string",
+          "purpose": "Team name as it appears in match results or fixtures."
+        },
+        {
+          "name": "source_system",
+          "required": true,
+          "type": "string",
+          "purpose": "Name source, such as international_results, FIFA, or product_fixture."
+        },
+        {
+          "name": "team_key",
+          "required": true,
+          "type": "string",
+          "purpose": "Canonical teams_db key."
+        },
+        {
+          "name": "teams_db_name",
+          "required": true,
+          "type": "string",
+          "purpose": "Team name used in teams_db snapshot."
+        },
+        {
+          "name": "valid_from",
+          "required": false,
+          "type": "date",
+          "purpose": "Start date for this mapping when names change over time."
+        },
+        {
+          "name": "valid_to",
+          "required": false,
+          "type": "date",
+          "purpose": "End date for this mapping when names change over time."
+        },
+        {
+          "name": "mapping_confidence",
+          "required": true,
+          "type": "enum:exact,alias,manual,ambiguous",
+          "purpose": "Join confidence level."
+        },
+        {
+          "name": "notes",
+          "required": false,
+          "type": "string",
+          "purpose": "Name-change or ambiguity notes."
+        }
+      ]
+    }
+  ],
+  "minimum_viable_pqs_shadow_benchmark_data": {
+    "description": "Minimum data needed to run a reproducible PQS shadow benchmark for 2026 World Cup fixtures without claiming historical calibration.",
+    "required_files": [
+      "teams_db_snapshot_schema.csv",
+      "player_ratings_schema.csv",
+      "team_name_mapping_schema.csv"
+    ],
+    "strongly_recommended_files": [
+      "match_roster_schema.csv",
+      "unavailable_players_schema.csv"
+    ],
+    "optional_for_v1_shadow": [
+      "fatigue_state_schema.csv"
+    ],
+    "minimum_fields": [
+      "snapshot_id",
+      "snapshot_date",
+      "team_key",
+      "team_name",
+      "has_data",
+      "starting_pqs",
+      "bench_pqs",
+      "player_id",
+      "player_name",
+      "position",
+      "efficiency_score",
+      "rating_source",
+      "rating_timestamp",
+      "source_team_name",
+      "source_system",
+      "teams_db_name",
+      "mapping_confidence"
+    ],
+    "benchmark_mode": "shadow_additive_layer",
+    "not_sufficient_for": [
+      "claiming PQS calibration",
+      "retrospective 2024 validation unless period-correct 2024 snapshots are available",
+      "injury-sensitive tuning unless pre-match unavailable player data are available"
+    ]
+  },
+  "look_ahead_bias_risks": [
+    {
+      "risk": "Using a 2026 squad snapshot to evaluate Euro 2024 or Copa America 2024 matches.",
+      "impact": "Player ratings, transfers, retirements, development, injuries, and squad selection are known after the evaluated matches.",
+      "mitigation": "Require snapshot_date and rating_timestamp to be on or before match_date."
+    },
+    {
+      "risk": "Using confirmed starting XI after kickoff as if it were pre-match information.",
+      "impact": "Improves roster precision using information that may not be available at prediction time.",
+      "mitigation": "Store reported_at and lineup_confirmed; separate pre-kickoff projected roster from post-announcement confirmed lineup."
+    },
+    {
+      "risk": "Using unavailable player reports published after the match.",
+      "impact": "Backfills injury information unavailable to the model at prediction time.",
+      "mitigation": "Require reported_at before kickoff for unavailable_players rows."
+    },
+    {
+      "risk": "Using tournament performance boosts from completed matches to predict earlier matches.",
+      "impact": "Leaks outcomes into player efficiency scores.",
+      "mitigation": "Disable performance boosts in calibration unless they are rebuilt chronologically from prior matches only."
+    },
+    {
+      "risk": "Using current team_key mappings without historical validity windows.",
+      "impact": "Can mis-map historical or renamed teams.",
+      "mitigation": "Use valid_from and valid_to for ambiguous or historical mappings."
+    }
+  ],
+  "avoid_2026_squad_for_2024_validation": {
+    "rule": "For any evaluated match, only snapshots with snapshot_date <= match_date are eligible.",
+    "recommended_selection": "Use the latest eligible snapshot before the match; if no eligible snapshot exists, exclude the match from PQS validation.",
+    "validation_scope": "Euro 2024 validation requires a Euro 2024-era snapshot; 2026 World Cup shadow benchmark can use a 2026 pre-tournament snapshot.",
+    "reporting_requirement": "Every benchmark should report snapshot_id, snapshot_date, match_date range, excluded matches due to missing snapshots, and coverage by team."
+  },
+  "pqs_as_shadow_additive_layer": {
+    "baseline": "final_worldcup_model_v1_candidate without PQS",
+    "principle": "PQS should be added as an xG adjustment layer for shadow comparison, not as a replacement for calibrated Elo or calibrated neutral xG.",
+    "suggested_formula_for_research_only": {
+      "team_a_xg": "baseline_team_a_xg + pqs_weight * (attack_pqs_a - defense_pqs_b) / 0.3",
+      "team_b_xg": "baseline_team_b_xg + pqs_weight * (attack_pqs_b - defense_pqs_a) / 0.3",
+      "floor": "apply existing min_xg after adjustment"
+    },
+    "candidate_weights": [
+      0.0,
+      0.1,
+      0.2,
+      0.25,
+      0.3
+    ],
+    "required_shadow_outputs": [
+      "baseline_xg",
+      "pqs_adjusted_xg",
+      "xg_delta",
+      "wdl_probability_delta",
+      "score_matrix_delta",
+      "draw_probability_delta",
+      "low_score_probability_delta",
+      "championship_odds_delta"
+    ],
+    "do_not_claim": [
+      "PQS improves predictive accuracy",
+      "PQS is calibrated",
+      "PQS weight is optimal"
+    ]
+  },
+  "recommended_first_benchmark_scope": {
+    "scope": "2026 World Cup shadow benchmark",
+    "reason": "It can use a period-correct 2026 pre-tournament teams_db snapshot without pretending to validate historical PQS.",
+    "evaluation_type": "drift and QA comparison until real outcomes are available",
+    "metrics": [
+      "Accuracy after outcomes exist",
+      "LogLoss after outcomes exist",
+      "Brier after outcomes exist",
+      "xG drift",
+      "score matrix drift",
+      "W/D/L probability drift",
+      "championship odds drift",
+      "team-level largest PQS boosts and penalties"
+    ]
+  },
+  "go_no_go": {
+    "can_start_pqs_benchmark_framework": true,
+    "can_start_pqs_tuning": false,
+    "can_claim_pqs_calibrated": false,
+    "recommended_next_step": "Create schema templates and a PQS shadow benchmark framework that reads frozen snapshots and reports drift versus final_worldcup_model_v1_candidate."
+  }
+}
