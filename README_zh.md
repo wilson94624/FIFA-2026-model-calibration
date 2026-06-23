@@ -4,7 +4,7 @@
 
 # 研究動機
 
-FIFA Predictor 4.0 的正式模型包含多個層次：Elo、Expected Goals、Poisson、Dixon-Coles、PQS，以及未來可能加入的傷停、疲勞、市場資料與賽事情境。若直接在完整產品模型中調參，很容易不知道改善來自哪一層，也容易把資料問題、模型問題和產品整合問題混在一起。
+FIFA Predictor 4.0 的正式模型包含多個層次：Elo、Expected Goals、Poisson、Dixon-Coles、PQS，以及參考外部資料的傷停、疲勞、市場資料與賽事情境。若直接在完整產品模型中調參，很容易不知道改善來自哪一層，也容易把資料問題、模型問題和產品整合問題混在一起。
 
 這個 Calibration Lab 的目標是把模型拆成可驗證、可重現、可比較的研究流程。每一步只研究一個問題，先建立乾淨 baseline，再逐步加入候選改良，並用 time split、tournament split、team universe filtering 等方式確認結果不是偶然或資料污染。
 
