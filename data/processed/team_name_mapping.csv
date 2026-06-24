@@ -1,0 +1,107 @@
+source_team_name,source_system,team_key,teams_db_name,valid_from,valid_to,mapping_confidence,notes
+Mexico,teams_db,mexico,Mexico,,,exact,
+Mexico,fixture,mexico,Mexico,,,exact,teams_db fixture name
+South Korea,teams_db,south_korea,South Korea,,,exact,
+South Korea,fixture,south_korea,South Korea,,,exact,teams_db fixture name
+South Africa,teams_db,south_africa,South Africa,,,exact,
+South Africa,fixture,south_africa,South Africa,,,exact,teams_db fixture name
+Czechia,teams_db,czech_republic,Czechia,,,exact,
+Czechia,fixture,czech_republic,Czechia,,,exact,teams_db fixture name
+Czech Republic,international_results,czech_republic,Czechia,,,alias,common international_results alias
+Czech Republic,fixture,czech_republic,Czechia,,,alias,common fixture alias
+Canada,teams_db,canada,Canada,,,exact,
+Canada,fixture,canada,Canada,,,exact,teams_db fixture name
+Qatar,teams_db,qatar,Qatar,,,exact,
+Qatar,fixture,qatar,Qatar,,,exact,teams_db fixture name
+Switzerland,teams_db,switzerland,Switzerland,,,exact,
+Switzerland,fixture,switzerland,Switzerland,,,exact,teams_db fixture name
+Bosnia and Herzegovina,teams_db,bosnia_and_herzegovina,Bosnia and Herzegovina,,,exact,
+Bosnia and Herzegovina,fixture,bosnia_and_herzegovina,Bosnia and Herzegovina,,,exact,teams_db fixture name
+Morocco,teams_db,morocco,Morocco,,,exact,
+Morocco,fixture,morocco,Morocco,,,exact,teams_db fixture name
+Haiti,teams_db,haiti,Haiti,,,exact,
+Haiti,fixture,haiti,Haiti,,,exact,teams_db fixture name
+Brazil,teams_db,brazil,Brazil,,,exact,
+Brazil,fixture,brazil,Brazil,,,exact,teams_db fixture name
+Scotland,teams_db,scotland,Scotland,,,exact,
+Scotland,fixture,scotland,Scotland,,,exact,teams_db fixture name
+USA,teams_db,united_states,USA,,,exact,
+USA,fixture,united_states,USA,,,exact,teams_db fixture name
+United States,international_results,united_states,USA,,,alias,common international_results alias
+United States,fixture,united_states,USA,,,alias,common fixture alias
+Australia,teams_db,australia,Australia,,,exact,
+Australia,fixture,australia,Australia,,,exact,teams_db fixture name
+Paraguay,teams_db,paraguay,Paraguay,,,exact,
+Paraguay,fixture,paraguay,Paraguay,,,exact,teams_db fixture name
+Turkey,teams_db,turkey,Turkey,,,exact,
+Turkey,fixture,turkey,Turkey,,,exact,teams_db fixture name
+Ivory Coast,teams_db,ivory_coast,Ivory Coast,,,exact,
+Ivory Coast,fixture,ivory_coast,Ivory Coast,,,exact,teams_db fixture name
+Curacao,teams_db,curacao,Curacao,,,exact,
+Curacao,fixture,curacao,Curacao,,,exact,teams_db fixture name
+Curaçao,international_results,curacao,Curacao,,,alias,common international_results alias
+Curaçao,fixture,curacao,Curacao,,,alias,common fixture alias
+Ecuador,teams_db,ecuador,Ecuador,,,exact,
+Ecuador,fixture,ecuador,Ecuador,,,exact,teams_db fixture name
+Germany,teams_db,germany,Germany,,,exact,
+Germany,fixture,germany,Germany,,,exact,teams_db fixture name
+Japan,teams_db,japan,Japan,,,exact,
+Japan,fixture,japan,Japan,,,exact,teams_db fixture name
+Tunisia,teams_db,tunisia,Tunisia,,,exact,
+Tunisia,fixture,tunisia,Tunisia,,,exact,teams_db fixture name
+Netherlands,teams_db,netherlands,Netherlands,,,exact,
+Netherlands,fixture,netherlands,Netherlands,,,exact,teams_db fixture name
+Sweden,teams_db,sweden,Sweden,,,exact,
+Sweden,fixture,sweden,Sweden,,,exact,teams_db fixture name
+Iran,teams_db,iran,Iran,,,exact,
+Iran,fixture,iran,Iran,,,exact,teams_db fixture name
+Egypt,teams_db,egypt,Egypt,,,exact,
+Egypt,fixture,egypt,Egypt,,,exact,teams_db fixture name
+New Zealand,teams_db,new_zealand,New Zealand,,,exact,
+New Zealand,fixture,new_zealand,New Zealand,,,exact,teams_db fixture name
+Belgium,teams_db,belgium,Belgium,,,exact,
+Belgium,fixture,belgium,Belgium,,,exact,teams_db fixture name
+Saudi Arabia,teams_db,saudi_arabia,Saudi Arabia,,,exact,
+Saudi Arabia,fixture,saudi_arabia,Saudi Arabia,,,exact,teams_db fixture name
+Uruguay,teams_db,uruguay,Uruguay,,,exact,
+Uruguay,fixture,uruguay,Uruguay,,,exact,teams_db fixture name
+Spain,teams_db,spain,Spain,,,exact,
+Spain,fixture,spain,Spain,,,exact,teams_db fixture name
+Cabo Verde,teams_db,cape_verde,Cabo Verde,,,exact,
+Cabo Verde,fixture,cape_verde,Cabo Verde,,,exact,teams_db fixture name
+Cape Verde,international_results,cape_verde,Cabo Verde,,,alias,common international_results alias
+Cape Verde,fixture,cape_verde,Cabo Verde,,,alias,common fixture alias
+Iraq,teams_db,iraq,Iraq,,,exact,
+Iraq,fixture,iraq,Iraq,,,exact,teams_db fixture name
+Senegal,teams_db,senegal,Senegal,,,exact,
+Senegal,fixture,senegal,Senegal,,,exact,teams_db fixture name
+France,teams_db,france,France,,,exact,
+France,fixture,france,France,,,exact,teams_db fixture name
+Norway,teams_db,norway,Norway,,,exact,
+Norway,fixture,norway,Norway,,,exact,teams_db fixture name
+Jordan,teams_db,jordan,Jordan,,,exact,
+Jordan,fixture,jordan,Jordan,,,exact,teams_db fixture name
+Algeria,teams_db,algeria,Algeria,,,exact,
+Algeria,fixture,algeria,Algeria,,,exact,teams_db fixture name
+Argentina,teams_db,argentina,Argentina,,,exact,
+Argentina,fixture,argentina,Argentina,,,exact,teams_db fixture name
+Austria,teams_db,austria,Austria,,,exact,
+Austria,fixture,austria,Austria,,,exact,teams_db fixture name
+Uzbekistan,teams_db,uzbekistan,Uzbekistan,,,exact,
+Uzbekistan,fixture,uzbekistan,Uzbekistan,,,exact,teams_db fixture name
+Congo DR,teams_db,dr_congo,Congo DR,,,exact,
+Congo DR,fixture,dr_congo,Congo DR,,,exact,teams_db fixture name
+DR Congo,international_results,dr_congo,Congo DR,,,alias,common international_results alias
+DR Congo,fixture,dr_congo,Congo DR,,,alias,common fixture alias
+Colombia,teams_db,colombia,Colombia,,,exact,
+Colombia,fixture,colombia,Colombia,,,exact,teams_db fixture name
+Portugal,teams_db,portugal,Portugal,,,exact,
+Portugal,fixture,portugal,Portugal,,,exact,teams_db fixture name
+Ghana,teams_db,ghana,Ghana,,,exact,
+Ghana,fixture,ghana,Ghana,,,exact,teams_db fixture name
+Panama,teams_db,panama,Panama,,,exact,
+Panama,fixture,panama,Panama,,,exact,teams_db fixture name
+Croatia,teams_db,croatia,Croatia,,,exact,
+Croatia,fixture,croatia,Croatia,,,exact,teams_db fixture name
+England,teams_db,england,England,,,exact,
+England,fixture,england,England,,,exact,teams_db fixture name
