@@ -121,6 +121,119 @@ final_worldcup_model_v1_candidate
 - Dixon-Coles rho 只有小幅改善。
 - `gamma = 0.08` 仍然適合保留。
 
+# Calibration Research Summary (2026-06)
+
+## 1. Elo Research Conclusions
+
+`standard_elo_v1` 是乾淨、可重現的 baseline：所有隊伍都從同一份 historical results 來源重建，並使用標準 Elo 邏輯。它仍然是重要比較基準，但機率校準能力弱於後續 calibrated candidates。
+
+`calibrated_elo_v2_candidate` 在 Accuracy、LogLoss、Brier Score 上都有改善，但完整 goal-difference multiplier 造成 Elo scale 過度擴張，因此不適合直接作為 FIFA Predictor default。
+
+`calibrated_elo_v3_candidate` 使用 goal-difference shrinkage，`alpha = 0.10`。它保留多數 validation gain，同時降低 v2 的 rating-scale expansion，所以 v3 是目前推薦的 Elo candidate。不過它仍然是 Calibration Lab candidate，尚不是 production default。
+
+## 2. xG Research Conclusions
+
+World Cup mode 主要是中立場預測問題。原本 asymmetric xG 對一般國際賽有用，但在世界盃中立場情境下，資料中的第一隊不一定是真主隊，因此可能把 home/away 結構帶入不該有主場優勢的比賽。
+
+neutral xG candidate 將 `team_a` / `team_b` 對稱處理，只用 Elo difference 轉換 expected goals，不預設 home advantage。
+
+目前 World Cup xG candidate：
+
+```text
+base = 1.35
+c1 = 1.30
+scale = 600
+min_xg = 0.20
+```
+
+## 3. Dixon-Coles Conclusions
+
+目前 Dixon-Coles candidate 使用：
+
+```text
+rho = 0.05
+```
+
+它確實有改善，但幅度很小。Dixon-Coles 應視為 low-score probability refinement，不是 World Cup model 改善的主要來源。
+
+## 4. Bivariate Poisson Conclusions
+
+目前 Bivariate Poisson shared-goal parameter 維持：
+
+```text
+gamma = 0.08
+```
+
+gamma search 顯示這個值已接近目前 World Cup candidate 的最佳 LogLoss 區域。除非未來 xG 或資料範圍有重大變化，不建議繼續大幅搜尋 gamma。
+
+## 5. Final World Cup Candidate
+
+目前 World Cup candidate 組成：
+
+- Elo: `calibrated_elo_v3_candidate`
+- xG: neutral World Cup xG candidate
+- Dixon-Coles `rho = 0.05`
+- Bivariate Poisson `gamma = 0.08`
+
+final benchmark 從 `baseline_current` 到 `full_calibrated_worldcup_candidate` 的改善：
+
+- Accuracy: `+0.047009`
+- LogLoss improvement: `+0.028380`
+- Brier improvement: `+0.021075`
+
+## 6. PQS Research Conclusions
+
+PQS 尚未完成 calibration，也不應被描述為已提升預測表現。目前 PQS 研究只屬於 shadow benchmark 與 QA analysis。
+
+目前已知：
+
+- PQS 與 Elo 高度重疊。
+- Pearson correlation 約 `0.75`。
+- Sign agreement 約 `84%`。
+- PQS 會造成明顯 xG、W/D/L、score matrix drift。
+- 目前不能宣稱 PQS 提升預測。
+- PQS 尚未完成 calibration。
+
+### Reasonable PQS Cases
+
+- `Jordan vs Algeria`
+- `Austria vs Jordan`
+- `Uzbekistan vs Colombia`
+
+這些案例的 squad-quality drift 方向大致符合足球直覺，但仍需要 human review。
+
+### Suspicious PQS Cases
+
+- `France vs Iraq`
+- `Brazil vs Haiti`
+- `Belgium vs Iran`
+
+這些案例可能涉及 double counting Elo，因為 calibrated Elo/xG baseline 已經捕捉到明顯強弱差距，而 PQS 又進一步放大這些差距。
+
+## 7. Current Recommended Direction
+
+目前最推薦：
+
+```text
+PQS → injury / availability correction layer
+```
+
+而不是：
+
+```text
+PQS → 主模型強度特徵
+```
+
+Raw PQS 應先維持 shadow-only。只有在取得 period-correct injuries、availability、rosters、lineups 並能避免 look-ahead bias 後，才適合進一步評估是否納入模型。
+
+## 8. Roadmap Update
+
+- ✅ Phase 1 Calibration Framework
+- ✅ Phase 2 World Cup Calibration
+- 🔄 Phase 3 PQS Investigation
+- ⏳ Injury-aware PQS Research
+- ⏳ FIFA Predictor Shadow Integration
+
 # 研究路線圖
 
 已完成：

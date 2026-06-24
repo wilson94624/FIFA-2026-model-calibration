@@ -1,0 +1,838 @@
+{
+  "report_name": "PQS Shadow QA Report",
+  "scope": "manual QA of largest pqs_weight=0.30 drift cases",
+  "disclaimers": {
+    "formal_predictor_modified": false,
+    "model_formulas_modified": false,
+    "pqs_tuning_performed": false,
+    "pqs_calibration_claimed": false,
+    "interpretation": "This report evaluates whether PQS drift looks football-intuitive. It does not claim improved predictive accuracy."
+  },
+  "known_context": {
+    "pqs_weight": 0.3,
+    "pearson_pqs_vs_elo_overlap_approx": 0.75,
+    "sign_agreement_approx": 0.84,
+    "high_level_read": "PQS has material drift but substantially overlaps Elo."
+  },
+  "largest_drift_matches": [
+    {
+      "match_id": "intl_results_048172",
+      "match": "France vs Iraq",
+      "baseline_xg": {
+        "team_a": 2.192096,
+        "team_b": 0.507904
+      },
+      "pqs_adjusted_xg": {
+        "team_a": 2.382096,
+        "team_b": 0.307237
+      },
+      "xg_delta": {
+        "team_a": 0.19,
+        "team_b": -0.200667
+      },
+      "baseline_wdl": {
+        "team_a_win": 0.767944,
+        "draw": 0.164414,
+        "team_b_win": 0.067642
+      },
+      "pqs_adjusted_wdl": {
+        "team_a_win": 0.844382,
+        "draw": 0.126706,
+        "team_b_win": 0.028912
+      },
+      "wdl_delta": {
+        "team_a_win": 0.076438,
+        "draw": -0.037708,
+        "team_b_win": -0.03873
+      },
+      "score_matrix_mean_abs_delta": 0.007521,
+      "low_score_probability_delta": -0.022663,
+      "pqs_boosted_teams": [
+        "France"
+      ],
+      "pqs_penalized_teams": [
+        "Iraq"
+      ],
+      "football_intuition_assessment": "reasonable_direction_but_high_double_counting_risk",
+      "double_counting_elo_risk": "high",
+      "needs_human_review": "yes",
+      "review_note": "France receiving a boost and Iraq a penalty fits broad squad-quality intuition, but France is already heavily favored by Elo, so this looks like a likely double-counting case."
+    },
+    {
+      "match_id": "intl_results_048161",
+      "match": "Brazil vs Haiti",
+      "baseline_xg": {
+        "team_a": 2.274391,
+        "team_b": 0.425609
+      },
+      "pqs_adjusted_xg": {
+        "team_a": 2.456891,
+        "team_b": 0.262038
+      },
+      "xg_delta": {
+        "team_a": 0.1825,
+        "team_b": -0.163571
+      },
+      "baseline_wdl": {
+        "team_a_win": 0.801229,
+        "draw": 0.14875,
+        "team_b_win": 0.05002
+      },
+      "pqs_adjusted_wdl": {
+        "team_a_win": 0.863538,
+        "draw": 0.11509,
+        "team_b_win": 0.021373
+      },
+      "wdl_delta": {
+        "team_a_win": 0.062308,
+        "draw": -0.033661,
+        "team_b_win": -0.028648
+      },
+      "score_matrix_mean_abs_delta": 0.006525,
+      "low_score_probability_delta": -0.025425,
+      "pqs_boosted_teams": [
+        "Brazil"
+      ],
+      "pqs_penalized_teams": [
+        "Haiti"
+      ],
+      "football_intuition_assessment": "reasonable_direction_but_high_double_counting_risk",
+      "double_counting_elo_risk": "high",
+      "needs_human_review": "yes",
+      "review_note": "Brazil boost versus Haiti penalty is intuitive, but the matchup is already structurally captured by Elo; PQS mostly amplifies an existing mismatch."
+    },
+    {
+      "match_id": "intl_results_048175",
+      "match": "Jordan vs Algeria",
+      "baseline_xg": {
+        "team_a": 0.896985,
+        "team_b": 1.803015
+      },
+      "pqs_adjusted_xg": {
+        "team_a": 0.719843,
+        "team_b": 1.955792
+      },
+      "xg_delta": {
+        "team_a": -0.177143,
+        "team_b": 0.152778
+      },
+      "baseline_wdl": {
+        "team_a_win": 0.182227,
+        "draw": 0.226844,
+        "team_b_win": 0.590929
+      },
+      "pqs_adjusted_wdl": {
+        "team_a_win": 0.125885,
+        "draw": 0.204216,
+        "team_b_win": 0.669899
+      },
+      "wdl_delta": {
+        "team_a_win": -0.056342,
+        "draw": -0.022628,
+        "team_b_win": 0.078969
+      },
+      "score_matrix_mean_abs_delta": 0.005052,
+      "low_score_probability_delta": -0.006772,
+      "pqs_boosted_teams": [
+        "Algeria"
+      ],
+      "pqs_penalized_teams": [
+        "Jordan"
+      ],
+      "football_intuition_assessment": "reasonable_direction",
+      "double_counting_elo_risk": "medium",
+      "needs_human_review": "yes",
+      "review_note": "Algeria boost and Jordan penalty are plausible from squad-quality priors. Review needed because the drift is large and may over-penalize Jordan."
+    },
+    {
+      "match_id": "intl_results_048151",
+      "match": "Austria vs Jordan",
+      "baseline_xg": {
+        "team_a": 1.799367,
+        "team_b": 0.900633
+      },
+      "pqs_adjusted_xg": {
+        "team_a": 1.948367,
+        "team_b": 0.726823
+      },
+      "xg_delta": {
+        "team_a": 0.149,
+        "team_b": -0.17381
+      },
+      "baseline_wdl": {
+        "team_a_win": 0.589167,
+        "draw": 0.227296,
+        "team_b_win": 0.183537
+      },
+      "pqs_adjusted_wdl": {
+        "team_a_win": 0.666559,
+        "draw": 0.205375,
+        "team_b_win": 0.128066
+      },
+      "wdl_delta": {
+        "team_a_win": 0.077392,
+        "draw": -0.021921,
+        "team_b_win": -0.055471
+      },
+      "score_matrix_mean_abs_delta": 0.004939,
+      "low_score_probability_delta": -0.006316,
+      "pqs_boosted_teams": [
+        "Austria"
+      ],
+      "pqs_penalized_teams": [
+        "Jordan"
+      ],
+      "football_intuition_assessment": "reasonable_direction",
+      "double_counting_elo_risk": "medium",
+      "needs_human_review": "yes",
+      "review_note": "Austria boost and Jordan penalty are plausible, but Jordan appears repeatedly among largest penalties, suggesting a cap or injury-only rule may be safer."
+    },
+    {
+      "match_id": "intl_results_048168",
+      "match": "Belgium vs Iran",
+      "baseline_xg": {
+        "team_a": 1.643823,
+        "team_b": 1.056177
+      },
+      "pqs_adjusted_xg": {
+        "team_a": 1.832573,
+        "team_b": 0.885224
+      },
+      "xg_delta": {
+        "team_a": 0.18875,
+        "team_b": -0.170952
+      },
+      "baseline_wdl": {
+        "team_a_win": 0.513382,
+        "draw": 0.24355,
+        "team_b_win": 0.243068
+      },
+      "pqs_adjusted_wdl": {
+        "team_a_win": 0.600557,
+        "draw": 0.223509,
+        "team_b_win": 0.175935
+      },
+      "wdl_delta": {
+        "team_a_win": 0.087175,
+        "draw": -0.020042,
+        "team_b_win": -0.067133
+      },
+      "score_matrix_mean_abs_delta": 0.00493,
+      "low_score_probability_delta": -0.012244,
+      "pqs_boosted_teams": [
+        "Belgium"
+      ],
+      "pqs_penalized_teams": [
+        "Iran"
+      ],
+      "football_intuition_assessment": "plausible_but_potentially_excessive",
+      "double_counting_elo_risk": "high",
+      "needs_human_review": "yes",
+      "review_note": "Belgium boost is plausible from player pool quality, but Iran penalty may be too broad without injury/availability evidence."
+    },
+    {
+      "match_id": "intl_results_048153",
+      "match": "Uzbekistan vs Colombia",
+      "baseline_xg": {
+        "team_a": 0.856332,
+        "team_b": 1.843668
+      },
+      "pqs_adjusted_xg": {
+        "team_a": 0.701332,
+        "team_b": 2.01224
+      },
+      "xg_delta": {
+        "team_a": -0.155,
+        "team_b": 0.168571
+      },
+      "baseline_wdl": {
+        "team_a_win": 0.167906,
+        "draw": 0.221605,
+        "team_b_win": 0.610489
+      },
+      "pqs_adjusted_wdl": {
+        "team_a_win": 0.117087,
+        "draw": 0.197041,
+        "team_b_win": 0.685871
+      },
+      "wdl_delta": {
+        "team_a_win": -0.050819,
+        "draw": -0.024563,
+        "team_b_win": 0.075382
+      },
+      "score_matrix_mean_abs_delta": 0.004673,
+      "low_score_probability_delta": -0.01434,
+      "pqs_boosted_teams": [
+        "Colombia"
+      ],
+      "pqs_penalized_teams": [
+        "Uzbekistan"
+      ],
+      "football_intuition_assessment": "reasonable_direction",
+      "double_counting_elo_risk": "medium",
+      "needs_human_review": "yes",
+      "review_note": "Colombia boost and Uzbekistan penalty align with squad-value intuition, but should be reviewed because PQS is likely acting as another team-strength proxy."
+    }
+  ],
+  "strongest_boost_teams": [
+    {
+      "team": "Belgium",
+      "team_key": "belgium",
+      "starting_pqs": 0.337273,
+      "bench_pqs": 0.284,
+      "avg_player_efficiency": 0.306538,
+      "avg_overall": 80.653846,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "T. Courtois",
+          "position": "GK",
+          "overall": 89.0,
+          "efficiency_score": 0.39
+        },
+        {
+          "name": "K. De Bruyne",
+          "position": "MF",
+          "overall": 87.0,
+          "efficiency_score": 0.37
+        },
+        {
+          "name": "Y. Tielemans",
+          "position": "MF",
+          "overall": 85.0,
+          "efficiency_score": 0.35
+        },
+        {
+          "name": "R. Lukaku",
+          "position": "FW",
+          "overall": 84.0,
+          "efficiency_score": 0.34
+        },
+        {
+          "name": "M. Sels",
+          "position": "GK",
+          "overall": 83.0,
+          "efficiency_score": 0.33
+        }
+      ],
+      "matches_in_shadow": 2,
+      "avg_xg_delta": 0.177083,
+      "total_xg_delta": 0.354167,
+      "max_abs_xg_delta": 0.18875
+    },
+    {
+      "team": "Colombia",
+      "team_key": "colombia",
+      "starting_pqs": 0.297273,
+      "bench_pqs": 0.258667,
+      "avg_player_efficiency": 0.275,
+      "avg_overall": 77.5,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "L. Díaz",
+          "position": "MF",
+          "overall": 85.0,
+          "efficiency_score": 0.35
+        },
+        {
+          "name": "D. Zapata",
+          "position": "FW",
+          "overall": 82.0,
+          "efficiency_score": 0.32
+        },
+        {
+          "name": "D. Sánchez",
+          "position": "DF",
+          "overall": 82.0,
+          "efficiency_score": 0.32
+        },
+        {
+          "name": "D. Muñoz",
+          "position": "DF",
+          "overall": 81.0,
+          "efficiency_score": 0.31
+        },
+        {
+          "name": "R. Ríos",
+          "position": "MF",
+          "overall": 79.0,
+          "efficiency_score": 0.29
+        }
+      ],
+      "matches_in_shadow": 1,
+      "avg_xg_delta": 0.168571,
+      "total_xg_delta": 0.168571,
+      "max_abs_xg_delta": 0.168571
+    },
+    {
+      "team": "Spain",
+      "team_key": "spain",
+      "starting_pqs": 0.364545,
+      "bench_pqs": 0.334667,
+      "avg_player_efficiency": 0.347308,
+      "avg_overall": 84.730769,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "Rodri",
+          "position": "MF",
+          "overall": 90.0,
+          "efficiency_score": 0.4
+        },
+        {
+          "name": "Lamine Yamal",
+          "position": "MF",
+          "overall": 89.0,
+          "efficiency_score": 0.39
+        },
+        {
+          "name": "Pedri",
+          "position": "MF",
+          "overall": 89.0,
+          "efficiency_score": 0.39
+        },
+        {
+          "name": "David Raya",
+          "position": "GK",
+          "overall": 87.0,
+          "efficiency_score": 0.37
+        },
+        {
+          "name": "Nico Williams",
+          "position": "MF",
+          "overall": 86.0,
+          "efficiency_score": 0.36
+        }
+      ],
+      "matches_in_shadow": 2,
+      "avg_xg_delta": 0.142381,
+      "total_xg_delta": 0.284762,
+      "max_abs_xg_delta": 0.154762
+    },
+    {
+      "team": "Germany",
+      "team_key": "germany",
+      "starting_pqs": 0.357273,
+      "bench_pqs": 0.32,
+      "avg_player_efficiency": 0.335769,
+      "avg_overall": 83.576923,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "J. Kimmich",
+          "position": "MF",
+          "overall": 89.0,
+          "efficiency_score": 0.39
+        },
+        {
+          "name": "F. Wirtz",
+          "position": "MF",
+          "overall": 89.0,
+          "efficiency_score": 0.39
+        },
+        {
+          "name": "J. Musiala",
+          "position": "MF",
+          "overall": 88.0,
+          "efficiency_score": 0.38
+        },
+        {
+          "name": "J. Tah",
+          "position": "DF",
+          "overall": 87.0,
+          "efficiency_score": 0.37
+        },
+        {
+          "name": "M. ter Stegen",
+          "position": "GK",
+          "overall": 86.0,
+          "efficiency_score": 0.36
+        }
+      ],
+      "matches_in_shadow": 2,
+      "avg_xg_delta": 0.1365,
+      "total_xg_delta": 0.273,
+      "max_abs_xg_delta": 0.209
+    },
+    {
+      "team": "France",
+      "team_key": "france",
+      "starting_pqs": 0.367273,
+      "bench_pqs": 0.333333,
+      "avg_player_efficiency": 0.347692,
+      "avg_overall": 84.769231,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "K. Mbappé",
+          "position": "FW",
+          "overall": 91.0,
+          "efficiency_score": 0.41
+        },
+        {
+          "name": "O. Dembélé",
+          "position": "FW",
+          "overall": 90.0,
+          "efficiency_score": 0.4
+        },
+        {
+          "name": "M. Maignan",
+          "position": "GK",
+          "overall": 87.0,
+          "efficiency_score": 0.37
+        },
+        {
+          "name": "J. Koundé",
+          "position": "DF",
+          "overall": 87.0,
+          "efficiency_score": 0.37
+        },
+        {
+          "name": "W. Saliba",
+          "position": "DF",
+          "overall": 87.0,
+          "efficiency_score": 0.37
+        }
+      ],
+      "matches_in_shadow": 2,
+      "avg_xg_delta": 0.13,
+      "total_xg_delta": 0.26,
+      "max_abs_xg_delta": 0.19
+    },
+    {
+      "team": "Brazil",
+      "team_key": "brazil",
+      "starting_pqs": 0.363636,
+      "bench_pqs": 0.317333,
+      "avg_player_efficiency": 0.336923,
+      "avg_overall": 83.692308,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "Alisson",
+          "position": "GK",
+          "overall": 89.0,
+          "efficiency_score": 0.39
+        },
+        {
+          "name": "Raphinha",
+          "position": "MF",
+          "overall": 89.0,
+          "efficiency_score": 0.39
+        },
+        {
+          "name": "Vini Jr.",
+          "position": "FW",
+          "overall": 89.0,
+          "efficiency_score": 0.39
+        },
+        {
+          "name": "Gabriel",
+          "position": "DF",
+          "overall": 88.0,
+          "efficiency_score": 0.38
+        },
+        {
+          "name": "Marquinhos",
+          "position": "DF",
+          "overall": 87.0,
+          "efficiency_score": 0.37
+        }
+      ],
+      "matches_in_shadow": 2,
+      "avg_xg_delta": 0.1165,
+      "total_xg_delta": 0.233,
+      "max_abs_xg_delta": 0.1825
+    }
+  ],
+  "strongest_penalty_teams": [
+    {
+      "team": "Jordan",
+      "team_key": "jordan",
+      "starting_pqs": 0.127273,
+      "bench_pqs": 0.07,
+      "avg_player_efficiency": 0.094231,
+      "avg_overall": 59.423077,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "M. Al Tamari",
+          "position": "MF",
+          "overall": 75.0,
+          "efficiency_score": 0.25
+        },
+        {
+          "name": "Y. Al Arab",
+          "position": "DF",
+          "overall": 75.0,
+          "efficiency_score": 0.25
+        },
+        {
+          "name": "I. Sabra",
+          "position": "FW",
+          "overall": 61.0,
+          "efficiency_score": 0.11
+        },
+        {
+          "name": "約旦球員 2",
+          "position": "DF",
+          "overall": 60.0,
+          "efficiency_score": 0.1
+        },
+        {
+          "name": "約旦球員 11",
+          "position": "FW",
+          "overall": 60.0,
+          "efficiency_score": 0.1
+        }
+      ],
+      "matches_in_shadow": 2,
+      "avg_xg_delta": -0.175476,
+      "total_xg_delta": -0.350952,
+      "max_abs_xg_delta": 0.177143
+    },
+    {
+      "team": "Iraq",
+      "team_key": "iraq",
+      "starting_pqs": 0.166364,
+      "bench_pqs": 0.042667,
+      "avg_player_efficiency": 0.095,
+      "avg_overall": 59.5,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "I. Bayesh",
+          "position": "MF",
+          "overall": 68.0,
+          "efficiency_score": 0.18
+        },
+        {
+          "name": "M. Doski",
+          "position": "DF",
+          "overall": 68.0,
+          "efficiency_score": 0.18
+        },
+        {
+          "name": "M. Jeahze",
+          "position": "DF",
+          "overall": 68.0,
+          "efficiency_score": 0.18
+        },
+        {
+          "name": "Z. Iqbal",
+          "position": "MF",
+          "overall": 68.0,
+          "efficiency_score": 0.18
+        },
+        {
+          "name": "A. Sher",
+          "position": "MF",
+          "overall": 67.0,
+          "efficiency_score": 0.17
+        }
+      ],
+      "matches_in_shadow": 2,
+      "avg_xg_delta": -0.156167,
+      "total_xg_delta": -0.312333,
+      "max_abs_xg_delta": 0.200667
+    },
+    {
+      "team": "Uzbekistan",
+      "team_key": "uzbekistan",
+      "starting_pqs": 0.134545,
+      "bench_pqs": 0.065333,
+      "avg_player_efficiency": 0.094615,
+      "avg_overall": 59.461538,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "A. Khusanov",
+          "position": "DF",
+          "overall": 77.0,
+          "efficiency_score": 0.27
+        },
+        {
+          "name": "E. Shomurodov",
+          "position": "FW",
+          "overall": 74.0,
+          "efficiency_score": 0.24
+        },
+        {
+          "name": "K. Alikulov",
+          "position": "DF",
+          "overall": 68.0,
+          "efficiency_score": 0.18
+        },
+        {
+          "name": "A. Fayzullaev",
+          "position": "MF",
+          "overall": 65.0,
+          "efficiency_score": 0.15
+        },
+        {
+          "name": "M. Urinboev",
+          "position": "FW",
+          "overall": 63.0,
+          "efficiency_score": 0.13
+        }
+      ],
+      "matches_in_shadow": 1,
+      "avg_xg_delta": -0.155,
+      "total_xg_delta": -0.155,
+      "max_abs_xg_delta": 0.155
+    },
+    {
+      "team": "Haiti",
+      "team_key": "haiti",
+      "starting_pqs": 0.192727,
+      "bench_pqs": 0.042667,
+      "avg_player_efficiency": 0.106154,
+      "avg_overall": 60.615385,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "J. Bellegarde",
+          "position": "MF",
+          "overall": 75.0,
+          "efficiency_score": 0.25
+        },
+        {
+          "name": "R. Adé",
+          "position": "DF",
+          "overall": 72.0,
+          "efficiency_score": 0.22
+        },
+        {
+          "name": "F. Pierrot",
+          "position": "FW",
+          "overall": 72.0,
+          "efficiency_score": 0.22
+        },
+        {
+          "name": "C. Arcus",
+          "position": "DF",
+          "overall": 71.0,
+          "efficiency_score": 0.21
+        },
+        {
+          "name": "J. Duverne",
+          "position": "DF",
+          "overall": 71.0,
+          "efficiency_score": 0.21
+        }
+      ],
+      "matches_in_shadow": 2,
+      "avg_xg_delta": -0.124286,
+      "total_xg_delta": -0.248571,
+      "max_abs_xg_delta": 0.163571
+    },
+    {
+      "team": "South Africa",
+      "team_key": "south_africa",
+      "starting_pqs": 0.181818,
+      "bench_pqs": 0.046667,
+      "avg_player_efficiency": 0.103846,
+      "avg_overall": 60.384615,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "S. Ngezana",
+          "position": "DF",
+          "overall": 73.0,
+          "efficiency_score": 0.23
+        },
+        {
+          "name": "G. Links",
+          "position": "DF",
+          "overall": 72.0,
+          "efficiency_score": 0.22
+        },
+        {
+          "name": "L. Foster",
+          "position": "FW",
+          "overall": 72.0,
+          "efficiency_score": 0.22
+        },
+        {
+          "name": "B. Hlongwane",
+          "position": "DF",
+          "overall": 71.0,
+          "efficiency_score": 0.21
+        },
+        {
+          "name": "K. Kodisang",
+          "position": "MF",
+          "overall": 68.0,
+          "efficiency_score": 0.18
+        }
+      ],
+      "matches_in_shadow": 2,
+      "avg_xg_delta": -0.109107,
+      "total_xg_delta": -0.218214,
+      "max_abs_xg_delta": 0.122857
+    },
+    {
+      "team": "Iran",
+      "team_key": "iran",
+      "starting_pqs": 0.164545,
+      "bench_pqs": 0.088667,
+      "avg_player_efficiency": 0.120769,
+      "avg_overall": 62.076923,
+      "star_players": 0,
+      "top_players_by_efficiency": [
+        {
+          "name": "M. Taremi",
+          "position": "FW",
+          "overall": 78.0,
+          "efficiency_score": 0.28
+        },
+        {
+          "name": "A. Sayyadmanesh",
+          "position": "MF",
+          "overall": 74.0,
+          "efficiency_score": 0.24
+        },
+        {
+          "name": "A. Gholizadeh",
+          "position": "MF",
+          "overall": 71.0,
+          "efficiency_score": 0.21
+        },
+        {
+          "name": "A. Abedzadeh",
+          "position": "GK",
+          "overall": 68.0,
+          "efficiency_score": 0.18
+        },
+        {
+          "name": "M. Hosseini",
+          "position": "DF",
+          "overall": 68.0,
+          "efficiency_score": 0.18
+        }
+      ],
+      "matches_in_shadow": 2,
+      "avg_xg_delta": -0.096786,
+      "total_xg_delta": -0.193571,
+      "max_abs_xg_delta": 0.170952
+    }
+  ],
+  "qa_summary": {
+    "reasonable_drift_cases": [
+      "Jordan vs Algeria",
+      "Austria vs Jordan",
+      "Uzbekistan vs Colombia"
+    ],
+    "suspicious_or_double_counting_cases": [
+      "France vs Iraq",
+      "Brazil vs Haiti",
+      "Belgium vs Iran"
+    ],
+    "recommend_pqs_weight_cap": true,
+    "suggested_shadow_cap_for_future_research": "Do not exceed 0.10-0.20 without injury/availability evidence; pqs_weight=0.30 produces large team-strength amplification.",
+    "recommend_injury_only_pqs_adjustment": true,
+    "can_start_injury_unavailable_player_simulation_design": true,
+    "final_recommendation": "Keep PQS as shadow-only for raw squad quality. If promoted later, use it primarily as injury/availability/depth adjustment rather than raw team-strength feature."
+  }
+}

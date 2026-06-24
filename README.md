@@ -94,6 +94,139 @@ Layer contribution:
 - Dixon-Coles rho contributed only minor improvement.
 - `gamma = 0.08` remains suitable.
 
+# Calibration Research Summary (2026-06)
+
+## 1. Elo Research Conclusions
+
+`standard_elo_v1` is the clean reproducible baseline: all teams are rebuilt from
+the same historical result source with standard Elo logic. It remains useful as
+the comparison anchor, but its probability calibration is weaker than later
+candidates.
+
+`calibrated_elo_v2_candidate` improved Accuracy, LogLoss, and Brier Score, but
+the full goal-difference multiplier expanded the Elo scale too aggressively.
+That made the candidate harder to trust as a FIFA Predictor default.
+
+`calibrated_elo_v3_candidate` keeps most of the validation gain while applying
+goal-difference shrinkage with `alpha = 0.10`. This reduces the rating-scale
+expansion seen in v2, so v3 is the current recommended Elo candidate. It is
+still a calibrated lab candidate, not a production default.
+
+## 2. xG Research Conclusions
+
+World Cup mode is primarily a neutral-site prediction problem. The original
+asymmetric xG setup was useful for general international matches, but it can
+carry home/away structure into matches where the first listed team is not a true
+home side.
+
+The neutral xG candidate treats `team_a` and `team_b` symmetrically and converts
+Elo difference into expected goals without assigning default home advantage.
+The current World Cup xG candidate is:
+
+```text
+base = 1.35
+c1 = 1.30
+scale = 600
+min_xg = 0.20
+```
+
+## 3. Dixon-Coles Conclusions
+
+The current calibrated Dixon-Coles candidate uses:
+
+```text
+rho = 0.05
+```
+
+The improvement exists, but it is small. Dixon-Coles should be treated as a
+low-score probability refinement, not the main source of the World Cup model
+improvement.
+
+## 4. Bivariate Poisson Conclusions
+
+The current Bivariate Poisson shared-goal parameter remains:
+
+```text
+gamma = 0.08
+```
+
+Gamma search showed this value is already near the best LogLoss region for the
+current World Cup candidate. Large further searches are not recommended until a
+new xG or data regime changes the score distribution.
+
+## 5. Final World Cup Candidate
+
+The current World Cup candidate combines:
+
+- Elo: `calibrated_elo_v3_candidate`
+- xG: neutral World Cup xG candidate
+- Dixon-Coles `rho = 0.05`
+- Bivariate Poisson `gamma = 0.08`
+
+The final benchmark improved from `baseline_current` to
+`full_calibrated_worldcup_candidate`:
+
+- Accuracy: `+0.047009`
+- LogLoss improvement: `+0.028380`
+- Brier improvement: `+0.021075`
+
+## 6. PQS Research Conclusions
+
+PQS is not calibrated yet and should not be described as improving prediction
+accuracy. The current PQS work is a shadow benchmark and QA analysis only.
+
+Known findings:
+
+- PQS and Elo overlap strongly.
+- Pearson correlation is approximately `0.75`.
+- Sign agreement is approximately `84%`.
+- PQS creates visible xG, W/D/L, and score-matrix drift.
+- The current lab cannot claim PQS improves predictions.
+- PQS calibration is not complete.
+
+### Reasonable PQS Cases
+
+- `Jordan vs Algeria`
+- `Austria vs Jordan`
+- `Uzbekistan vs Colombia`
+
+These cases show plausible squad-quality direction, though they still require
+human review.
+
+### Suspicious PQS Cases
+
+- `France vs Iraq`
+- `Brazil vs Haiti`
+- `Belgium vs Iran`
+
+These cases may involve double counting Elo because PQS amplifies matchups where
+the calibrated Elo/xG baseline already sees a strong team-strength difference.
+
+## 7. Current Recommended Direction
+
+The current recommendation is:
+
+```text
+PQS -> injury / availability correction layer
+```
+
+not:
+
+```text
+PQS -> main model strength feature
+```
+
+Raw PQS should remain shadow-only until period-correct injuries, availability,
+rosters, and lineups can be tested without look-ahead bias.
+
+## 8. Roadmap Update
+
+- ✅ Phase 1 Calibration Framework
+- ✅ Phase 2 World Cup Calibration
+- 🔄 Phase 3 PQS Investigation
+- ⏳ Injury-aware PQS Research
+- ⏳ FIFA Predictor Shadow Integration
+
 # Research Roadmap
 
 Completed:
