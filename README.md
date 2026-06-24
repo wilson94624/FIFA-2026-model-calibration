@@ -83,7 +83,9 @@ Parameters:
 - xG: `calibrated_xg_worldcup_v1_candidate`
 - Dixon-Coles `rho = 0.05`
 - Bivariate Poisson `gamma = 0.08`
-- PQS disabled
+- Domination layer disabled / 100% normal xG
+- Raw PQS disabled
+- PQS reserved for future injury-aware availability correction
 - Market disabled
 - Home advantage disabled except possible host-specific handling later
 
@@ -162,6 +164,9 @@ The current World Cup candidate combines:
 - xG: neutral World Cup xG candidate
 - Dixon-Coles `rho = 0.05`
 - Bivariate Poisson `gamma = 0.08`
+- Domination layer disabled / 100% normal xG
+- Raw PQS disabled
+- PQS reserved for future injury-aware correction
 
 The final benchmark improved from `baseline_current` to
 `full_calibrated_worldcup_candidate`:
@@ -219,13 +224,67 @@ PQS -> main model strength feature
 Raw PQS should remain shadow-only until period-correct injuries, availability,
 rosters, and lineups can be tested without look-ahead bias.
 
-## 8. Roadmap Update
+## 8. Domination Layer Conclusions
 
-- ✅ Phase 1 Calibration Framework
-- ✅ Phase 2 World Cup Calibration
-- 🔄 Phase 3 PQS Investigation
-- ⏳ Injury-aware PQS Research
-- ⏳ FIFA Predictor Shadow Integration
+The production-style domination layer was benchmarked against the current
+World Cup neutral candidate using the same World Cup + Euro neutral dataset.
+
+The main benchmark found that 100% normal xG performed best on the primary
+calibration metrics:
+
+- LogLoss
+- Brier Score
+- Goal Difference MAE
+- Draw probability calibration
+
+The current 70/30 normal/domination blend was not the best setting and is not
+recommended for `final_worldcup_model_v1_candidate`.
+
+The extended benchmark checked score-betting-style metrics. Domination created
+very small gains in some correct-score ranking metrics:
+
+- Top-3 correct score was best at 80/20, but only about `+0.000855` above 100/0.
+- Top-5 correct score was best at 90/10 or 80/20, also only about `+0.000855` above 100/0.
+- Blowout detection did not improve.
+
+This is not strong enough evidence to include domination in the main model.
+Domination can remain a score-betting-only shadow experiment, but the current
+recommended World Cup candidate uses 100% normal xG.
+
+## 9. Current Recommended Direction
+
+Recommended `final_worldcup_model_v1_candidate`:
+
+- Elo: `calibrated_elo_v3_candidate`
+- xG: neutral World Cup xG candidate
+- Dixon-Coles `rho = 0.05`
+- Bivariate Poisson `gamma = 0.08`
+- Domination disabled / 100% normal xG
+- Raw PQS disabled
+- PQS reserved for future injury-aware correction
+
+PQS should continue toward:
+
+```text
+PQS -> injury / availability correction layer
+```
+
+not:
+
+```text
+PQS -> main model strength feature
+```
+
+## 10. Roadmap Update
+
+- ✅ Elo calibration
+- ✅ xG calibration
+- ✅ Dixon-Coles / gamma calibration
+- ✅ PQS shadow investigation
+- ✅ Domination layer benchmark
+- ⏳ Score tail calibration
+- ⏳ Injury-aware PQS
+- ⏳ FIFA Predictor 4.0 shadow integration
 
 # Research Roadmap
 
@@ -235,15 +294,32 @@ Completed:
 - Elo calibration
 - Validation framework
 - World Cup mode v1 benchmark
+- xG calibration
+- Dixon-Coles / gamma calibration
+- PQS shadow investigation
+- Domination layer benchmark
 
 In progress:
 
-- FIFA Predictor shadow mode integration planning
+- Score tail calibration planning
 
 Planned:
 
-- PQS integration
-- FIFA Predictor integration
+- Injury-aware PQS research
+- FIFA Predictor 4.0 shadow integration
+
+## Score Tail Calibration Report
+
+The next research direction is a score-tail calibration report. Its purpose is
+to check whether the model systematically underestimates high-margin outcomes
+and tail scorelines.
+
+Planned checks:
+
+- Whether the model underestimates `3+` goal-difference wins.
+- Whether `4-0`, `5-0`, `6-0`, and related tail scorelines receive realistic probability.
+- Top-3 and Top-5 correct-score coverage.
+- Blowout detection quality.
 
 ## FIFA Predictor Shadow Mode Integration
 

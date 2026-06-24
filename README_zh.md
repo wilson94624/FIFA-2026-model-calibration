@@ -110,7 +110,9 @@ final_worldcup_model_v1_candidate
 - xG: `calibrated_xg_worldcup_v1_candidate`
 - Dixon-Coles `rho = 0.05`
 - Bivariate Poisson `gamma = 0.08`
-- PQS disabled
+- Domination layer disabled / 100% normal xG
+- Raw PQS disabled
+- PQS 保留給未來 injury-aware availability correction
 - Market disabled
 - Home advantage disabled，未來可視主辦國情境再做 host-specific handling
 
@@ -174,6 +176,9 @@ gamma search 顯示這個值已接近目前 World Cup candidate 的最佳 LogLos
 - xG: neutral World Cup xG candidate
 - Dixon-Coles `rho = 0.05`
 - Bivariate Poisson `gamma = 0.08`
+- Domination layer disabled / 100% normal xG
+- Raw PQS disabled
+- PQS 保留給未來 injury-aware correction
 
 final benchmark 從 `baseline_current` 到 `full_calibrated_worldcup_candidate` 的改善：
 
@@ -226,13 +231,61 @@ PQS → 主模型強度特徵
 
 Raw PQS 應先維持 shadow-only。只有在取得 period-correct injuries、availability、rosters、lineups 並能避免 look-ahead bias 後，才適合進一步評估是否納入模型。
 
-## 8. Roadmap Update
+## 8. Domination Layer Conclusions
 
-- ✅ Phase 1 Calibration Framework
-- ✅ Phase 2 World Cup Calibration
-- 🔄 Phase 3 PQS Investigation
-- ⏳ Injury-aware PQS Research
-- ⏳ FIFA Predictor Shadow Integration
+目前已完成 production-style domination layer benchmark，使用相同的 World Cup + Euro neutral dataset，評估它是否應該接進目前 World Cup neutral candidate。
+
+主要 benchmark 顯示，100% normal xG 在以下主要 calibration metrics 上最佳：
+
+- LogLoss
+- Brier Score
+- Goal Difference MAE
+- Draw probability calibration
+
+目前 production 風格的 70/30 normal/domination blend 不是最佳設定，因此不建議納入 `final_worldcup_model_v1_candidate`。
+
+extended benchmark 進一步檢查比分投注場景。Domination 對部分 correct-score ranking metrics 有極小改善：
+
+- Top-3 correct score 最佳為 80/20，但只比 100/0 多約 `+0.000855`。
+- Top-5 correct score 最佳為 90/10 或 80/20，也只比 100/0 多約 `+0.000855`。
+- Blowout detection 沒有改善。
+
+這些改善幅度不足以支持正式納入主模型。Domination 可以保留為 score-betting-only shadow experiment，但目前推薦的 World Cup candidate 使用 100% normal xG。
+
+## 9. Current Recommended Direction
+
+Recommended `final_worldcup_model_v1_candidate`：
+
+- Elo: `calibrated_elo_v3_candidate`
+- xG: neutral World Cup xG candidate
+- Dixon-Coles `rho = 0.05`
+- Bivariate Poisson `gamma = 0.08`
+- Domination disabled / 100% normal xG
+- Raw PQS disabled
+- PQS reserved for future injury-aware correction
+
+PQS 目前最推薦走向：
+
+```text
+PQS → injury / availability correction layer
+```
+
+而不是：
+
+```text
+PQS → 主模型強度特徵
+```
+
+## 10. Roadmap Update
+
+- ✅ Elo calibration
+- ✅ xG calibration
+- ✅ Dixon-Coles / gamma calibration
+- ✅ PQS shadow investigation
+- ✅ Domination layer benchmark
+- ⏳ Score tail calibration
+- ⏳ Injury-aware PQS
+- ⏳ FIFA Predictor 4.0 shadow integration
 
 # 研究路線圖
 
@@ -242,15 +295,30 @@ Raw PQS 應先維持 shadow-only。只有在取得 period-correct injuries、ava
 - Elo calibration
 - Validation framework
 - World Cup mode v1 benchmark
+- xG calibration
+- Dixon-Coles / gamma calibration
+- PQS shadow investigation
+- Domination layer benchmark
 
 進行中：
 
-- FIFA Predictor shadow mode integration planning
+- Score tail calibration planning
 
 計畫中：
 
-- PQS integration
-- FIFA Predictor integration
+- Injury-aware PQS research
+- FIFA Predictor 4.0 shadow integration
+
+## Score Tail Calibration Report
+
+下一個研究方向是 Score Tail Calibration Report，目的是檢查模型是否系統性低估大比分與比分尾端機率。
+
+預計檢查：
+
+- 模型是否低估 `3+` 淨勝。
+- `4-0`、`5-0`、`6-0` 等尾端比分機率是否合理。
+- Top-3 / Top-5 正確比分覆蓋率。
+- Blowout detection 品質。
 
 ## FIFA Predictor Shadow Mode Integration
 
