@@ -1,0 +1,374 @@
+{
+  "report": "score_distribution_diagnostics",
+  "dataset": {
+    "label": "FIFA World Cup + UEFA Euro neutral matches",
+    "universe": "FIFA + historical national teams",
+    "source_matches": 49449,
+    "universe_matches": 48175,
+    "target_matches": 1170
+  },
+  "model_context": {
+    "candidate": "final_worldcup_model_v1_candidate",
+    "domination": "disabled / 100% normal",
+    "dixon_coles_rho": 0.05,
+    "bivariate_poisson_gamma": 0.08,
+    "formal_model_formulas_unchanged": true,
+    "diagnostic_only": true
+  },
+  "max_goals_sensitivity": [
+    {
+      "max_goals": 5,
+      "matches": 1170,
+      "log_loss": 0.9937522285340306,
+      "brier_score": 0.5906149691578761,
+      "accuracy": 0.5324786324786325,
+      "correct_score_top1_accuracy": 0.12735042735042734,
+      "correct_score_top3_accuracy": 0.33589743589743587,
+      "correct_score_top5_accuracy": 0.4846153846153846,
+      "predicted_gd_3_plus_probability": 0.13763115889302133,
+      "predicted_total_goals_4_plus_probability": 0.28154447444696573,
+      "average_missing_tail_mass": 0.009431247058262553,
+      "max_missing_tail_mass": 0.05054653380619867,
+      "runtime_seconds": 0.036703707999549806,
+      "runtime_ms_per_match": 0.031370690597905815
+    },
+    {
+      "max_goals": 6,
+      "matches": 1170,
+      "log_loss": 0.9936912377934406,
+      "brier_score": 0.590514543011452,
+      "accuracy": 0.5324786324786325,
+      "correct_score_top1_accuracy": 0.12735042735042734,
+      "correct_score_top3_accuracy": 0.33589743589743587,
+      "correct_score_top5_accuracy": 0.4846153846153846,
+      "predicted_gd_3_plus_probability": 0.14319532851621514,
+      "predicted_total_goals_4_plus_probability": 0.28655681252729925,
+      "average_missing_tail_mass": 0.002497747205818852,
+      "max_missing_tail_mass": 0.017984455002696187,
+      "runtime_seconds": 0.04853720800019801,
+      "runtime_ms_per_match": 0.0414847931625624
+    },
+    {
+      "max_goals": 7,
+      "matches": 1170,
+      "log_loss": 0.9936844483603194,
+      "brier_score": 0.5904911800949668,
+      "accuracy": 0.5324786324786325,
+      "correct_score_top1_accuracy": 0.12735042735042734,
+      "correct_score_top3_accuracy": 0.33589743589743587,
+      "correct_score_top5_accuracy": 0.4846153846153846,
+      "predicted_gd_3_plus_probability": 0.14458075213405852,
+      "predicted_total_goals_4_plus_probability": 0.28777714482406214,
+      "average_missing_tail_mass": 0.0007911003212700078,
+      "max_missing_tail_mass": 0.005812807510232498,
+      "runtime_seconds": 0.06111095903906971,
+      "runtime_ms_per_match": 0.0522315889222818
+    },
+    {
+      "max_goals": 8,
+      "matches": 1170,
+      "log_loss": 0.9936856520620936,
+      "brier_score": 0.5904865122185535,
+      "accuracy": 0.5324786324786325,
+      "correct_score_top1_accuracy": 0.12735042735042734,
+      "correct_score_top3_accuracy": 0.33589743589743587,
+      "correct_score_top5_accuracy": 0.4846153846153846,
+      "predicted_gd_3_plus_probability": 0.14488690624396283,
+      "predicted_total_goals_4_plus_probability": 0.2880483787249324,
+      "average_missing_tail_mass": 0.0004104633722151051,
+      "max_missing_tail_mass": 0.0018317800953059349,
+      "runtime_seconds": 0.07922937499824911,
+      "runtime_ms_per_match": 0.06771741452841805
+    },
+    {
+      "max_goals": 10,
+      "matches": 1170,
+      "log_loss": 0.9936871540559651,
+      "brier_score": 0.5904857097355143,
+      "accuracy": 0.5324786324786325,
+      "correct_score_top1_accuracy": 0.12735042735042734,
+      "correct_score_top3_accuracy": 0.33589743589743587,
+      "correct_score_top5_accuracy": 0.4846153846153846,
+      "predicted_gd_3_plus_probability": 0.14496017581625487,
+      "predicted_total_goals_4_plus_probability": 0.2881144566344639,
+      "average_missing_tail_mass": 0.0003176091731740053,
+      "max_missing_tail_mass": 0.0003748065972802861,
+      "runtime_seconds": 0.12039137503597885,
+      "runtime_ms_per_match": 0.10289861114186227
+    }
+  ],
+  "score_grid_truncation_analysis": {
+    "6_plus_goals_by_either_team": {
+      "matches": 32,
+      "rate": 0.02735042735042735
+    },
+    "7_plus_goals_by_either_team": {
+      "matches": 15,
+      "rate": 0.01282051282051282
+    },
+    "8_plus_goals_by_either_team": {
+      "matches": 7,
+      "rate": 0.005982905982905983
+    },
+    "exact_score_outside_current_max_goals_5": {
+      "matches": 32,
+      "rate": 0.02735042735042735,
+      "examples": [
+        {
+          "date": "1930-07-19",
+          "match": "Argentina vs Mexico",
+          "score": "6-3",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1930-07-26",
+          "match": "Argentina vs United States",
+          "score": "6-1",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1938-06-05",
+          "match": "Brazil vs Poland",
+          "score": "6-5",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1938-06-05",
+          "match": "Hungary vs Indonesia",
+          "score": "6-0",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1938-06-12",
+          "match": "Cuba vs Sweden",
+          "score": "0-8",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1950-07-02",
+          "match": "Bolivia vs Uruguay",
+          "score": "0-8",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1954-06-17",
+          "match": "Hungary vs South Korea",
+          "score": "9-0",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1954-06-19",
+          "match": "Scotland vs Uruguay",
+          "score": "0-7",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1954-06-20",
+          "match": "Germany vs Hungary",
+          "score": "3-8",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1954-06-20",
+          "match": "South Korea vs Turkey",
+          "score": "0-7",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1954-06-23",
+          "match": "Germany vs Turkey",
+          "score": "7-2",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1954-06-30",
+          "match": "Austria vs Germany",
+          "score": "1-6",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1958-06-08",
+          "match": "France vs Paraguay",
+          "score": "7-3",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1958-06-15",
+          "match": "Argentina vs Czechoslovakia",
+          "score": "1-6",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1958-06-28",
+          "match": "France vs Germany",
+          "score": "6-3",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1962-06-03",
+          "match": "Bulgaria vs Hungary",
+          "score": "1-6",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1974-06-18",
+          "match": "Yugoslavia vs DR Congo",
+          "score": "9-0",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1974-06-19",
+          "match": "Haiti vs Poland",
+          "score": "0-7",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1978-06-06",
+          "match": "Germany vs Mexico",
+          "score": "6-0",
+          "tournament": "FIFA World Cup"
+        },
+        {
+          "date": "1982-06-15",
+          "match": "Hungary vs El Salvador",
+          "score": "10-1",
+          "tournament": "FIFA World Cup"
+        }
+      ]
+    },
+    "impact_note": "MAX_GOALS=5 makes exact-score hits impossible for any match where either team scores 6+."
+  },
+  "poisson_shape_analysis": {
+    "scoreline_comparison": [
+      {
+        "scoreline": "2-2",
+        "actual_frequency": 0.035897435897435895,
+        "predicted_probability": 0.049401019359264525,
+        "actual_minus_predicted": -0.01350358346182863
+      },
+      {
+        "scoreline": "3-1",
+        "actual_frequency": 0.03504273504273504,
+        "predicted_probability": 0.03959422962687461,
+        "actual_minus_predicted": -0.004551494584139566
+      },
+      {
+        "scoreline": "1-3",
+        "actual_frequency": 0.03333333333333333,
+        "predicted_probability": 0.03299303444628707,
+        "actual_minus_predicted": 0.0003402988870462656
+      },
+      {
+        "scoreline": "2-1",
+        "actual_frequency": 0.09145299145299145,
+        "predicted_probability": 0.07983862096341876,
+        "actual_minus_predicted": 0.011614370489572687
+      },
+      {
+        "scoreline": "1-2",
+        "actual_frequency": 0.07094017094017094,
+        "predicted_probability": 0.07244374888244616,
+        "actual_minus_predicted": -0.0015035779422752221
+      },
+      {
+        "scoreline": "4-0",
+        "actual_frequency": 0.01452991452991453,
+        "predicted_probability": 0.01437735550305723,
+        "actual_minus_predicted": 0.00015255902685730113
+      },
+      {
+        "scoreline": "0-4",
+        "actual_frequency": 0.008547008547008548,
+        "predicted_probability": 0.010321381915388401,
+        "actual_minus_predicted": -0.0017743733683798536
+      },
+      {
+        "scoreline": "5-0",
+        "actual_frequency": 0.005982905982905983,
+        "predicted_probability": 0.004788138311799644,
+        "actual_minus_predicted": 0.0011947676711063391
+      },
+      {
+        "scoreline": "0-5",
+        "actual_frequency": 0.0008547008547008547,
+        "predicted_probability": 0.003285606150429775,
+        "actual_minus_predicted": -0.00243090529572892
+      },
+      {
+        "scoreline": "4-1",
+        "actual_frequency": 0.020512820512820513,
+        "predicted_probability": 0.015474701986754937,
+        "actual_minus_predicted": 0.005038118526065576
+      },
+      {
+        "scoreline": "1-4",
+        "actual_frequency": 0.008547008547008548,
+        "predicted_probability": 0.011990461410920281,
+        "actual_minus_predicted": -0.0034434528639117334
+      }
+    ],
+    "concentrated_scoreline_predicted_probability": 0.27427065327829114,
+    "concentrated_scoreline_actual_frequency": 0.26666666666666666,
+    "tail_scoreline_predicted_probability": 0.060237645278350266,
+    "tail_scoreline_actual_frequency": 0.05897435897435898
+  },
+  "goal_difference_tail_analysis": [
+    {
+      "bucket": "GD=0",
+      "actual_rate": 0.24102564102564103,
+      "predicted_probability": 0.236889618381618,
+      "actual_minus_predicted": 0.0041360226440230186
+    },
+    {
+      "bucket": "GD=1",
+      "actual_rate": 0.4008547008547009,
+      "predicted_probability": 0.4047150761572759,
+      "actual_minus_predicted": -0.0038603753025750476
+    },
+    {
+      "bucket": "GD=2",
+      "actual_rate": 0.19401709401709402,
+      "predicted_probability": 0.22076414656808369,
+      "actual_minus_predicted": -0.026747052550989664
+    },
+    {
+      "bucket": "GD>=3",
+      "actual_rate": 0.1641025641025641,
+      "predicted_probability": 0.1376311588930214,
+      "actual_minus_predicted": 0.026471405209542692
+    }
+  ],
+  "favorite_blowout_analysis": [
+    {
+      "bucket": "favorite_win_by_1",
+      "actual_rate": 0.2504273504273504,
+      "predicted_probability": 0.2471504118851733,
+      "actual_minus_predicted": 0.0032769385421771158
+    },
+    {
+      "bucket": "favorite_win_by_2",
+      "actual_rate": 0.14188034188034188,
+      "predicted_probability": 0.1575027861183437,
+      "actual_minus_predicted": -0.015622444238001826
+    },
+    {
+      "bucket": "favorite_win_by_3_plus",
+      "actual_rate": 0.14017094017094017,
+      "predicted_probability": 0.11246520094557617,
+      "actual_minus_predicted": 0.027705739225364
+    }
+  ],
+  "diagnostic_conclusions": {
+    "max_goals_should_be_raised_for_wdl_metrics": false,
+    "max_goals_should_be_raised_for_exact_score_diagnostics": true,
+    "max_goals_5_to_reference": {
+      "reference_max_goals": 10,
+      "gd_3_plus_probability_delta": 0.007329016923233539,
+      "total_goals_4_plus_probability_delta": 0.006569982187498158
+    },
+    "primary_gd_3_plus_underestimation_cause": "xG difference / score-distribution shape, not grid truncation",
+    "poisson_shape_note": "The model assigns more probability to concentrated 2-1/1-2/2-2/3-1/1-3 scorelines than to 4-0/5-0/4-1 style tail scorelines.",
+    "fat_tail_distribution_research_recommended": true,
+    "do_not_change_formal_model_yet": true
+  }
+}
