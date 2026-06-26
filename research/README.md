@@ -7,13 +7,13 @@
 ## 建議閱讀順序
 
 1. [final_summary.md](final_summary.md)  
-   先讀這篇。它用白話整理整個 Calibration Lab：我們想解決什麼、做了哪些研究、哪些留下、哪些放棄、為什麼 Dynamic Team PQS 變成下一階段。
+   先讀這篇。它用白話整理整個 Calibration Lab：本研究想解決什麼、做了哪些研究、哪些留下、哪些放棄、為什麼 Dynamic Team PQS 變成下一階段。
 
 2. [calibration_closure_audit.md](calibration_closure_audit.md)  
    這是正式收尾依據。最後決定是：Calibration 可以收尾，進入 4.0 / 5.0 integration planning。
 
 3. [00-overview.md](00-overview.md)  
-   這篇是研究故事的起點，說明為什麼我們需要 Calibration Lab，而不是一直往產品模型裡加功能。
+   這篇是研究故事的起點，說明為什麼需要 Calibration Lab，而不是一直往產品模型裡加功能。
 
 4. [01-elo-calibration.md](01-elo-calibration.md)  
    先看 Elo。這是模型地基，也是最後 formal candidate 的第一層。

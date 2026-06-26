@@ -16,7 +16,7 @@ Calibration Lab v1.0 已經收尾。最後 closure audit 的決定是：
 A. 可以收尾，進入 4.0 / 5.0 integration planning。
 ```
 
-這份 README 是寫給半年後回來看的自己：快速想起我們做了什麼、最後相信什麼、最後放棄什麼，以及為什麼 FIFA Predictor 5.0 要從 Dynamic Team PQS 開始。
+這份 README 是給半年後重新回來閱讀時使用：快速回到本專案做了什麼、最後相信什麼、最後放棄什麼，以及為什麼 FIFA Predictor 5.0 要從 Dynamic Team PQS 開始。
 
 > 校準的目的，不是證明每個想法都是對的，而是找出哪些想法真正值得成為模型的一部分。
 
@@ -24,7 +24,7 @@ A. 可以收尾，進入 4.0 / 5.0 integration planning。
 
 FIFA Predictor 4.0 原本是一個越做越完整的足球預測系統。
 
-我們想預測：
+FIFA Predictor 想預測：
 
 - 勝平負機率
 - 正確比分
@@ -46,7 +46,7 @@ FIFA Predictor 4.0 原本是一個越做越完整的足球預測系統。
 
 問題是：看起來合理，不代表真的能改善模型。
 
-Calibration Lab 的目的，就是把這些想法一個一個拆開，不用產品敘事說服自己，而是用 benchmark 和資料切分確認：
+Calibration Lab 的目的，就是把這些想法一個一個拆開，不靠產品敘事說服模型，而是用 benchmark 和資料切分確認：
 
 - 哪些真的應該進模型？
 - 哪些只是和 Elo 重疊？
@@ -112,13 +112,13 @@ final_worldcup_model_v1_candidate
 Elo calibration 也有穩定幫助。
 Dixon-Coles 和 Gamma 的改善很小，但夠穩定，所以保留。
 
-## 我們最後學到什麼？
+## 本研究最後學到什麼？
 
 ### 1. Elo 是地基，但不能亂放大
 
 `calibrated_elo_v2_candidate` 的指標很好，但 rating scale 擴太大。
 
-最後我們採用 `calibrated_elo_v3_candidate`：
+本研究最後採用 `calibrated_elo_v3_candidate`：
 
 - `K = 80`
 - `goal_diff_shrinkage_alpha = 0.10`
@@ -154,7 +154,7 @@ gamma = 0.08
 
 ### 4. Raw PQS 的直覺對，但方向錯
 
-一開始我們以為球員品質一定能提升模型。
+本研究一開始假設球員品質能提升模型。
 
 後來發現 Raw PQS 與 Elo 高度重疊：
 
@@ -174,13 +174,13 @@ gamma = 0.08
 這不是失敗。
 這是很重要的研究成果。
 
-它告訴我們：PQS 真正有價值的地方，不是描述一隊本來有多強，而是描述這隊今天和正常狀態差多少。
+這個結果指出：PQS 真正有價值的地方，不是描述一隊本來有多強，而是描述這隊今天和正常狀態差多少。
 
 這就是 Dynamic Team PQS 的起點。
 
 ### 5. Domination Layer 沒有通過
 
-我們原本以為強隊對弱隊應該有壓制效果，可能能改善 3-0、4-0、5-0 這種比分。
+本研究原本假設強隊對弱隊應該有壓制效果，可能能改善 3-0、4-0、5-0 這種比分。
 
 結果是：
 
