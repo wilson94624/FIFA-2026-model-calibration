@@ -1,470 +1,380 @@
 # FIFA-2026-model-calibration
 
-本 repository 是 FIFA Predictor 4.0 的模型校準實驗室。它是一個研究工作區，用來驗證模型假設、檢查機率校準、執行 tuning 實驗。它不是正式產品的 API、前端、資料庫層或部署套件。
+[English](README.md) | 繁體中文
 
-# 研究動機
+這個 repository 是 FIFA Predictor 的 Calibration Lab。
 
-FIFA Predictor 4.0 的正式模型包含多個層次：Elo、Expected Goals、Poisson、Dixon-Coles、PQS，以及參考外部資料的傷停、疲勞、市場資料與賽事情境。若直接在完整產品模型中調參，很容易不知道改善來自哪一層，也容易把資料問題、模型問題和產品整合問題混在一起。
+它不是正式產品。
+不是 API。
+不是前端。
+不是資料庫。
+也不是新的研究循環。
 
-這個 Calibration Lab 的目標是把模型拆成可驗證、可重現、可比較的研究流程。每一步只研究一個問題，先建立乾淨 baseline，再逐步加入候選改良，並用 time split、tournament split、team universe filtering 等方式確認結果不是偶然或資料污染。
-
-# 我們為什麼做這一步
-
-目前的研究順序刻意從最底層開始：
-
-- 先重建 Elo，因為所有後續勝率與 xG 都依賴 pre-match Elo。
-- 再做 Elo calibration，確認 K factor、goal difference multiplier、team universe 等設定是否能改善機率預測。
-- 接著做 time split validation，確認模型不是只在全歷史資料上變好，而是真的能預測 2024 之後的資料。
-- 再做 tournament split validation，檢查候選模型在 World Cup、Euro、Copa América、AFC Asian Cup、AFCON 等主要賽事上是否穩定。
-- 現在進入 Elo-to-xG calibration，因為即使 Elo 排名合理，Elo 差距如何轉成 expected goals 仍然會直接影響 Poisson、Dixon-Coles 與最終勝平負機率。
-
-這樣做可以避免太早調 Poisson 或 Dixon-Coles，卻其實是在補償 xG 公式本身的偏差。
-
-# 最後學到了什麼
-
-目前最重要的結論是：
-
-- 標準 Elo 可以作為乾淨 baseline，但預測校準能力有限。
-- `calibrated_elo_v2_candidate` 的 LogLoss / Brier 改善明顯，但 rating scale 擴張過大。
-- `calibrated_elo_v3_candidate` 使用 goal-difference shrinkage，在保留多數 calibration gain 的同時，明顯改善 Elo scale。
-- Team universe filtering 很重要，可以排除 regional / non-FIFA teams 對 calibration universe 的污染。
-- Time split validation 顯示 calibrated Elo 對 2024 之後資料仍有效。
-- Tournament split validation 顯示 v3 在多數 major tournaments 上優於 standard Elo，但不是所有賽事都全面改善。
-- Elo-to-xG benchmark 顯示目前 xG 公式方向合理，但 absolute goal level 偏低，尤其 home goals 與 total goals。
-
-因此，下一個最值得研究的不是 Poisson 或 Dixon-Coles，而是先校準 Elo-to-xG 公式中的 `base_home`、`base_away`、`c1` 與可能的 neutral/home split。
-
-# 校準進度
-
-已完成的研究階段：
-
-- 從 `international_results` 重建可重現的 Elo history。
-- 調整 Elo K-factor，並選出較強的 calibrated candidates 進行驗證。
-- 研究 home advantage 作為 Elo points adjustment，但目前 World Cup 導向候選模型暫不啟用。
-- 研究 tournament weight，保守 grid validation 後暫不啟用。
-- 研究 goal-difference multiplier，並導入 shrinkage 以降低 Elo scale expansion。
-- 建立 team universe filter，支援 FIFA-only 與 FIFA + historical national teams calibration。
-- 執行 time split validation：訓練期到 2023，驗證期從 2024 開始。
-- 執行 tournament split validation：覆蓋主要國際賽事。
-- 建立 Elo-to-xG benchmark，評估不同 Elo source 轉換成 expected goals 與 W/D/L 機率後的表現。
-
-# 目前最佳候選模型
-
-目前候選模型：
+Calibration Lab v1.0 已經收尾。最後 closure audit 的決定是：
 
 ```text
-calibrated_elo_v3_candidate
+A. 可以收尾，進入 4.0 / 5.0 integration planning。
 ```
 
-參數：
+這份 README 是寫給半年後回來看的自己：快速想起我們做了什麼、最後相信什麼、最後放棄什麼，以及為什麼 FIFA Predictor 5.0 要從 Dynamic Team PQS 開始。
 
-- `K = 80`
-- `goal_diff_shrinkage_alpha = 0.10`
-- `home_advantage = 0`
-- `tournament_weight = 1`
-- PQS disabled
+> 校準的目的，不是證明每個想法都是對的，而是找出哪些想法真正值得成為模型的一部分。
 
-狀態：
+## 這個 Lab 一開始想解決什麼？
 
-- 比 standard Elo 有更好的校準表現。
-- 比 `calibrated_elo_v2_candidate` 有更穩定的 rating scale。
-- 尚未升級為 production default。
+FIFA Predictor 4.0 原本是一個越做越完整的足球預測系統。
 
-# Final World Cup Model Benchmark
+我們想預測：
 
-Calibration Lab 已完成 World Cup 導向模型路徑的 final benchmark，資料範圍為：
+- 勝平負機率
+- 正確比分
+- 奪冠機率
+- 比賽分析
+
+所以模型裡慢慢加了很多看起來合理的足球概念：
+
+- Elo
+- xG
+- Dixon-Coles
+- Bivariate Poisson
+- Raw PQS
+- Domination Layer
+- Score Tail Correction
+- Injury / Availability
+- Fatigue
+- Style
+
+問題是：看起來合理，不代表真的能改善模型。
+
+Calibration Lab 的目的，就是把這些想法一個一個拆開，不用產品敘事說服自己，而是用 benchmark 和資料切分確認：
+
+- 哪些真的應該進模型？
+- 哪些只是和 Elo 重疊？
+- 哪些只在某些 split 變好？
+- 哪些很有足球直覺，但目前資料不夠？
+
+## 最後模型長什麼樣？
+
+目前正式 World Cup candidate 是：
+
+```text
+final_worldcup_model_v1_candidate
+```
+
+保留：
+
+| Layer | 最終設定 |
+| --- | --- |
+| Elo | `calibrated_elo_v3_candidate` |
+| K factor | `K = 80` |
+| Goal-difference shrinkage | `alpha = 0.10` |
+| xG | Neutral World Cup xG |
+| xG 參數 | `base = 1.35`, `c1 = 1.30`, `scale = 600` |
+| Neutral World Cup Mode | 不使用 Home Advantage |
+| Tournament Weight | 不採用，維持 `1` |
+| Score model | Bivariate Poisson |
+| Dixon-Coles | `rho = 0.05` |
+| Gamma | `gamma = 0.08` |
+
+不保留：
+
+| 研究方向 | 最終決定 |
+| --- | --- |
+| Raw PQS 當球隊強度特徵 | 不採用 |
+| Domination Layer | 不採用 |
+| Global Tail Correction | 不採用 |
+| Conditional Tail Correction | 不採用 |
+| Negative Binomial 取代 Poisson | 不採用 |
+| 固定 Injury Coefficient | 不採用 |
+| Fatigue | 暫停 |
+| Style | 暫停 |
+
+## Final Benchmark
+
+資料範圍：
 
 - FIFA World Cup + UEFA Euro
-- 只使用 `neutral == TRUE` 的比賽
-- FIFA + historical national teams universe
-
-比較的模型：
-
-- `baseline_current`
-- `elo_only_calibrated`
-- `elo_xg_calibrated`
-- `full_calibrated_worldcup_candidate`
-
-結果摘要：
+- 只看中立場
+- FIFA + historical national team universe
 
 | Model | Accuracy | LogLoss | Brier |
 | --- | ---: | ---: | ---: |
 | `baseline_current` | 0.485470 | 1.022132 | 0.611690 |
 | `full_calibrated_worldcup_candidate` | 0.532479 | 0.993752 | 0.590615 |
 
-從 `baseline_current` 到 `full_calibrated_worldcup_candidate` 的改善幅度：
+相對 baseline：
 
 - Accuracy: `+0.047009`
-- LogLoss improvement: `+0.028380`
-- Brier improvement: `+0.021075`
+- LogLoss: `+0.028380`
+- Brier: `+0.021075`
 
-最終候選：
+最重要的改善來自 xG calibration。
+Elo calibration 也有穩定幫助。
+Dixon-Coles 和 Gamma 的改善很小，但夠穩定，所以保留。
 
-```text
-final_worldcup_model_v1_candidate
-```
+## 我們最後學到什麼？
 
-參數：
+### 1. Elo 是地基，但不能亂放大
 
-- Elo: `calibrated_elo_v3_candidate`
-- xG: `calibrated_xg_worldcup_v1_candidate`
-- Dixon-Coles `rho = 0.05`
-- Bivariate Poisson `gamma = 0.08`
-- Domination layer disabled / 100% normal xG
-- Raw PQS disabled
-- PQS 保留給未來 injury-aware availability correction
-- Market disabled
-- Home advantage disabled，未來可視主辦國情境再做 host-specific handling
+`calibrated_elo_v2_candidate` 的指標很好，但 rating scale 擴太大。
 
-分層貢獻：
+最後我們採用 `calibrated_elo_v3_candidate`：
 
-- xG calibration 貢獻最大的 LogLoss improvement。
-- Elo calibration 帶來穩定改善。
-- Dixon-Coles rho 只有小幅改善。
-- `gamma = 0.08` 仍然適合保留。
+- `K = 80`
+- `goal_diff_shrinkage_alpha = 0.10`
 
-# Calibration Research Summary (2026-06)
+這不是追求最漂亮的單一數字，而是比較穩的版本。
 
-## 1. Elo Research Conclusions
+### 2. xG 是最大改善來源
 
-`standard_elo_v1` 是乾淨、可重現的 baseline：所有隊伍都從同一份 historical results 來源重建，並使用標準 Elo 邏輯。它仍然是重要比較基準，但機率校準能力弱於後續 calibrated candidates。
+Elo 告訴模型誰比較強。
 
-`calibrated_elo_v2_candidate` 在 Accuracy、LogLoss、Brier Score 上都有改善，但完整 goal-difference multiplier 造成 Elo scale 過度擴張，因此不適合直接作為 FIFA Predictor default。
+xG 決定這個強弱差要變成多少進球。
 
-`calibrated_elo_v3_candidate` 使用 goal-difference shrinkage，`alpha = 0.10`。它保留多數 validation gain，同時降低 v2 的 rating-scale expansion，所以 v3 是目前推薦的 Elo candidate。不過它仍然是 Calibration Lab candidate，尚不是 production default。
-
-## 2. xG Research Conclusions
-
-World Cup mode 主要是中立場預測問題。原本 asymmetric xG 對一般國際賽有用，但在世界盃中立場情境下，資料中的第一隊不一定是真主隊，因此可能把 home/away 結構帶入不該有主場優勢的比賽。
-
-neutral xG candidate 將 `team_a` / `team_b` 對稱處理，只用 Elo difference 轉換 expected goals，不預設 home advantage。
-
-目前 World Cup xG candidate：
+World Cup / Euro 中立場不能直接沿用一般主客場公式，所以最後採用 neutral xG：
 
 ```text
 base = 1.35
 c1 = 1.30
 scale = 600
-min_xg = 0.20
 ```
 
-## 3. Dixon-Coles Conclusions
+這是目前 World Cup candidate 最核心的改善。
 
-目前 Dixon-Coles candidate 使用：
+### 3. Dixon-Coles 和 Gamma 有用，但只是細調
+
+保留：
 
 ```text
 rho = 0.05
-```
-
-它確實有改善，但幅度很小。Dixon-Coles 應視為 low-score probability refinement，不是 World Cup model 改善的主要來源。
-
-## 4. Bivariate Poisson Conclusions
-
-目前 Bivariate Poisson shared-goal parameter 維持：
-
-```text
 gamma = 0.08
 ```
 
-gamma search 顯示這個值已接近目前 World Cup candidate 的最佳 LogLoss 區域。除非未來 xG 或資料範圍有重大變化，不建議繼續大幅搜尋 gamma。
+它們不是模型變好的主因，但能提供小幅、穩定的校準改善。
 
-## 5. Final World Cup Candidate
+### 4. Raw PQS 的直覺對，但方向錯
 
-目前 World Cup candidate 組成：
+一開始我們以為球員品質一定能提升模型。
 
-- Elo: `calibrated_elo_v3_candidate`
-- xG: neutral World Cup xG candidate
+後來發現 Raw PQS 與 Elo 高度重疊：
+
+- Pearson correlation 約 `0.75`
+- Sign agreement 約 `84%`
+
+這代表 Raw PQS 常常不是提供新資訊，而是在說：
+
+```text
+強隊球員比較強。
+```
+
+但 Elo 其實已經知道強隊比較強。
+
+所以 Raw PQS 不適合當正式模型的 Team Strength Feature。
+
+這不是失敗。
+這是很重要的研究成果。
+
+它告訴我們：PQS 真正有價值的地方，不是描述一隊本來有多強，而是描述這隊今天和正常狀態差多少。
+
+這就是 Dynamic Team PQS 的起點。
+
+### 5. Domination Layer 沒有通過
+
+我們原本以為強隊對弱隊應該有壓制效果，可能能改善 3-0、4-0、5-0 這種比分。
+
+結果是：
+
+- 某些 Correct Score 排名有一點改善
+- 但 LogLoss 和 Brier 沒有改善
+- 改善幅度太小
+- 可能又是在重複放大 Elo/xG 已經知道的強弱差
+
+所以不採用。
+
+### 6. Score Tail 問題是真的，但不能硬修
+
+模型確實低估 `GD >= 3`。
+
+但 Global Tail Correction 和 Conditional Tail Correction 在 split validation 不穩定。
+
+有些 pooled 結果看起來有改善，但到 modern era、recent era 或 Euro split 就不穩。
+
+所以正式模型不做 Tail Correction。
+
+這裡最大的教訓是：
+
+```text
+看到問題，不代表第一個修正方法就是對的。
+```
+
+### 7. Negative Binomial 沒有取代 Poisson
+
+Negative Binomial 比 Poisson 有更厚的尾端，直覺上很適合解決大比分問題。
+
+但 benchmark 顯示它不是只增加 5-0、6-0，而是把整個分布撐開。
+
+結果：
+
+- high-mismatch 有些地方變好
+- pooled LogLoss / Brier / Top-3 變差
+
+所以正式維持 Bivariate Poisson。
+
+### 8. Injury / Availability 不是係數，是資訊層
+
+傷停一定重要。
+
+但目前沒有足夠資料支持：
+
+```text
+固定 Injury Coefficient
+```
+
+正確做法是：
+
+```text
+Information Layer
+-> Dynamic Team PQS
+-> Shadow Mode
+-> 證明有效後再考慮正式模型
+```
+
+第一版只應該收集資訊、顯示資訊、做 shadow drift。
+不要直接修改正式勝率。
+
+## 為什麼 Dynamic Team PQS 變成下一階段？
+
+因為 Raw PQS 問錯問題。
+
+Raw PQS 問：
+
+```text
+這隊強不強？
+```
+
+但 Elo 已經很會回答這題。
+
+Dynamic Team PQS 應該問：
+
+```text
+這隊今天和它正常狀態差多少？
+```
+
+這比較可能是 Elo 沒有的新資訊。
+
+例如：
+
+- 主力門將不能上
+- 兩個中衛同時缺陣
+- 最重要的前鋒受傷
+- 替補深度不足
+- 賽前臨時停賽
+
+這些不是「強隊比較強」。
+這些是「今天這隊不是平常那隊」。
+
+所以 FIFA Predictor 5.0 的重點不是重新校準 Elo，而是建立 Dynamic Team PQS 所需的資料工程：
+
+- frozen prediction archive
+- prediction timestamp
+- input snapshot
+- unavailable players
+- reported_at
+- expected role
+- player mapping
+- shadow-mode QA
+
+## 4.0 和 5.0 的分界線
+
+### 4.0 應該做什麼？
+
+4.0 可以整合已經校準完成的模型核心：
+
+- calibrated Elo v3
+- neutral World Cup xG
+- Bivariate Poisson
 - Dixon-Coles `rho = 0.05`
-- Bivariate Poisson `gamma = 0.08`
-- Domination layer disabled / 100% normal xG
-- Raw PQS disabled
-- PQS 保留給未來 injury-aware correction
+- Gamma `0.08`
 
-final benchmark 從 `baseline_current` 到 `full_calibrated_worldcup_candidate` 的改善：
+同時不要加入：
 
-- Accuracy: `+0.047009`
-- LogLoss improvement: `+0.028380`
-- Brier improvement: `+0.021075`
+- Raw PQS
+- Domination Layer
+- Tail Correction
+- Negative Binomial
+- fixed injury coefficient
 
-## 6. PQS Research Conclusions
+4.0 的目標是穩定、可解釋、不要亂加東西。
 
-PQS 尚未完成 calibration，也不應被描述為已提升預測表現。目前 PQS 研究只屬於 shadow benchmark 與 QA analysis。
+### 5.0 應該做什麼？
 
-目前已知：
+5.0 應該處理 Calibration Lab 沒有資料證明的事情：
 
-- PQS 與 Elo 高度重疊。
-- Pearson correlation 約 `0.75`。
-- Sign agreement 約 `84%`。
-- PQS 會造成明顯 xG、W/D/L、score matrix drift。
-- 目前不能宣稱 PQS 提升預測。
-- PQS 尚未完成 calibration。
+- Dynamic Team PQS
+- Injury / Availability Information Layer
+- Shadow Mode
+- frozen prediction archive
+- Host / semi-home advantage
+- Fatigue data readiness
+- Style data readiness
 
-### Reasonable PQS Cases
+5.0 不是「把 4.0 變複雜」。
 
-- `Jordan vs Algeria`
-- `Austria vs Jordan`
-- `Uzbekistan vs Colombia`
+5.0 是先把資料和驗證方式準備好，讓下一個真正有價值的訊號有機會被證明。
 
-這些案例的 squad-quality drift 方向大致符合足球直覺，但仍需要 human review。
+## 建議閱讀順序
 
-### Suspicious PQS Cases
+第一次回來看，照這樣讀：
 
-- `France vs Iraq`
-- `Brazil vs Haiti`
-- `Belgium vs Iran`
+1. [research/final_summary.md](research/final_summary.md)
+2. [research/README.md](research/README.md)
+3. [research/calibration_closure_audit.md](research/calibration_closure_audit.md)
+4. [research/01-elo-calibration.md](research/01-elo-calibration.md)
+5. [research/02-xg-calibration.md](research/02-xg-calibration.md)
+6. [research/04-pqs-shadow-study.md](research/04-pqs-shadow-study.md)
+7. [research/05-domination-layer-study.md](research/05-domination-layer-study.md)
+8. [research/06-score-tail-calibration.md](research/06-score-tail-calibration.md)
+9. [research/10-score-distribution-and-model-limits.md](research/10-score-distribution-and-model-limits.md)
+10. [research/08-injury-aware-pqs-design.md](research/08-injury-aware-pqs-design.md)
 
-這些案例可能涉及 double counting Elo，因為 calibrated Elo/xG baseline 已經捕捉到明顯強弱差距，而 PQS 又進一步放大這些差距。
-
-## 7. Current Recommended Direction
-
-目前最推薦：
-
-```text
-PQS → injury / availability correction layer
-```
-
-而不是：
+## Repository 裡各資料夾的角色
 
 ```text
-PQS → 主模型強度特徵
-```
+research/
+  正式研究說明、閱讀順序、final summary、closure audit
 
-Raw PQS 應先維持 shadow-only。只有在取得 period-correct injuries、availability、rosters、lineups 並能避免 look-ahead bias 後，才適合進一步評估是否納入模型。
-
-## 8. Domination Layer Conclusions
-
-目前已完成 production-style domination layer benchmark，使用相同的 World Cup + Euro neutral dataset，評估它是否應該接進目前 World Cup neutral candidate。
-
-主要 benchmark 顯示，100% normal xG 在以下主要 calibration metrics 上最佳：
-
-- LogLoss
-- Brier Score
-- Goal Difference MAE
-- Draw probability calibration
-
-目前 production 風格的 70/30 normal/domination blend 不是最佳設定，因此不建議納入 `final_worldcup_model_v1_candidate`。
-
-extended benchmark 進一步檢查比分投注場景。Domination 對部分 correct-score ranking metrics 有極小改善：
-
-- Top-3 correct score 最佳為 80/20，但只比 100/0 多約 `+0.000855`。
-- Top-5 correct score 最佳為 90/10 或 80/20，也只比 100/0 多約 `+0.000855`。
-- Blowout detection 沒有改善。
-
-這些改善幅度不足以支持正式納入主模型。Domination 可以保留為 score-betting-only shadow experiment，但目前推薦的 World Cup candidate 使用 100% normal xG。
-
-## 9. Current Recommended Direction
-
-Recommended `final_worldcup_model_v1_candidate`：
-
-- Elo: `calibrated_elo_v3_candidate`
-- xG: neutral World Cup xG candidate
-- Dixon-Coles `rho = 0.05`
-- Bivariate Poisson `gamma = 0.08`
-- Domination disabled / 100% normal xG
-- Raw PQS disabled
-- PQS reserved for future injury-aware correction
-
-PQS 目前最推薦走向：
-
-```text
-PQS → injury / availability correction layer
-```
-
-而不是：
-
-```text
-PQS → 主模型強度特徵
-```
-
-## 10. Roadmap Update
-
-- ✅ Elo calibration
-- ✅ xG calibration
-- ✅ Dixon-Coles / gamma calibration
-- ✅ PQS shadow investigation
-- ✅ Domination layer benchmark
-- ⏳ Score tail calibration
-- ⏳ Injury-aware PQS
-- ⏳ FIFA Predictor 4.0 shadow integration
-
-# 研究路線圖
-
-已完成：
-
-- Elo rebuild
-- Elo calibration
-- Validation framework
-- World Cup mode v1 benchmark
-- xG calibration
-- Dixon-Coles / gamma calibration
-- PQS shadow investigation
-- Domination layer benchmark
-
-進行中：
-
-- Score tail calibration planning
-
-計畫中：
-
-- Injury-aware PQS research
-- FIFA Predictor 4.0 shadow integration
-
-## Score Tail Calibration Report
-
-下一個研究方向是 Score Tail Calibration Report，目的是檢查模型是否系統性低估大比分與比分尾端機率。
-
-預計檢查：
-
-- 模型是否低估 `3+` 淨勝。
-- `4-0`、`5-0`、`6-0` 等尾端比分機率是否合理。
-- Top-3 / Top-5 正確比分覆蓋率。
-- Blowout detection 品質。
-
-## FIFA Predictor Shadow Mode Integration
-
-Shadow mode 的意思是：calibrated World Cup mode 不會立刻取代 production model，而是先讓舊模型與新的 World Cup calibrated mode 並行運作。
-
-並行期間需要比較：
-
-- xG outputs
-- W/D/L probabilities
-- score matrix
-- championship odds
-- match reviews
-
-只有在 QA 確認新模型的機率、比分分布與下游 tournament outputs 都穩定且可解釋之後，才考慮正式升級。
-
-Pipeline：
-
-```text
-international_results
-    ↓
-Elo Rebuild
-    ↓
-Elo Calibration
-    ↓
-xG Calibration
-    ↓
-Poisson
-    ↓
-Dixon-Coles
-    ↓
-PQS
-    ↓
-FIFA Predictor
-```
-
-## 第一階段 Baseline
-
-目前可執行 baseline 刻意保持簡潔：
-
-- ELO-only expected goals
-- Bivariate Poisson score matrix
-- Dixon-Coles low-score correction
-- Accuracy、multiclass LogLoss、Brier Score
-
-baseline 只使用以下 CSV 欄位：
-
-```text
-home_team,away_team,home_score,away_score,home_pre_match_elo,away_pre_match_elo
-```
-
-baseline CLI 讀取 CSV 時不會自動更新 Elo。每一列都必須已經包含該場比賽前的 pre-match Elo。
-
-固定模型常數：
-
-- `c1 = 0.75`
-- `GAMMA = 0.08`
-- `RHO = -0.05`
-- `MAX_GOALS = 5`
-
-## 使用方式
-
-準備符合必要 schema 的 historical matches CSV，然後執行：
-
-```bash
-python scripts/run_elo_baseline.py \
-  --input data/raw/historical_matches.csv \
-  --output results/elo_baseline_predictions.csv
-```
-
-輸出的 CSV 會包含 expected goals、home/draw/away probabilities、predicted label 與 actual label。CLI 會印出：
-
-```text
-matches: N
-accuracy: ...
-log_loss: ...
-brier_score: ...
-```
-
-header-only schema template 位於：
-
-```text
-data/schema/historical_matches_schema.csv
-```
-
-本 repo 不包含假造的 historical match data。
-
-## Repository 結構
-
-```text
-data/
-  raw/
-  processed/
-  external/
-  schema/
-src/
-  model/
-    elo.py
-    pqs.py
-    expected_goals.py
-    poisson.py
-    metrics.py
-  tuning/
-  utils/
-scripts/
 results/
-notebooks/
+  benchmark 輸出、診斷報告、資料可用性報告
+
+src/
+  校準與 benchmark 所用程式
+
+data/
+  raw / processed / schema 資料
+
 archive/product_legacy/
-tests/
+  從產品隔離出來的舊邏輯，只作為研究參考
 ```
 
-## 保留的 Legacy Model Logic
+## Final Conclusion
 
-Calibration modules 保留了 FIFA Predictor 4.0 中有研究價值的模型核心：
+這次 Calibration Lab 最重要的成果，不是「模型一定更準」這種口號。
 
-- ELO expected score 與 ELO update helper
-- ELO-to-Expected-Goals formula
-- Bivariate Poisson score probability formula
-- Dixon-Coles correction
-- Score-matrix normalization
-- Score-matrix aggregation into home/draw/away probabilities
-- Legacy PQS active-roster logic，已隔離供未來研究使用
+已經比較有證據的是：
 
-## 已隔離的產品依賴
+- calibrated Elo v3 比 standard Elo 更適合作為目前候選
+- neutral World Cup xG 是最大改善來源
+- Dixon-Coles `rho = 0.05` 和 Gamma `0.08` 可以保留
+- Raw PQS、Domination、Tail Correction、Negative Binomial 都不應直接進正式模型
 
-原本與產品耦合的檔案已封存於 `archive/product_legacy/`。第一階段 baseline 不會 import 這些檔案。
+仍然未知的是：
 
-已隔離的產品依賴包含：
+- 傷停資訊能不能穩定改善預測
+- Host / semi-home advantage 要怎麼處理
+- fatigue 是否有資料支撐
+- style 是否能從敘事變成可靠特徵
+- Dynamic Team PQS 是否能真正提供 Elo 沒有的新訊號
 
-- SQLAlchemy database models
-- backend/FastAPI import paths
-- frontend JSON paths
-- `.env` loading
-- Gemini/LLM analysis 與 external API calls
-- tournament bracket 與 knockout simulation
-- Monte Carlo champion probability outputs
-- automatic frontend JSON writes
+這些留給 FIFA Predictor 5.0。
 
-## 下一步需要的資料
-
-若要執行有意義的 calibration experiments，需要準備 historical match data，至少包含：
-
-- team names
-- final score
-- pre-match Elo for both teams
-- match date
-- competition or tournament name
-- neutral-site or host indicator
-
-未來可以加入 player/PQS snapshots、injuries、rest days、travel、market odds 與 tournament context，但這些都刻意排除在第一階段 ELO-only baseline 之外。
+> 校準的目的，不是證明每個想法都是對的，而是找出哪些想法真正值得成為模型的一部分。

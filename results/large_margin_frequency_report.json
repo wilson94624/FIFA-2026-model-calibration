@@ -1,0 +1,1790 @@
+{
+  "report": "large_margin_frequency_and_overfitting_risk",
+  "data_source": "data/processed/matches_with_elo.csv",
+  "model_formulas_unchanged": true,
+  "research_only": true,
+  "splits": {
+    "all_processed_matches": {
+      "name": "all_processed_matches",
+      "matches": 49449,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 11246,
+          "rate": 0.22742623713320795
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 17033,
+          "rate": 0.34445590406277177
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 9917,
+          "rate": 0.2005500616797104
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 5240,
+          "rate": 0.1059677647677405
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 2719,
+          "rate": 0.05498594511516917
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 3294,
+          "rate": 0.06661408724140024
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 11253,
+          "rate": 0.22756779712430988
+        },
+        "gd_4_plus": {
+          "matches": 6013,
+          "rate": 0.1216000323565694
+        },
+        "gd_5_plus": {
+          "matches": 3294,
+          "rate": 0.06661408724140024
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 9429,
+          "rate": 0.1906813080143178
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 5259,
+          "rate": 0.10635199902930292
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 3448,
+          "rate": 0.06972840704564298
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 1919,
+          "rate": 0.0388076604178042
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 997,
+          "rate": 0.020162187304091084
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 1451,
+          "rate": 0.0293433638698457
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 649,
+          "rate": 0.013124633460737325
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 587,
+          "rate": 0.01187081639669154
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 164,
+          "rate": 0.003316548362959817
+        }
+      ],
+      "avg_abs_elo_diff": 122.01365175619325
+    },
+    "fifa_world_cup_only": {
+      "name": "fifa_world_cup_only",
+      "matches": 1008,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 227,
+          "rate": 0.2251984126984127
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 391,
+          "rate": 0.3878968253968254
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 207,
+          "rate": 0.20535714285714285
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 105,
+          "rate": 0.10416666666666667
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 37,
+          "rate": 0.03670634920634921
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 41,
+          "rate": 0.040674603174603176
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 183,
+          "rate": 0.18154761904761904
+        },
+        "gd_4_plus": {
+          "matches": 78,
+          "rate": 0.07738095238095238
+        },
+        "gd_5_plus": {
+          "matches": 41,
+          "rate": 0.040674603174603176
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 162,
+          "rate": 0.16071428571428573
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 71,
+          "rate": 0.07043650793650794
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 60,
+          "rate": 0.05952380952380952
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 26,
+          "rate": 0.025793650793650792
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 7,
+          "rate": 0.006944444444444444
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 34,
+          "rate": 0.03373015873015873
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 9,
+          "rate": 0.008928571428571428
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 6,
+          "rate": 0.005952380952380952
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 4,
+          "rate": 0.003968253968253968
+        }
+      ],
+      "avg_abs_elo_diff": 102.0749766170635
+    },
+    "uefa_euro_only": {
+      "name": "uefa_euro_only",
+      "matches": 388,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 102,
+          "rate": 0.26288659793814434
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 163,
+          "rate": 0.42010309278350516
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 76,
+          "rate": 0.1958762886597938
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 36,
+          "rate": 0.09278350515463918
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 6,
+          "rate": 0.015463917525773196
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 5,
+          "rate": 0.01288659793814433
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 47,
+          "rate": 0.1211340206185567
+        },
+        "gd_4_plus": {
+          "matches": 11,
+          "rate": 0.028350515463917526
+        },
+        "gd_5_plus": {
+          "matches": 5,
+          "rate": 0.01288659793814433
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 40,
+          "rate": 0.10309278350515463
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 10,
+          "rate": 0.02577319587628866
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 29,
+          "rate": 0.07474226804123711
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 5,
+          "rate": 0.01288659793814433
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 4,
+          "rate": 0.010309278350515464
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 6,
+          "rate": 0.015463917525773196
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 1,
+          "rate": 0.002577319587628866
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 0,
+          "rate": 0.0
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 0,
+          "rate": 0.0
+        }
+      ],
+      "avg_abs_elo_diff": 107.6347371829897
+    },
+    "modern_era_1990_plus": {
+      "name": "modern_era_1990_plus",
+      "matches": 32331,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 7603,
+          "rate": 0.23516130030002166
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 11338,
+          "rate": 0.35068510098666916
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 6424,
+          "rate": 0.19869475116761004
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 3319,
+          "rate": 0.1026568927654573
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 1678,
+          "rate": 0.0519006526244162
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 1969,
+          "rate": 0.060901302155825676
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 6966,
+          "rate": 0.21545884754569916
+        },
+        "gd_4_plus": {
+          "matches": 3647,
+          "rate": 0.11280195478024187
+        },
+        "gd_5_plus": {
+          "matches": 1969,
+          "rate": 0.060901302155825676
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 6057,
+          "rate": 0.18734341653521389
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 3304,
+          "rate": 0.10219294175868361
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 2348,
+          "rate": 0.07262379759364078
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 1277,
+          "rate": 0.03949769570999969
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 650,
+          "rate": 0.02010454362685967
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 846,
+          "rate": 0.026166836782035817
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 349,
+          "rate": 0.01079459342426773
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 372,
+          "rate": 0.01150598496798738
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 77,
+          "rate": 0.0023816151681049147
+        }
+      ],
+      "avg_abs_elo_diff": 131.80353234038537
+    },
+    "recent_era_2000_plus": {
+      "name": "recent_era_2000_plus",
+      "matches": 25387,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 5916,
+          "rate": 0.23303265450821287
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 8929,
+          "rate": 0.35171544491275064
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 5068,
+          "rate": 0.19962973175247173
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 2622,
+          "rate": 0.10328120691692598
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 1316,
+          "rate": 0.05183755465395675
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 1536,
+          "rate": 0.06050340725568204
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 5474,
+          "rate": 0.21562216882656476
+        },
+        "gd_4_plus": {
+          "matches": 2852,
+          "rate": 0.1123409619096388
+        },
+        "gd_5_plus": {
+          "matches": 1536,
+          "rate": 0.06050340725568204
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 4792,
+          "rate": 0.18875802576121636
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 2603,
+          "rate": 0.1025327923740497
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 1878,
+          "rate": 0.073974869027455
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 1012,
+          "rate": 0.039862921967936345
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 521,
+          "rate": 0.02052231457044944
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 648,
+          "rate": 0.02552487493599086
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 264,
+          "rate": 0.01039902312207035
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 297,
+          "rate": 0.011698901012329144
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 58,
+          "rate": 0.002284633867727577
+        }
+      ],
+      "avg_abs_elo_diff": 136.25704653570725
+    }
+  },
+  "era_effect": {
+    "all_pre_1990": {
+      "name": "all_pre_1990",
+      "matches": 17118,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 3643,
+          "rate": 0.21281691786423648
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 5695,
+          "rate": 0.3326907348989368
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 3493,
+          "rate": 0.20405421194064727
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 1921,
+          "rate": 0.11222105386143241
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 1041,
+          "rate": 0.06081317910970908
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 1325,
+          "rate": 0.07740390232503797
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 4287,
+          "rate": 0.2504381352961795
+        },
+        "gd_4_plus": {
+          "matches": 2366,
+          "rate": 0.13821708143474706
+        },
+        "gd_5_plus": {
+          "matches": 1325,
+          "rate": 0.07740390232503797
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 3372,
+          "rate": 0.19698562916228532
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 1955,
+          "rate": 0.11420726720411263
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 1100,
+          "rate": 0.06425984343965417
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 642,
+          "rate": 0.037504381352961795
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 347,
+          "rate": 0.02027105970323636
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 605,
+          "rate": 0.03534291389180979
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 300,
+          "rate": 0.01752541184717841
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 215,
+          "rate": 0.01255987849047786
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 87,
+          "rate": 0.005082369435681739
+        }
+      ],
+      "avg_abs_elo_diff": 103.52337081405538
+    },
+    "all_1990_plus": {
+      "name": "all_1990_plus",
+      "matches": 32331,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 7603,
+          "rate": 0.23516130030002166
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 11338,
+          "rate": 0.35068510098666916
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 6424,
+          "rate": 0.19869475116761004
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 3319,
+          "rate": 0.1026568927654573
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 1678,
+          "rate": 0.0519006526244162
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 1969,
+          "rate": 0.060901302155825676
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 6966,
+          "rate": 0.21545884754569916
+        },
+        "gd_4_plus": {
+          "matches": 3647,
+          "rate": 0.11280195478024187
+        },
+        "gd_5_plus": {
+          "matches": 1969,
+          "rate": 0.060901302155825676
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 6057,
+          "rate": 0.18734341653521389
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 3304,
+          "rate": 0.10219294175868361
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 2348,
+          "rate": 0.07262379759364078
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 1277,
+          "rate": 0.03949769570999969
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 650,
+          "rate": 0.02010454362685967
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 846,
+          "rate": 0.026166836782035817
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 349,
+          "rate": 0.01079459342426773
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 372,
+          "rate": 0.01150598496798738
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 77,
+          "rate": 0.0023816151681049147
+        }
+      ],
+      "avg_abs_elo_diff": 131.80353234038537
+    },
+    "all_2000_plus": {
+      "name": "all_2000_plus",
+      "matches": 25387,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 5916,
+          "rate": 0.23303265450821287
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 8929,
+          "rate": 0.35171544491275064
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 5068,
+          "rate": 0.19962973175247173
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 2622,
+          "rate": 0.10328120691692598
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 1316,
+          "rate": 0.05183755465395675
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 1536,
+          "rate": 0.06050340725568204
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 5474,
+          "rate": 0.21562216882656476
+        },
+        "gd_4_plus": {
+          "matches": 2852,
+          "rate": 0.1123409619096388
+        },
+        "gd_5_plus": {
+          "matches": 1536,
+          "rate": 0.06050340725568204
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 4792,
+          "rate": 0.18875802576121636
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 2603,
+          "rate": 0.1025327923740497
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 1878,
+          "rate": 0.073974869027455
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 1012,
+          "rate": 0.039862921967936345
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 521,
+          "rate": 0.02052231457044944
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 648,
+          "rate": 0.02552487493599086
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 264,
+          "rate": 0.01039902312207035
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 297,
+          "rate": 0.011698901012329144
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 58,
+          "rate": 0.002284633867727577
+        }
+      ],
+      "avg_abs_elo_diff": 136.25704653570725
+    },
+    "world_cup_pre_1990": {
+      "name": "world_cup_pre_1990",
+      "matches": 412,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 84,
+          "rate": 0.20388349514563106
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 142,
+          "rate": 0.3446601941747573
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 94,
+          "rate": 0.22815533980582525
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 49,
+          "rate": 0.11893203883495146
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 16,
+          "rate": 0.038834951456310676
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 27,
+          "rate": 0.06553398058252427
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 92,
+          "rate": 0.22330097087378642
+        },
+        "gd_4_plus": {
+          "matches": 43,
+          "rate": 0.10436893203883495
+        },
+        "gd_5_plus": {
+          "matches": 27,
+          "rate": 0.06553398058252427
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 82,
+          "rate": 0.19902912621359223
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 39,
+          "rate": 0.09466019417475728
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 24,
+          "rate": 0.05825242718446602
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 11,
+          "rate": 0.02669902912621359
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 4,
+          "rate": 0.009708737864077669
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 17,
+          "rate": 0.0412621359223301
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 4,
+          "rate": 0.009708737864077669
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 4,
+          "rate": 0.009708737864077669
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 2,
+          "rate": 0.0048543689320388345
+        }
+      ],
+      "avg_abs_elo_diff": 97.50568179854368
+    },
+    "world_cup_1990_plus": {
+      "name": "world_cup_1990_plus",
+      "matches": 596,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 143,
+          "rate": 0.23993288590604026
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 249,
+          "rate": 0.41778523489932884
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 113,
+          "rate": 0.18959731543624161
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 56,
+          "rate": 0.09395973154362416
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 21,
+          "rate": 0.03523489932885906
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 14,
+          "rate": 0.02348993288590604
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 91,
+          "rate": 0.15268456375838926
+        },
+        "gd_4_plus": {
+          "matches": 35,
+          "rate": 0.0587248322147651
+        },
+        "gd_5_plus": {
+          "matches": 14,
+          "rate": 0.02348993288590604
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 80,
+          "rate": 0.1342281879194631
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 32,
+          "rate": 0.053691275167785234
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 36,
+          "rate": 0.06040268456375839
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 15,
+          "rate": 0.025167785234899327
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 3,
+          "rate": 0.0050335570469798654
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 17,
+          "rate": 0.028523489932885907
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 5,
+          "rate": 0.008389261744966443
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 2,
+          "rate": 0.003355704697986577
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 2,
+          "rate": 0.003355704697986577
+        }
+      ],
+      "avg_abs_elo_diff": 105.23361665939596
+    },
+    "world_cup_2000_plus": {
+      "name": "world_cup_2000_plus",
+      "matches": 428,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 101,
+          "rate": 0.23598130841121495
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 173,
+          "rate": 0.40420560747663553
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 89,
+          "rate": 0.20794392523364486
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 41,
+          "rate": 0.09579439252336448
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 14,
+          "rate": 0.03271028037383177
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 10,
+          "rate": 0.02336448598130841
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 65,
+          "rate": 0.15186915887850466
+        },
+        "gd_4_plus": {
+          "matches": 24,
+          "rate": 0.056074766355140186
+        },
+        "gd_5_plus": {
+          "matches": 10,
+          "rate": 0.02336448598130841
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 57,
+          "rate": 0.13317757009345793
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 21,
+          "rate": 0.04906542056074766
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 27,
+          "rate": 0.0630841121495327
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 10,
+          "rate": 0.02336448598130841
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 1,
+          "rate": 0.002336448598130841
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 11,
+          "rate": 0.02570093457943925
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 3,
+          "rate": 0.007009345794392523
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 2,
+          "rate": 0.004672897196261682
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 2,
+          "rate": 0.004672897196261682
+        }
+      ],
+      "avg_abs_elo_diff": 110.7932308224299
+    }
+  },
+  "stage_effect": {
+    "stage_field_available": false,
+    "method": "chronological proxy by World Cup edition; first 70% of matches treated as group-stage proxy",
+    "warning": "international_results does not provide official stage labels; use this only as directional diagnostics.",
+    "group_stage_proxy": {
+      "name": "world_cup_group_stage_proxy",
+      "matches": 705,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 176,
+          "rate": 0.24964539007092199
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 250,
+          "rate": 0.3546099290780142
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 141,
+          "rate": 0.2
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 79,
+          "rate": 0.11205673758865248
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 26,
+          "rate": 0.03687943262411347
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 33,
+          "rate": 0.04680851063829787
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 138,
+          "rate": 0.19574468085106383
+        },
+        "gd_4_plus": {
+          "matches": 59,
+          "rate": 0.08368794326241134
+        },
+        "gd_5_plus": {
+          "matches": 33,
+          "rate": 0.04680851063829787
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 124,
+          "rate": 0.17588652482269504
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 54,
+          "rate": 0.07659574468085106
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 45,
+          "rate": 0.06382978723404255
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 18,
+          "rate": 0.02553191489361702
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 7,
+          "rate": 0.009929078014184398
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 26,
+          "rate": 0.03687943262411347
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 6,
+          "rate": 0.00851063829787234
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 5,
+          "rate": 0.0070921985815602835
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 2,
+          "rate": 0.0028368794326241137
+        }
+      ],
+      "avg_abs_elo_diff": 104.93646886666666
+    },
+    "knockout_stage_proxy": {
+      "name": "world_cup_knockout_stage_proxy",
+      "matches": 303,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 51,
+          "rate": 0.16831683168316833
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 141,
+          "rate": 0.46534653465346537
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 66,
+          "rate": 0.21782178217821782
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 26,
+          "rate": 0.0858085808580858
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 11,
+          "rate": 0.036303630363036306
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 8,
+          "rate": 0.026402640264026403
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 45,
+          "rate": 0.1485148514851485
+        },
+        "gd_4_plus": {
+          "matches": 19,
+          "rate": 0.0627062706270627
+        },
+        "gd_5_plus": {
+          "matches": 8,
+          "rate": 0.026402640264026403
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 38,
+          "rate": 0.1254125412541254
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 17,
+          "rate": 0.056105610561056105
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 15,
+          "rate": 0.04950495049504951
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 8,
+          "rate": 0.026402640264026403
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 0,
+          "rate": 0.0
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 8,
+          "rate": 0.026402640264026403
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 3,
+          "rate": 0.009900990099009901
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 1,
+          "rate": 0.0033003300330033004
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 2,
+          "rate": 0.006600660066006601
+        }
+      ],
+      "avg_abs_elo_diff": 95.41704910561056
+    }
+  },
+  "elo_mismatch_buckets": [
+    {
+      "name": "abs_elo_diff_lt_100",
+      "matches": 25137,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 6409,
+          "rate": 0.25496280383498426
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 9391,
+          "rate": 0.3735927119385766
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 4888,
+          "rate": 0.19445438994311176
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 2307,
+          "rate": 0.09177706170187373
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 1020,
+          "rate": 0.04057763456259697
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 1122,
+          "rate": 0.044635398018856666
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 4449,
+          "rate": 0.17699009428332738
+        },
+        "gd_4_plus": {
+          "matches": 2142,
+          "rate": 0.08521303258145363
+        },
+        "gd_5_plus": {
+          "matches": 1122,
+          "rate": 0.044635398018856666
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 3003,
+          "rate": 0.11946532999164577
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 1495,
+          "rate": 0.05947408203047301
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 1453,
+          "rate": 0.05780323825436608
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 704,
+          "rate": 0.028006524247125752
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 330,
+          "rate": 0.013128058240840196
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 685,
+          "rate": 0.02725066634841071
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 239,
+          "rate": 0.009507896725941838
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 150,
+          "rate": 0.005967299200381907
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 68,
+          "rate": 0.0027051756375064645
+        }
+      ],
+      "avg_abs_elo_diff": 46.74643999439074
+    },
+    {
+      "name": "abs_elo_diff_100_200",
+      "matches": 15099,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 3464,
+          "rate": 0.22941916683224053
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 5181,
+          "rate": 0.34313530697397177
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 3118,
+          "rate": 0.20650374196966687
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 1611,
+          "rate": 0.10669580766938208
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 824,
+          "rate": 0.05457315053977085
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 901,
+          "rate": 0.05967282601496788
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 3336,
+          "rate": 0.2209417842241208
+        },
+        "gd_4_plus": {
+          "matches": 1725,
+          "rate": 0.11424597655473873
+        },
+        "gd_5_plus": {
+          "matches": 901,
+          "rate": 0.05967282601496788
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 3018,
+          "rate": 0.19988078680707333
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 1638,
+          "rate": 0.10848400556328233
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 1035,
+          "rate": 0.06854758593284324
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 551,
+          "rate": 0.036492482945890456
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 257,
+          "rate": 0.01702099476786542
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 457,
+          "rate": 0.03026690509305252
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 227,
+          "rate": 0.015034108219087357
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 172,
+          "rate": 0.011391482879660905
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 50,
+          "rate": 0.0033114775812967748
+        }
+      ],
+      "avg_abs_elo_diff": 143.77091001384198
+    },
+    {
+      "name": "abs_elo_diff_200_300",
+      "matches": 6057,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 1059,
+          "rate": 0.1748390292223873
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 1816,
+          "rate": 0.2998183919432062
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 1277,
+          "rate": 0.21083044411424798
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 816,
+          "rate": 0.1347201584943041
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 499,
+          "rate": 0.08238401849100215
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 590,
+          "rate": 0.09740795773485224
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 1905,
+          "rate": 0.3145121347201585
+        },
+        "gd_4_plus": {
+          "matches": 1089,
+          "rate": 0.17979197622585438
+        },
+        "gd_5_plus": {
+          "matches": 590,
+          "rate": 0.09740795773485224
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 1851,
+          "rate": 0.3055968301139178
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 1072,
+          "rate": 0.17698530625722306
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 577,
+          "rate": 0.0952616807000165
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 362,
+          "rate": 0.05976556050850256
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 189,
+          "rate": 0.031203566121842496
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 197,
+          "rate": 0.032524351989433715
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 118,
+          "rate": 0.019481591546970448
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 109,
+          "rate": 0.017995707445930327
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 19,
+          "rate": 0.00313686643552914
+        }
+      ],
+      "avg_abs_elo_diff": 242.2943238963183
+    },
+    {
+      "name": "abs_elo_diff_300_400",
+      "matches": 2132,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 271,
+          "rate": 0.12711069418386492
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 480,
+          "rate": 0.225140712945591
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 432,
+          "rate": 0.2026266416510319
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 329,
+          "rate": 0.15431519699812382
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 238,
+          "rate": 0.11163227016885553
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 382,
+          "rate": 0.17917448405253283
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 949,
+          "rate": 0.4451219512195122
+        },
+        "gd_4_plus": {
+          "matches": 620,
+          "rate": 0.29080675422138835
+        },
+        "gd_5_plus": {
+          "matches": 382,
+          "rate": 0.17917448405253283
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 943,
+          "rate": 0.4423076923076923
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 617,
+          "rate": 0.2893996247654784
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 242,
+          "rate": 0.11350844277673545
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 187,
+          "rate": 0.0877110694183865
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 118,
+          "rate": 0.055347091932457786
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 78,
+          "rate": 0.036585365853658534
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 48,
+          "rate": 0.0225140712945591
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 92,
+          "rate": 0.043151969981238276
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 12,
+          "rate": 0.005628517823639775
+        }
+      ],
+      "avg_abs_elo_diff": 339.48309692026265
+    },
+    {
+      "name": "abs_elo_diff_400_plus",
+      "matches": 1024,
+      "notes": "",
+      "goal_difference_distribution": [
+        {
+          "bucket": "GD=0",
+          "matches": 43,
+          "rate": 0.0419921875
+        },
+        {
+          "bucket": "GD=1",
+          "matches": 165,
+          "rate": 0.1611328125
+        },
+        {
+          "bucket": "GD=2",
+          "matches": 202,
+          "rate": 0.197265625
+        },
+        {
+          "bucket": "GD=3",
+          "matches": 177,
+          "rate": 0.1728515625
+        },
+        {
+          "bucket": "GD=4",
+          "matches": 138,
+          "rate": 0.134765625
+        },
+        {
+          "bucket": "GD>=5",
+          "matches": 299,
+          "rate": 0.2919921875
+        }
+      ],
+      "large_margin_rates": {
+        "gd_3_plus": {
+          "matches": 614,
+          "rate": 0.599609375
+        },
+        "gd_4_plus": {
+          "matches": 437,
+          "rate": 0.4267578125
+        },
+        "gd_5_plus": {
+          "matches": 299,
+          "rate": 0.2919921875
+        },
+        "favorite_win_by_3_plus": {
+          "matches": 614,
+          "rate": 0.599609375
+        },
+        "favorite_win_by_4_plus": {
+          "matches": 437,
+          "rate": 0.4267578125
+        }
+      },
+      "exact_tail_scorelines": [
+        {
+          "scoreline_group": "3-0_or_0-3",
+          "matches": 141,
+          "rate": 0.1376953125
+        },
+        {
+          "scoreline_group": "4-0_or_0-4",
+          "matches": 115,
+          "rate": 0.1123046875
+        },
+        {
+          "scoreline_group": "5-0_or_0-5",
+          "matches": 103,
+          "rate": 0.1005859375
+        },
+        {
+          "scoreline_group": "4-1_or_1-4",
+          "matches": 34,
+          "rate": 0.033203125
+        },
+        {
+          "scoreline_group": "5-1_or_1-5",
+          "matches": 17,
+          "rate": 0.0166015625
+        },
+        {
+          "scoreline_group": "6-0_or_0-6",
+          "matches": 64,
+          "rate": 0.0625
+        },
+        {
+          "scoreline_group": "7-1_or_1-7",
+          "matches": 15,
+          "rate": 0.0146484375
+        }
+      ],
+      "avg_abs_elo_diff": 484.6056159960938
+    }
+  ],
+  "conclusions": {
+    "tail_scorelines_common_enough_for_global_model_change": false,
+    "large_margins_concentrated_contexts": {
+      "world_cup_gd_3_plus_rate": 0.18154761904761904,
+      "euro_gd_3_plus_rate": 0.1211340206185567,
+      "world_cup_pre_1990_gd_3_plus_rate": 0.22330097087378642,
+      "world_cup_1990_plus_gd_3_plus_rate": 0.15268456375838926,
+      "world_cup_group_proxy_gd_3_plus_rate": 0.19574468085106383,
+      "world_cup_knockout_proxy_gd_3_plus_rate": 0.1485148514851485,
+      "elo_400_plus_gd_3_plus_rate": 0.599609375,
+      "elo_lt_100_gd_3_plus_rate": 0.17699009428332738
+    },
+    "overfitting_risk": {
+      "risk": "high",
+      "reason": "Large margins are meaningfully concentrated in World Cup, older eras, and high Elo mismatch buckets. A global tail amplification could overfit mismatch/group-stage contexts and harm modern, Euro, knockout, or balanced matchups."
+    },
+    "world_cup_48_team_recommendation": {
+      "recommended_mode": "conditional shadow diagnostics and separate group-stage diagnostics",
+      "global_model_change": false,
+      "reason": "A 48-team field may increase high-mismatch group matches, but historical evidence does not support a global correction."
+    },
+    "poisson_vs_negative_binomial_research": {
+      "recommended": true,
+      "scope": "research-only comparison for score tails and group-stage mismatch diagnostics"
+    },
+    "keep_formal_model_baseline_unchanged": true
+  }
+}

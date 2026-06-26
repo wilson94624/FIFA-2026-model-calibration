@@ -56,7 +56,7 @@ This report manually reviews the largest `pqs_weight=0.30` drift cases. It does 
 - Football intuition: `reasonable_direction`
 - Double-counting Elo risk: `medium`
 - Human review: `yes`
-- Note: Austria boost and Jordan penalty are plausible, but Jordan appears repeatedly among largest penalties, suggesting a cap or injury-only rule may be safer.
+- Note: Austria boost and Jordan penalty are plausible, but Jordan appears repeatedly among largest penalties, suggesting a cap or Injury / Availability rule may be safer.
 ### Belgium vs Iran
 - Baseline xG: `1.643823 - 1.056177`
 - PQS-adjusted xG: `1.832573 - 0.885224`
@@ -82,7 +82,7 @@ This report manually reviews the largest `pqs_weight=0.30` drift cases. It does 
 - Football intuition: `reasonable_direction`
 - Double-counting Elo risk: `medium`
 - Human review: `yes`
-- Note: Colombia boost and Uzbekistan penalty align with squad-value intuition, but should be reviewed because PQS is likely acting as another team-strength proxy.
+- Note: Colombia boost and Uzbekistan penalty align with squad-value intuition, but should be reviewed because Raw PQS is likely acting as another team-strength proxy.
 ## Strongest Boost Teams
 | Team | Matches | Avg xG Δ | Starting PQS | Bench PQS | Avg Overall | Stars |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -107,6 +107,6 @@ This report manually reviews the largest `pqs_weight=0.30` drift cases. It does 
 - Reasonable drift cases: `Jordan vs Algeria`, `Austria vs Jordan`, `Uzbekistan vs Colombia`.
 - Suspicious / likely double-counting cases: `France vs Iraq`, `Brazil vs Haiti`, `Belgium vs Iran`.
 - `pqs_weight=0.30` should be treated as too aggressive for raw squad-quality adjustment.
-- Future research should cap raw PQS lower, likely around `0.10-0.20`, unless injury/availability evidence justifies larger movement.
-- The preferred future direction is injury-only or availability-aware PQS adjustment, not raw PQS as a main model feature.
+- Future research should cap Raw PQS lower, likely around `0.10-0.20`, unless Injury / Availability evidence justifies larger movement.
+- The preferred future direction is Dynamic Team PQS / Injury / Availability adjustment, not Raw PQS as a main model feature.
 - It is reasonable to begin designing injury / unavailable-player simulation, but not to claim PQS calibration.

@@ -2,128 +2,161 @@
 
 English | [繁體中文](README_zh.md)
 
-This repository is the FIFA Predictor 4.0 model calibration lab. It is a research
-workspace for testing model assumptions, probability calibration, and tuning
-experiments. It is not the production API, frontend, database layer, or
-deployment package.
+This repository is the research documentation and calibration workspace for the
+FIFA Predictor World Cup model. It is not the production API, frontend,
+database, deployment package, or a new modeling phase.
 
-# Calibration Progress
-
-Completed research phases:
-
-- Rebuilt a reproducible Elo history from `international_results`.
-- Tuned Elo K-factor candidates and selected stronger calibrated candidates for validation.
-- Researched home advantage as an Elo-point adjustment while keeping it disabled for the current World Cup-oriented candidate.
-- Researched tournament weight effects and kept tournament weight disabled after conservative grid validation.
-- Researched goal-difference multipliers and introduced shrinkage to reduce Elo scale expansion.
-- Built a team universe filter for FIFA-only and FIFA + historical national team calibration.
-- Ran time split validation with training through 2023 and validation from 2024 onward.
-- Ran tournament split validation across major international competitions.
-- Built an Elo-to-xG benchmark to evaluate how Elo sources convert into expected goals and downstream W/D/L probabilities.
-
-# Current Best Candidate
-
-Current candidate:
+Calibration Lab v1.0 is now closed. The final closure audit decision is:
 
 ```text
-calibrated_elo_v3_candidate
+A. Close calibration and move into 4.0 / 5.0 integration planning.
 ```
 
-Parameters:
+The purpose of this lab was not to prove that every football idea improves the
+model. It was to test which ideas survive calibration, which ideas should stay
+out, and which ideas belong in the next research phase.
 
-- `K = 80`
-- `goal_diff_shrinkage_alpha = 0.10`
-- `home_advantage = 0`
-- `tournament_weight = 1`
-- PQS disabled
+> Calibration is not about proving every idea works.
+> It is about discovering which ideas deserve to become part of the model.
 
-Status:
+## What This Project Does
 
-- Better calibration than standard Elo.
-- More stable rating scale than `calibrated_elo_v2_candidate`.
-- Not yet promoted to the production default.
+The lab takes a football prediction model apart into testable layers:
 
-# Final World Cup Model Benchmark
+- Rebuild team strength from international results.
+- Calibrate Elo and expected goals.
+- Evaluate score-distribution assumptions.
+- Test intuitive add-ons such as Raw PQS, Domination, and Score Tail Correction.
+- Separate validated model components from research-only ideas.
+- Define what should move into FIFA Predictor 4.0 and what belongs to FIFA Predictor 5.0.
 
-The lab has completed a final benchmark for the World Cup-oriented model path on:
+The calibration target is a World Cup-oriented neutral-match model, evaluated
+primarily on FIFA World Cup and UEFA Euro neutral-site matches.
+
+## Final Model Candidate
+
+The current formal model candidate is:
+
+```text
+final_worldcup_model_v1_candidate
+```
+
+Retained components:
+
+| Layer | Final Setting |
+| --- | --- |
+| Elo | `calibrated_elo_v3_candidate` |
+| Elo K factor | `K = 80` |
+| Goal-difference shrinkage | `alpha = 0.10` |
+| World Cup xG | Neutral xG |
+| xG parameters | `base = 1.35`, `c1 = 1.30`, `scale = 600` |
+| Home advantage | Disabled in Neutral World Cup Mode |
+| Tournament weight | Disabled, `tournament_weight = 1` |
+| Score distribution | Bivariate Poisson |
+| Dixon-Coles | `rho = 0.05` |
+| Gamma | `gamma = 0.08` |
+
+Excluded from the formal model:
+
+| Idea | Final Decision |
+| --- | --- |
+| Raw PQS as team strength | Not adopted |
+| Domination Layer | Not adopted |
+| Global Tail Correction | Not adopted |
+| Conditional Tail Correction | Not adopted |
+| Negative Binomial replacement | Not adopted |
+| Fixed injury coefficient | Not adopted |
+| Fatigue coefficient | Deferred |
+| Style coefficient | Deferred |
+
+## Final Benchmark
+
+Final World Cup benchmark scope:
 
 - FIFA World Cup + UEFA Euro
-- neutral-site matches only
+- Neutral-site matches only
 - FIFA + historical national team universe
-
-Compared models:
-
-- `baseline_current`
-- `elo_only_calibrated`
-- `elo_xg_calibrated`
-- `full_calibrated_worldcup_candidate`
-
-Result summary:
 
 | Model | Accuracy | LogLoss | Brier |
 | --- | ---: | ---: | ---: |
 | `baseline_current` | 0.485470 | 1.022132 | 0.611690 |
 | `full_calibrated_worldcup_candidate` | 0.532479 | 0.993752 | 0.590615 |
 
-Improvement from `baseline_current` to `full_calibrated_worldcup_candidate`:
+Improvement from `baseline_current`:
 
 - Accuracy: `+0.047009`
-- LogLoss improvement: `+0.028380`
-- Brier improvement: `+0.021075`
+- LogLoss: `+0.028380`
+- Brier: `+0.021075`
 
-Final candidate:
+The biggest verified improvement came from xG calibration. Elo calibration also
+helped. Dixon-Coles and Gamma were retained because they gave small, consistent
+calibration improvements. The rejected layers were rejected because they did not
+improve the primary probability metrics reliably enough.
+
+## Research Method
+
+The lab follows a simple rule:
 
 ```text
-final_worldcup_model_v1_candidate
+Do not add a model layer just because it sounds right in football terms.
 ```
 
-Parameters:
+Each candidate idea was checked against some combination of:
 
-- Elo: `calibrated_elo_v3_candidate`
-- xG: `calibrated_xg_worldcup_v1_candidate`
-- Dixon-Coles `rho = 0.05`
-- Bivariate Poisson `gamma = 0.08`
-- Domination layer disabled / 100% normal xG
-- Raw PQS disabled
-- PQS reserved for future injury-aware availability correction
-- Market disabled
-- Home advantage disabled except possible host-specific handling later
+- Accuracy
+- Multiclass LogLoss
+- Brier Score
+- Top-1 / Top-3 / Top-5 correct score
+- Goal-difference calibration
+- Draw and low-score calibration
+- Time split validation
+- Tournament split validation
+- Modern-era and recent-era stability
+- Data-readiness and look-ahead-bias audits
 
-Layer contribution:
+The lab treats negative results as real research output. A rejected feature can
+be just as useful as an adopted feature if it prevents the formal model from
+double-counting signal or overfitting rare scorelines.
 
-- xG calibration contributed the largest LogLoss improvement.
-- Elo calibration contributed stable improvement.
-- Dixon-Coles rho contributed only minor improvement.
-- `gamma = 0.08` remains suitable.
+## Completed Research
 
-# Calibration Research Summary (2026-06)
+| Topic | Outcome | Where To Read |
+| --- | --- | --- |
+| Calibration overview | Explains why the lab exists and what it learned | [research/00-overview.md](research/00-overview.md) |
+| Elo calibration | Adopt `calibrated_elo_v3_candidate` with `K = 80` and `alpha = 0.10` | [research/01-elo-calibration.md](research/01-elo-calibration.md) |
+| xG calibration | Adopt neutral World Cup xG with `base = 1.35`, `c1 = 1.30`, `scale = 600` | [research/02-xg-calibration.md](research/02-xg-calibration.md) |
+| Dixon-Coles / Gamma | Retain `rho = 0.05` and `gamma = 0.08` | [research/03-dixon-coles-gamma.md](research/03-dixon-coles-gamma.md) |
+| Raw PQS | Do not use as main team-strength feature | [research/04-pqs-shadow-study.md](research/04-pqs-shadow-study.md) |
+| Domination Layer | Do not adopt; hurts primary calibration metrics | [research/05-domination-layer-study.md](research/05-domination-layer-study.md) |
+| Score Tail Correction | Do not adopt global or conditional correction | [research/06-score-tail-calibration.md](research/06-score-tail-calibration.md) |
+| Poisson limits | Keep Bivariate Poisson; do not replace with Negative Binomial | [research/07-poisson-distribution-research.md](research/07-poisson-distribution-research.md) |
+| Injury / Availability | Use as Information Layer and future Shadow Mode, not a fixed coefficient | [research/08-injury-aware-pqs-design.md](research/08-injury-aware-pqs-design.md) |
+| Future work | Move Dynamic Team PQS to FIFA Predictor 5.0 research | [research/09-future-work.md](research/09-future-work.md) |
+| Score distribution limits | Correct score remains high variance; avoid overfitting rare blowouts | [research/10-score-distribution-and-model-limits.md](research/10-score-distribution-and-model-limits.md) |
+| Closure audit | Formal close decision for Calibration Lab v1.0 | [research/calibration_closure_audit.md](research/calibration_closure_audit.md) |
 
-## 1. Elo Research Conclusions
+For a guided reading order, start with [research/README.md](research/README.md).
+For the short v1.0 narrative summary, read
+[research/final_summary.md](research/final_summary.md).
 
-`standard_elo_v1` is the clean reproducible baseline: all teams are rebuilt from
-the same historical result source with standard Elo logic. It remains useful as
-the comparison anchor, but its probability calibration is weaker than later
-candidates.
+## What Was Adopted
 
-`calibrated_elo_v2_candidate` improved Accuracy, LogLoss, and Brier Score, but
-the full goal-difference multiplier expanded the Elo scale too aggressively.
-That made the candidate harder to trust as a FIFA Predictor default.
+### Calibrated Elo
 
-`calibrated_elo_v3_candidate` keeps most of the validation gain while applying
-goal-difference shrinkage with `alpha = 0.10`. This reduces the rating-scale
-expansion seen in v2, so v3 is the current recommended Elo candidate. It is
-still a calibrated lab candidate, not a production default.
+Elo calibration is complete for this phase. The model uses
+`calibrated_elo_v3_candidate`, with `K = 80` and goal-difference shrinkage
+`alpha = 0.10`.
 
-## 2. xG Research Conclusions
+Tournament weight was tested and not adopted. Home advantage remains disabled in
+Neutral World Cup Mode because the final candidate is built around neutral-site
+World Cup and Euro matches.
 
-World Cup mode is primarily a neutral-site prediction problem. The original
-asymmetric xG setup was useful for general international matches, but it can
-carry home/away structure into matches where the first listed team is not a true
-home side.
+### Neutral xG
 
-The neutral xG candidate treats `team_a` and `team_b` symmetrically and converts
-Elo difference into expected goals without assigning default home advantage.
-The current World Cup xG candidate is:
+World Cup mode uses a neutral xG formula. This avoids treating dataset ordering
+as a real home/away advantage when the match is played at a neutral site.
+
+The retained xG candidate is:
 
 ```text
 base = 1.35
@@ -132,283 +165,113 @@ scale = 600
 min_xg = 0.20
 ```
 
-## 3. Dixon-Coles Conclusions
+### Dixon-Coles And Gamma
 
-The current calibrated Dixon-Coles candidate uses:
+Dixon-Coles `rho = 0.05` and Bivariate Poisson `gamma = 0.08` remain in the
+model. Their contribution is small, but stable enough to keep.
+
+## What Was Rejected
+
+### Raw PQS
+
+Raw PQS was originally expected to improve team-strength estimation. The shadow
+study found that it overlaps strongly with Elo:
+
+- PQS vs Elo Pearson correlation: approximately `0.75`
+- Sign agreement: approximately `84%`
+
+That makes Raw PQS risky as a direct team-strength feature. It often amplifies a
+strength difference that Elo and xG already know.
+
+Final decision:
 
 ```text
-rho = 0.05
+Raw PQS is not adopted as a formal team-strength layer.
 ```
 
-The improvement exists, but it is small. Dixon-Coles should be treated as a
-low-score probability refinement, not the main source of the World Cup model
-improvement.
+### Domination Layer
 
-## 4. Bivariate Poisson Conclusions
+Domination produced tiny improvements in some correct-score ranking metrics, but
+it worsened the primary model-calibration metrics. It is not part of the formal
+candidate.
 
-The current Bivariate Poisson shared-goal parameter remains:
+### Score Tail Correction
+
+The lab confirmed that GD>=3 is underpredicted, but global and conditional tail
+corrections were not stable across splits. The model keeps diagnostics but does
+not alter the formal score formula.
+
+### Negative Binomial
+
+Negative Binomial has research value for high-mismatch subsets, but it worsened
+pooled LogLoss, Brier, and Top-3 in the feasibility benchmark. Bivariate Poisson
+remains the formal score-distribution baseline.
+
+### Injury Coefficient
+
+The lab does not support a fixed injury coefficient. Injury and availability are
+useful as information, but the current repository does not have the time-safe,
+match-level absence data needed for calibration.
+
+## Dynamic Team PQS And FIFA Predictor 5.0
+
+Dynamic Team PQS is not part of Calibration Lab v1.0. It is the main research
+direction for FIFA Predictor 5.0.
+
+The important shift is this:
 
 ```text
-gamma = 0.08
+Raw PQS asks: how strong is this team?
+Dynamic Team PQS asks: how different is this team today from its expected state?
 ```
 
-Gamma search showed this value is already near the best LogLoss region for the
-current World Cup candidate. Large further searches are not recommended until a
-new xG or data regime changes the score distribution.
+That second question is more promising because it can use information that Elo
+does not fully capture:
 
-## 5. Final World Cup Candidate
+- injuries
+- suspensions
+- unavailable players
+- expected starters
+- bench depth
+- late availability shocks
 
-The current World Cup candidate combines:
+The required path is:
 
-- Elo: `calibrated_elo_v3_candidate`
-- xG: neutral World Cup xG candidate
+```text
+Information Layer
+-> Dynamic Team PQS
+-> Shadow Mode
+-> validation
+-> possible formal model integration
+```
+
+It should not become a fixed coefficient until it proves predictive value with
+time-safe data.
+
+## 4.0 And 5.0 Boundary
+
+FIFA Predictor 4.0 integration should use the validated model core:
+
+- calibrated Elo v3
+- neutral World Cup xG
+- Bivariate Poisson
 - Dixon-Coles `rho = 0.05`
-- Bivariate Poisson `gamma = 0.08`
-- Domination layer disabled / 100% normal xG
-- Raw PQS disabled
-- PQS reserved for future injury-aware correction
-
-The final benchmark improved from `baseline_current` to
-`full_calibrated_worldcup_candidate`:
-
-- Accuracy: `+0.047009`
-- LogLoss improvement: `+0.028380`
-- Brier improvement: `+0.021075`
-
-## 6. PQS Research Conclusions
-
-PQS is not calibrated yet and should not be described as improving prediction
-accuracy. The current PQS work is a shadow benchmark and QA analysis only.
-
-Known findings:
-
-- PQS and Elo overlap strongly.
-- Pearson correlation is approximately `0.75`.
-- Sign agreement is approximately `84%`.
-- PQS creates visible xG, W/D/L, and score-matrix drift.
-- The current lab cannot claim PQS improves predictions.
-- PQS calibration is not complete.
-
-### Reasonable PQS Cases
-
-- `Jordan vs Algeria`
-- `Austria vs Jordan`
-- `Uzbekistan vs Colombia`
-
-These cases show plausible squad-quality direction, though they still require
-human review.
-
-### Suspicious PQS Cases
-
-- `France vs Iraq`
-- `Brazil vs Haiti`
-- `Belgium vs Iran`
-
-These cases may involve double counting Elo because PQS amplifies matchups where
-the calibrated Elo/xG baseline already sees a strong team-strength difference.
-
-## 7. Current Recommended Direction
-
-The current recommendation is:
-
-```text
-PQS -> injury / availability correction layer
-```
-
-not:
-
-```text
-PQS -> main model strength feature
-```
-
-Raw PQS should remain shadow-only until period-correct injuries, availability,
-rosters, and lineups can be tested without look-ahead bias.
-
-## 8. Domination Layer Conclusions
-
-The production-style domination layer was benchmarked against the current
-World Cup neutral candidate using the same World Cup + Euro neutral dataset.
-
-The main benchmark found that 100% normal xG performed best on the primary
-calibration metrics:
-
-- LogLoss
-- Brier Score
-- Goal Difference MAE
-- Draw probability calibration
-
-The current 70/30 normal/domination blend was not the best setting and is not
-recommended for `final_worldcup_model_v1_candidate`.
-
-The extended benchmark checked score-betting-style metrics. Domination created
-very small gains in some correct-score ranking metrics:
-
-- Top-3 correct score was best at 80/20, but only about `+0.000855` above 100/0.
-- Top-5 correct score was best at 90/10 or 80/20, also only about `+0.000855` above 100/0.
-- Blowout detection did not improve.
-
-This is not strong enough evidence to include domination in the main model.
-Domination can remain a score-betting-only shadow experiment, but the current
-recommended World Cup candidate uses 100% normal xG.
-
-## 9. Current Recommended Direction
-
-Recommended `final_worldcup_model_v1_candidate`:
-
-- Elo: `calibrated_elo_v3_candidate`
-- xG: neutral World Cup xG candidate
-- Dixon-Coles `rho = 0.05`
-- Bivariate Poisson `gamma = 0.08`
-- Domination disabled / 100% normal xG
-- Raw PQS disabled
-- PQS reserved for future injury-aware correction
-
-PQS should continue toward:
-
-```text
-PQS -> injury / availability correction layer
-```
-
-not:
-
-```text
-PQS -> main model strength feature
-```
-
-## 10. Roadmap Update
-
-- ✅ Elo calibration
-- ✅ xG calibration
-- ✅ Dixon-Coles / gamma calibration
-- ✅ PQS shadow investigation
-- ✅ Domination layer benchmark
-- ⏳ Score tail calibration
-- ⏳ Injury-aware PQS
-- ⏳ FIFA Predictor 4.0 shadow integration
-
-# Research Roadmap
-
-Completed:
-
-- Elo rebuild
-- Elo calibration
-- Validation framework
-- World Cup mode v1 benchmark
-- xG calibration
-- Dixon-Coles / gamma calibration
-- PQS shadow investigation
-- Domination layer benchmark
-
-In progress:
-
-- Score tail calibration planning
-
-Planned:
-
-- Injury-aware PQS research
-- FIFA Predictor 4.0 shadow integration
-
-## Score Tail Calibration Report
-
-The next research direction is a score-tail calibration report. Its purpose is
-to check whether the model systematically underestimates high-margin outcomes
-and tail scorelines.
-
-Planned checks:
-
-- Whether the model underestimates `3+` goal-difference wins.
-- Whether `4-0`, `5-0`, `6-0`, and related tail scorelines receive realistic probability.
-- Top-3 and Top-5 correct-score coverage.
-- Blowout detection quality.
-
-## FIFA Predictor Shadow Mode Integration
-
-Shadow mode means the calibrated World Cup mode should not replace the
-production model immediately. Instead, the old model and calibrated World Cup
-mode should run side by side while comparing:
-
-- xG outputs
-- W/D/L probabilities
-- score matrices
-- championship odds
-- match reviews
-
-The calibrated World Cup mode should only be promoted after QA confirms that
-the new probabilities, score distributions, and downstream tournament outputs
-are stable and explainable.
-
-Pipeline:
-
-```text
-international_results
-    ↓
-Elo Rebuild
-    ↓
-Elo Calibration
-    ↓
-xG Calibration
-    ↓
-Poisson
-    ↓
-Dixon-Coles
-    ↓
-PQS
-    ↓
-FIFA Predictor
-```
-
-## Phase-One Baseline
-
-The current executable baseline is intentionally narrow:
-
-- ELO-only expected goals
-- Bivariate Poisson score matrix
-- Dixon-Coles low-score correction
-- Accuracy, multiclass LogLoss, and Brier Score
-
-The baseline uses only these CSV columns:
-
-```text
-home_team,away_team,home_score,away_score,home_pre_match_elo,away_pre_match_elo
-```
-
-It does not update ELO ratings while reading the CSV. Each row must already
-include the pre-match ELO values to evaluate.
-
-Fixed model constants:
-
-- `c1 = 0.75`
-- `GAMMA = 0.08`
-- `RHO = -0.05`
-- `MAX_GOALS = 5`
-
-## Usage
-
-Create a historical matches CSV with the required schema, then run:
-
-```bash
-python scripts/run_elo_baseline.py \
-  --input data/raw/historical_matches.csv \
-  --output results/elo_baseline_predictions.csv
-```
-
-The output CSV includes expected goals, home/draw/away probabilities, predicted
-label, and actual label. The command prints:
-
-```text
-matches: N
-accuracy: ...
-log_loss: ...
-brier_score: ...
-```
-
-A header-only schema template is available at:
-
-```text
-data/schema/historical_matches_schema.csv
-```
-
-No fake historical match data is included.
+- Gamma `0.08`
+- no Raw PQS
+- no Domination Layer
+- no Tail Correction
+
+FIFA Predictor 5.0 research should build the data and shadow infrastructure that
+Calibration Lab could not honestly claim yet:
+
+- Dynamic Team PQS
+- Injury / Availability Information Layer
+- frozen prediction archives
+- model versioning and input snapshots
+- host / semi-home advantage research
+- fatigue data readiness
+- style data readiness
+- score-tail monitoring for 48-team World Cup mismatches
 
 ## Repository Layout
 
@@ -420,59 +283,39 @@ data/
   schema/
 src/
   model/
-    elo.py
-    pqs.py
-    expected_goals.py
-    poisson.py
-    metrics.py
   tuning/
   utils/
 scripts/
 results/
-notebooks/
-archive/product_legacy/
+research/
 tests/
+archive/product_legacy/
 ```
 
-## Preserved Legacy Logic
+## Running The Baseline
 
-The calibration modules preserve the useful model core from FIFA Predictor 4.0:
+The executable baseline is still available for research use:
 
-- ELO expected score and ELO update helper
-- ELO-to-Expected-Goals formula
-- Bivariate Poisson score probability formula
-- Dixon-Coles correction
-- Score-matrix normalization
-- Score-matrix aggregation into home/draw/away probabilities
-- Legacy PQS active-roster logic isolated for future research
+```bash
+python scripts/run_elo_baseline.py \
+  --input data/raw/historical_matches.csv \
+  --output results/elo_baseline_predictions.csv
+```
 
-## Isolated Product Dependencies
+This command expects a historical match CSV with pre-match Elo values already
+included. It does not update Elo ratings while reading the file.
 
-The original product-coupled files are archived under `archive/product_legacy/`.
-They are not imported by the phase-one baseline.
+## Final Conclusion
 
-Isolated product dependencies include:
+Calibration Lab v1.0 produced a cleaner model, but more importantly, it produced
+a clearer boundary around the model.
 
-- SQLAlchemy database models
-- backend/FastAPI import paths
-- frontend JSON paths
-- `.env` loading
-- Gemini/LLM analysis and external API calls
-- tournament bracket and knockout simulation
-- Monte Carlo champion probability outputs
-- automatic frontend JSON writes
+The lab proved that calibrated Elo, neutral xG, Dixon-Coles, and Gamma deserve
+to be part of the current World Cup candidate. It did not prove that Raw PQS,
+Domination, Tail Correction, Negative Binomial, injury coefficients, fatigue, or
+style should enter the formal model.
 
-## Next Data Needed
+That is the point of calibration.
 
-To run meaningful calibration experiments, prepare historical match data with:
-
-- team names
-- final score
-- pre-match ELO for both teams
-- match date
-- competition or tournament name
-- neutral-site or host indicator
-
-Future extensions can add player/PQS snapshots, injuries, rest days, travel,
-market odds, and tournament context, but these are intentionally excluded from
-the phase-one ELO-only baseline.
+> Calibration is not about proving every idea works.
+> It is about discovering which ideas deserve to become part of the model.

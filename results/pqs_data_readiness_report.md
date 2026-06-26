@@ -211,7 +211,7 @@ Required shadow outputs:
 Do not claim:
 
 - PQS improves predictive accuracy.
-- PQS is calibrated.
+- Raw PQS is calibrated.
 - PQS weight is optimal.
 
 ## Recommendation
